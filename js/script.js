@@ -1,69 +1,30 @@
 "use strict"
 
-document.addEventListener('click', documentActions);
+document.addEventListener("click", documentActions);
 
 function documentActions(e) {
 	const targetElement = e.target;
-	const iconMenu = document.querySelector('.icon-menu');
-	const menuBody = document.querySelector('.menu__body');
-	const isMenuOpen = document.body.classList.contains('menu-open');
 
-	// Клік по бургер-іконці
+	// Toggle the menu open/close when clicking on the menu icon
 	if (targetElement.closest('.icon-menu')) {
-		iconMenu.classList.toggle('active');
 		document.body.classList.toggle('menu-open');
-
-		if (document.body.classList.contains('menu-open')) {
-			menuOpen();
-		} else {
-			menuClose();
-		}
-		return;
-	}
-
-	// Клік по пункту меню
-	if (targetElement.closest('.menu__link')) {
-		document.querySelectorAll('.menu__link').forEach(link => link.classList.remove('active'));
-		targetElement.closest('.menu__link').classList.add('active'); // Додаємо активний клас
-
-		menuClose();
-		return;
-	}
-
-	// Закриття меню при кліку поза ним
-	if (isMenuOpen && !targetElement.closest('.menu__body')) {
-		menuClose();
+		targetElement.closest('.icon-menu').classList.toggle('open');
 	}
 }
 
-function menuOpen() {
-	const menuBody = document.querySelector('.menu__body');
-	const maxMenuHeight = Math.min(window.innerHeight * 0.8, menuBody.scrollHeight);
-	menuBody.style.maxHeight = `${maxMenuHeight}px`;
+// Handle menu link clicks
+document.querySelectorAll('.menu__link').forEach(link => {
+	link.addEventListener('click', function () {
+		// Close the menu when clicking on a navigation link
+		document.querySelector('.menu__body').classList.remove('open');
+		document.body.classList.remove('menu-open');
 
-	bodyLock();
-}
-
-function menuClose() {
-	const menuBody = document.querySelector('.menu__body');
-	menuBody.style.maxHeight = '0px';
-
-	bodyUnlock();
-	document.body.classList.remove('menu-open');
-	document.querySelector('.icon-menu').classList.remove('active');
-}
-
-// Функції блокування прокрутки без стрибка контенту
-function bodyLock() {
-	const scrollWidth = window.innerWidth - document.documentElement.clientWidth;
-	document.body.style.overflow = 'hidden';
-	document.body.style.paddingRight = `${scrollWidth}px`;
-}
-
-function bodyUnlock() {
-	document.body.style.overflow = '';
-	document.body.style.paddingRight = '';
-}
+		// Remove the open class from all icons
+		document.querySelectorAll('.icon-menu').forEach(icon =>
+			icon.classList.remove('open')
+		);
+	});
+});
 
 
 //Move header button
