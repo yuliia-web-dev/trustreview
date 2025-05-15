@@ -158,6 +158,8 @@ body {
   gap: 0.3125rem;
   font-weight: 500;
   color: #28a745;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 .description__link span {
   color: #fff;
@@ -167,6 +169,11 @@ body {
 }
 .description__link:not(:last-child) {
   margin-bottom: 3.125rem;
+}
+@media (any-hover: hover) {
+  .description__link:hover {
+    color: #212529;
+  }
 }
 
 .company-info {
@@ -307,16 +314,6 @@ body {
   line-height: 1.5em;
   font-weight: 600;
   margin-bottom: 0.625rem;
-}
-.about-company__descriptor {
-  padding: 0.3125rem 0.5rem;
-  background-color: #83d997;
-  border-radius: 1rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 0.875rem;
-  font-weight: 500;
 }
 .about-company__button {
   -ms-flex-negative: 0;

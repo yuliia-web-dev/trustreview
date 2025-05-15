@@ -246,7 +246,7 @@ body {
 	background-size: cover;
 	background-position: center;
 	min-height: 600px;
-	background-color: #42614d;
+	background-color: #a7d1b6;
 	padding: toRem(100) 0;
 	&__container {
 		display: flex;
@@ -374,8 +374,20 @@ body {
 		font-size: toRem(16);
 		color: #212529;
 	}
+	&__descriptor {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
 }
-
+.descriptor {
+	padding: toRem(2) toRem(5);
+	background-color: #83d997;
+	border-radius: toRem(16);
+	width: fit-content;
+	font-size: toRem(12);
+	font-weight: 500;
+}
 .footer {
 	// .footer__list
 

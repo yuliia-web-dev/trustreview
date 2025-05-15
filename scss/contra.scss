@@ -65,6 +65,7 @@ body {
 		gap: toRem(5);
 		font-weight: 500;
 		color: $accentColor;
+		transition: color 0.3s;
 		span {
 			color: #fff;
 			background: $accentColor;
@@ -73,6 +74,11 @@ body {
 		}
 		&:not(:last-child) {
 			margin-bottom: toRem(50);
+		}
+		@media(any-hover:hover){
+			&:hover{
+				color: #212529;
+			}
 		}
 	}
 }
@@ -215,12 +221,7 @@ body {
 	// .about-company__descriptor
 
 	&__descriptor {
-		padding: toRem(5) toRem(8);
-		background-color: #83d997;
-		border-radius: toRem(16);
-		width: fit-content;
-		font-size: toRem(14);
-		font-weight: 500;
+		
 	}
 
 	// .about-company__button
