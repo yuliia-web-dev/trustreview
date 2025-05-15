@@ -844,29 +844,29 @@ body.menu-open {
     z-index: 6;
     -webkit-transition: left 0.3s;
     transition: left 0.3s;
-    background: #e1dcdc;
+    background: #fff;
   }
 }
-@media (max-width: 50em) and (min-width: 89.375em) {
+@media (max-width: 50em) and (min-width: 50em) {
   .menu__body::before {
-    height: 6.25rem;
+    height: 5.0625rem;
   }
 }
-@media (max-width: 50em) and (min-width: 20em) and (max-width: 89.375em) {
-  @supports (height: clamp( 3.5rem , 2.7072072072rem  +  3.963963964vw , 6.25rem )) {
+@media (max-width: 50em) and (min-width: 20em) and (max-width: 50em) {
+  @supports (height: clamp( 4.125rem , 3.5rem  +  3.125vw , 5.0625rem )) {
     .menu__body::before {
-      height: clamp( 3.5rem , 2.7072072072rem  +  3.963963964vw , 6.25rem );
+      height: clamp( 4.125rem , 3.5rem  +  3.125vw , 5.0625rem );
     }
   }
-  @supports not (height: clamp( 3.5rem , 2.7072072072rem  +  3.963963964vw , 6.25rem )) {
+  @supports not (height: clamp( 4.125rem , 3.5rem  +  3.125vw , 5.0625rem )) {
     .menu__body::before {
-      height: calc(3.5rem + 2.75 * (100vw - 20rem) / 69.375);
+      height: calc(4.125rem + 0.9375 * (100vw - 20rem) / 30);
     }
   }
 }
 @media (max-width: 50em) and (max-width: 20em) {
   .menu__body::before {
-    height: 3.5rem;
+    height: 4.125rem;
   }
 }
 .menu-open .menu__body {
