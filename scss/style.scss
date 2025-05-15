@@ -63,7 +63,7 @@ body {
 	// .header__logo
 
 	&__logo {
-		z-index: 20;
+		z-index: 25;
 		@include adaptiveValue("font-size", 40, 30);
 		font-weight: 700;
 		color: $accentColor;
@@ -73,6 +73,7 @@ body {
 	// .header__button
 
 	&__button {
+		flex-shrink: 0;
 		@include adaptiveValue("padding-top", 10, 5);
 		@include adaptiveValue("padding-bottom", 10, 5);
 		@include adaptiveValue("padding-left", 20, 20);
@@ -81,12 +82,15 @@ body {
 		color: white;
 		font-size: toRem(18);
 		border-radius: 6px;
-		transition: all 0.2s;
+		transition: all 0.3s;
 		font-weight: 600;
 		@media (any-hover: hover) {
 			&:hover {
 				background-color: #157c2d;
 			}
+		}
+		@media(max-width: toEm(560)){
+			align-items: center;
 		}
 	}
 
@@ -98,16 +102,23 @@ body {
 	// .menu__body
 
 	&__body {
+		@media(max-width: toEm(560)){
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: toRem(20);
+		}
 		@media (max-width: toEm(800)) {
 			position: fixed;
 			width: 100%;
-			height: 100%;
+			min-height: 100vh;
 			left: -100%;
 			top: 0;
 			overflow: auto;
-			padding: toRem(150) toRem(15) toRem(15) toRem(15);
-			background: #000;
+			padding: toRem(150) toRem(15) toRem(50) toRem(15);
+			background: #cbe0d0;
 			transition: left 0.3s;
+			z-index: 20;
 			&::before {
 				content: "";
 				position: fixed;
@@ -117,7 +128,7 @@ body {
 				left: -100%;
 				z-index: 6;
 				transition: left 0.3s;
-				background: #000;
+				background: #e1dcdc;
 			}
 		}
 		.menu-open & {
@@ -144,6 +155,7 @@ body {
 			text-align: right;
 			row-gap: toRem(28);
 		}
+	
 	}
 
 	// .menu__item
@@ -227,6 +239,7 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		text-align: center;
 	}
 	&__title {
 		@include adaptiveValue("font-size", 48, 35);
@@ -245,12 +258,11 @@ body {
 			@include adaptiveValue("margin-bottom", 50, 20);
 		}
 	}
-	&__form{
+	&__form {
 		max-width: toRem(300);
 		width: 100%;
 	}
 	&__search-wrap {
-		
 		padding: toRem(10) toRem(20);
 		border-radius: toRem(8);
 		background-color: #fff;
@@ -295,7 +307,7 @@ body {
 }
 .item-company {
 	display: flex;
-	gap: toRem(36);
+	@include adaptiveValue("gap", 36,10);
 	align-items: center;
 	font-size: 1.2rem;
 	padding: toRem(18);
@@ -325,7 +337,7 @@ body {
 
 	&__info {
 		display: grid;
-		gap: toRem(20);
+		@include adaptiveValue("gap", 20,10);
 	}
 
 	// .item-company__title
@@ -386,7 +398,10 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: toRem(50);
+		gap: toRem(20);
+		@media (max-width: toEm(767.98)) {
+			flex-direction: column;
+		}
 	}
 
 	// .footer-top__logo
@@ -396,16 +411,24 @@ body {
 		font-weight: 700;
 		color: $accentColor;
 	}
-
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		gap: toRem(15);
+		@media (max-width: toEm(700)) {
+			flex-direction: column;
+		}
+	}
 	// .footer-top__menu
 
 	&__menu {
+		flex: 1;
 	}
-	&__list{
+	&__list {
 		display: flex;
 		gap: toRem(20);
 	}
-	&__link{
+	&__link {
 		transition: color 0.3s;
 		@media (any-hover: hover) {
 			&:hover {
@@ -439,9 +462,13 @@ body {
 
 	&__container {
 		display: flex;
+		gap: toRem(20);
 		justify-content: space-between;
 		align-items: center;
 		color: #fff;
+		@media (max-width: toEm(767.98)) {
+			flex-direction: column-reverse;
+		}
 	}
 	&__links-wrap {
 		display: flex;
