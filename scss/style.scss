@@ -274,7 +274,7 @@ body {
 		}
 	}
 	&__form {
-		max-width: toRem(300);
+		max-width: toRem(350);
 		width: 100%;
 	}
 	&__search-wrap {
@@ -283,7 +283,7 @@ body {
 		background-color: #fff;
 		transition: border 0.3s ease;
 		display: flex;
-		gap: toRem(10);
+		gap: toRem(15);
 		border: toRem(1) solid transparent;
 
 		&:focus-within {
