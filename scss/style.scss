@@ -435,9 +435,7 @@ body {
 	// .footer-top__logo
 
 	&__logo {
-		font-size: toRem(30);
-		font-weight: 700;
-		color: $accentColor;
+		@extend .header__logo;
 	}
 
 	// .footer-top__menu

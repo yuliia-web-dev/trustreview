@@ -677,7 +677,7 @@ body.menu-open {
     gap: 0.9375rem;
   }
 }
-.header__logo {
+.header__logo, .footer-top__logo {
   max-width: 15.625rem;
   height: auto;
   z-index: 25;
@@ -685,7 +685,7 @@ body.menu-open {
       -ms-flex: 1;
           flex: 1;
 }
-.header__logo img {
+.header__logo img, .footer-top__logo img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -1307,11 +1307,6 @@ body.menu-open {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-}
-.footer-top__logo {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: #28a745;
 }
 .footer-top__list {
   display: -webkit-box;
