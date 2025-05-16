@@ -1,7 +1,7 @@
 @use "sass:math";
 
 // Кольори
-$accentColor: #28A745;
+$accentColor: #28a745;
 // Функції
 @import "_functions.scss";
 // Шрифти
@@ -69,7 +69,7 @@ body {
 	// .header__logo
 
 	&__logo {
-		max-width: toRem(250);
+		max-width: toRem(220);
 		height: auto;
 		z-index: 25;
 		flex: 1;
@@ -186,7 +186,7 @@ body {
 		font-size: toRem(20);
 		line-height: toRem(32);
 		transition: color 0.3s;
-
+		font-family: "Roboto";
 		@media (max-width: toEm(800)) {
 			font-size: toRem(28);
 		}
@@ -229,13 +229,13 @@ body {
 	bottom: 0;
 }
 @media (max-width: toEm(800)) {
-	#menu02.active span:nth-of-type(1) {
+	#menu02.open span:nth-of-type(1) {
 		transform: translateY(10px) rotate(-315deg);
 	}
-	#menu02.active span:nth-of-type(2) {
+	#menu02.open span:nth-of-type(2) {
 		opacity: 0;
 	}
-	#menu02.active span:nth-of-type(3) {
+	#menu02.open span:nth-of-type(3) {
 		transform: translateY(-10px) rotate(315deg);
 	}
 }
@@ -264,6 +264,7 @@ body {
 		}
 	}
 	&__text {
+		font-family: "Roboto";
 		max-width: toRem(900);
 		color: #fff;
 		@include adaptiveValue("font-size", 20, 18);
@@ -362,14 +363,20 @@ body {
 		color: #212529;
 		font-weight: 600;
 		white-space: nowrap;
+		max-width: toRem(200);
 		text-overflow: ellipsis;
 		overflow: hidden;
 		font-size: 1rem;
+		@media(max-width:toEm(480)){
+			max-width: toRem(100);
+
+		}
 	}
 
 	// .item-company__text
 
 	&__text {
+		font-family: "Roboto";
 		font-size: toRem(16);
 		color: #212529;
 	}

@@ -134,6 +134,10 @@ body {
 	&__item {
 		display: grid;
 		gap: toRem(5);
+		span{
+			font-family: "Roboto";
+
+		}
 	}
 
 	// .card-company__link
@@ -261,6 +265,7 @@ body {
 		margin-bottom: toRem(20);
 	}
 	&__text {
+		font-family: "Roboto";
 		color: rgb(33, 37, 41);
 		word-break: break-word;
 		line-height: 2rem;

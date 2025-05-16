@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular&display=swap");
 @font-face {
   font-family: "icons";
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
@@ -244,6 +245,9 @@ body {
   display: grid;
   gap: 0.3125rem;
 }
+.card-company__item span {
+  font-family: "Roboto";
+}
 .card-company__link {
   text-decoration: underline;
 }
@@ -439,6 +443,7 @@ body {
   margin-bottom: 1.25rem;
 }
 .review__text {
+  font-family: "Roboto";
   color: rgb(33, 37, 41);
   word-break: break-word;
   line-height: 2rem;

@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular&display=swap");
 @font-face {
   font-family: "icons";
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
@@ -678,7 +680,7 @@ body.menu-open {
   }
 }
 .header__logo, .footer-top__logo {
-  max-width: 15.625rem;
+  max-width: 13.75rem;
   height: auto;
   z-index: 25;
   -webkit-box-flex: 1;
@@ -937,6 +939,7 @@ body.menu-open {
   line-height: 2rem;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
+  font-family: "Roboto";
 }
 @media (max-width: 50em) {
   .menu__link {
@@ -990,15 +993,15 @@ body.menu-open {
 }
 
 @media (max-width: 50em) {
-  #menu02.active span:nth-of-type(1) {
+  #menu02.open span:nth-of-type(1) {
     -webkit-transform: translateY(10px) rotate(-315deg);
         -ms-transform: translateY(10px) rotate(-315deg);
             transform: translateY(10px) rotate(-315deg);
   }
-  #menu02.active span:nth-of-type(2) {
+  #menu02.open span:nth-of-type(2) {
     opacity: 0;
   }
-  #menu02.active span:nth-of-type(3) {
+  #menu02.open span:nth-of-type(3) {
     -webkit-transform: translateY(-10px) rotate(315deg);
         -ms-transform: translateY(-10px) rotate(315deg);
             transform: translateY(-10px) rotate(315deg);
@@ -1077,6 +1080,7 @@ body.menu-open {
   }
 }
 .hero__text {
+  font-family: "Roboto";
   max-width: 56.25rem;
   color: #fff;
   font-weight: 500;
@@ -1260,11 +1264,18 @@ body.menu-open {
   color: #212529;
   font-weight: 600;
   white-space: nowrap;
+  max-width: 12.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
   font-size: 1rem;
 }
+@media (max-width: 30em) {
+  .item-company__title {
+    max-width: 6.25rem;
+  }
+}
 .item-company__text {
+  font-family: "Roboto";
   font-size: 1rem;
   color: #212529;
 }
