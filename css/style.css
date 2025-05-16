@@ -1014,6 +1014,7 @@ body.menu-open {
 .hero {
   background: url("../img/bg-image.jpg");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   min-height: 600px;
@@ -1204,6 +1205,8 @@ body.menu-open {
   border: 1px solid rgba(144, 146, 148, 0.2);
   position: relative;
   min-height: 50px;
+  -webkit-transition: all 0.3 ease-out;
+  transition: all 0.3 ease-out;
 }
 @media (min-width: 89.375em) {
   .item-company {
@@ -1225,6 +1228,12 @@ body.menu-open {
 @media (max-width: 20em) {
   .item-company {
     gap: 0.625rem;
+  }
+}
+@media (any-hover: hover) {
+  .item-company:hover {
+    -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
 }
 .item-company__number {
