@@ -1,7 +1,7 @@
 @use "sass:math";
 
 // Кольори
-$accentColor: #28a745;
+$accentColor: #28A745;
 // Функції
 @import "_functions.scss";
 // Шрифти
@@ -11,7 +11,7 @@ $accentColor: #28a745;
 // Обнулення
 @import "_reset.scss";
 // Компоненти
-@import "contra.scss";
+@import "company-1.scss";
 
 // Мінімальна ширина сторінки
 $minWidth: 320;

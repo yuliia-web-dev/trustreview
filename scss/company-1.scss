@@ -1,7 +1,8 @@
 @use "sass:math";
 
 // Кольори
-$accentColor: #28a745;
+$accentColor: #28A745;
+
 // Функції
 @import "_functions.scss";
 // Шрифти
@@ -75,8 +76,8 @@ body {
 		&:not(:last-child) {
 			margin-bottom: toRem(50);
 		}
-		@media(any-hover:hover){
-			&:hover{
+		@media (any-hover: hover) {
+			&:hover {
 				color: #212529;
 			}
 		}
@@ -153,11 +154,9 @@ body {
 			gap: toRem(30);
 			text-align: center;
 		}
-		@media(max-width: toEm(430)){
+		@media (max-width: toEm(430)) {
 			grid-template-columns: 1fr;
 			gap: toRem(20);
-
-		
 		}
 	}
 	// .card-company__badge
@@ -184,7 +183,7 @@ body {
 
 .social {
 	&__link {
-		&--dark{
+		&--dark {
 			color: #4d5853;
 		}
 	}
@@ -221,7 +220,6 @@ body {
 	// .about-company__descriptor
 
 	&__descriptor {
-		
 	}
 
 	// .about-company__button
@@ -252,7 +250,6 @@ body {
 		min-height: auto;
 		@media (max-width: toEm(767.98)) {
 			padding: 10px 20px;
-
 		}
 	}
 }

@@ -269,13 +269,13 @@ body {
           align-items: center;
   gap: 0.3125rem;
   font-weight: 500;
-  color: #28a745;
+  color: #28A745;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 .description__link span {
   color: #fff;
-  background: #28a745;
+  background: #28A745;
   border-radius: 2px;
   padding: 0 1px 0 1px;
 }
@@ -430,7 +430,7 @@ body {
 .about-company__button {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  background-color: #28a745;
+  background-color: #28A745;
   color: white;
   font-size: 1.125rem;
   border-radius: 6px;
@@ -694,7 +694,7 @@ body.menu-open {
 .header__button {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  background-color: #28a745;
+  background-color: #28A745;
   color: white;
   font-size: 1.125rem;
   border-radius: 6px;
@@ -928,7 +928,7 @@ body.menu-open {
 }
 @media (any-hover: hover) {
   .menu__item:hover .menu__link {
-    color: #28a745;
+    color: #28A745;
   }
 }
 .menu__link {
@@ -969,7 +969,7 @@ body.menu-open {
     left: 0;
     width: 100%;
     height: 0.25rem;
-    background-color: #28a745;
+    background-color: #28A745;
     border-radius: 4px;
     display: inline-block;
     -webkit-transition: all 0.4s;
@@ -1030,7 +1030,7 @@ body.menu-open {
 }
 .hero__title {
   font-weight: 700;
-  color: #28a745;
+  color: #28A745;
 }
 @media (min-width: 89.375em) {
   .hero__title {
@@ -1142,7 +1142,7 @@ body.menu-open {
   border: 0.0625rem solid transparent;
 }
 .hero__search-wrap:focus-within {
-  border: 0.0625rem solid #28a745;
+  border: 0.0625rem solid #28A745;
 }
 .hero__search-wrap img {
   width: 1.875rem;
@@ -1320,13 +1320,13 @@ body.menu-open {
 }
 @media (any-hover: hover) {
   .footer-top__link:hover {
-    color: #28a745;
+    color: #28A745;
   }
 }
 .footer-top__total-companies {
   background-color: rgba(122, 240, 63, 0.1);
   border-radius: 4px;
-  color: #28a745;
+  color: #28A745;
   padding: 0.5rem 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1379,7 +1379,7 @@ body.menu-open {
 }
 @media (any-hover: hover) {
   .footer-bottom__links-wrap a:hover {
-    color: #28a745;
+    color: #28A745;
   }
 }
 
@@ -1402,6 +1402,6 @@ body.menu-open {
 }
 @media (any-hover: hover) {
   .social__link:hover::before {
-    color: #28a745;
+    color: #28A745;
   }
 }
