@@ -1014,7 +1014,6 @@ body.menu-open {
 .hero {
   background: url("../img/bg-image.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   min-height: 600px;
