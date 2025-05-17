@@ -153,11 +153,15 @@ body {
 		display: grid;
 		gap: toRem(18);
 		@media (max-width: toEm(767.98)) {
-			grid-template-columns: repeat(3, 1fr);
-			gap: toRem(30);
+			grid-template-columns: repeat(4, 1fr);
+			gap: toRem(20);
 			text-align: center;
 		}
-		@media (max-width: toEm(430)) {
+		@media (max-width: toEm(550)) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: toRem(20);
+		}
+		@media (max-width: toEm(375)) {
 			grid-template-columns: 1fr;
 			gap: toRem(20);
 		}
