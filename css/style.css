@@ -1205,6 +1205,8 @@ body.menu-open {
   min-height: 50px;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  max-width: 47.5rem;
+  width: 100%;
 }
 @media (min-width: 89.375em) {
   .item-company {
@@ -1275,7 +1277,8 @@ body.menu-open {
   color: #212529;
   font-weight: 600;
   white-space: nowrap;
-  max-width: 12.5rem;
+  max-width: calc(100% - 200px);
+  white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   font-size: 1rem;
@@ -1287,8 +1290,12 @@ body.menu-open {
 }
 .item-company__text {
   font-family: "Roboto";
-  font-size: 1rem;
   color: #212529;
+  max-width: calc(100% - 100px);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 1rem;
 }
 .item-company__descriptor {
   position: absolute;
