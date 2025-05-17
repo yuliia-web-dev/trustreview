@@ -240,7 +240,7 @@ body {
 }
 
 .hero {
-	background: url("../img/bg-image.jpg");
+	background: url("../img/bg-image.webp");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -253,8 +253,6 @@ body {
 		align-items: center;
 		justify-content: center;
 		text-align: center;
-		z-index: 2;
-		position: relative;
 	}
 	&__title {
 		@include adaptiveValue("font-size", 48, 35);

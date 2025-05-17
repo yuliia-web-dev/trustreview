@@ -1011,7 +1011,7 @@ body.menu-open {
   }
 }
 .hero {
-  background: url("../img/bg-image.jpg");
+  background: url("../img/bg-image.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1033,8 +1033,6 @@ body.menu-open {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  z-index: 2;
-  position: relative;
 }
 .hero__title {
   font-weight: 700;
