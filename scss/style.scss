@@ -11,7 +11,7 @@ $accentColor: #28a745;
 // Обнулення
 @import "_reset.scss";
 // Компоненти
-@import "company-1.scss";
+@import "company-page.scss";
 
 // Мінімальна ширина сторінки
 $minWidth: 320;
@@ -247,12 +247,27 @@ body {
 	background-position: center;
 	min-height: 600px;
 	padding: toRem(100) 0;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		opacity: 0.5;
+		pointer-events:none;
+		z-index: 1;
+	}
 	&__container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
+		z-index: 2;
+		position: relative;
 	}
 	&__title {
 		@include adaptiveValue("font-size", 48, 35);
@@ -332,10 +347,9 @@ body {
 	position: relative;
 	min-height: 50px;
 	transition: all 0.3s ease-out;
-	@media(any-hover:hover){
-		&:hover{
+	@media (any-hover: hover) {
+		&:hover {
 			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-
 		}
 	}
 
@@ -374,9 +388,8 @@ body {
 		text-overflow: ellipsis;
 		overflow: hidden;
 		font-size: 1rem;
-		@media(max-width:toEm(480)){
+		@media (max-width: toEm(480)) {
 			max-width: toRem(100);
-
 		}
 	}
 
