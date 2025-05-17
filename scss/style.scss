@@ -356,6 +356,7 @@ body {
 		background-size: contain;
 		border-radius: 50%;
 		border: 1px solid #212529;
+		flex-shrink: 0;
 	}
 
 	// .item-company__info
@@ -386,7 +387,7 @@ body {
 	&__text {
 		font-family: "Roboto";
 		color: #212529;
-		max-width: calc(100% - 100px);
+		max-width: calc(100% - 50px);
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;

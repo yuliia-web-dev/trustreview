@@ -375,12 +375,18 @@ body {
 }
 @media (max-width: 47.99875em) {
   .card-company__wrap {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.875rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
     text-align: center;
   }
 }
-@media (max-width: 26.875em) {
+@media (max-width: 34.375em) {
+  .card-company__wrap {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+@media (max-width: 23.4375em) {
   .card-company__wrap {
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -1247,6 +1253,8 @@ body.menu-open {
   background-size: contain;
   border-radius: 50%;
   border: 1px solid #212529;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .item-company__info {
   display: grid;
@@ -1291,7 +1299,7 @@ body.menu-open {
 .item-company__text {
   font-family: "Roboto";
   color: #212529;
-  max-width: calc(100% - 100px);
+  max-width: calc(100% - 50px);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
