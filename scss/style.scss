@@ -33,7 +33,6 @@ body {
 	&.menu-open {
 		overflow: hidden;
 		touch-action: none;
-		scrollbar-gutter: stable;
 	}
 }
 .wrapper {

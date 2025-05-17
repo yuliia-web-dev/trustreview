@@ -577,7 +577,6 @@ body.menu-open {
   overflow: hidden;
   -ms-touch-action: none;
       touch-action: none;
-  scrollbar-gutter: stable;
 }
 
 .wrapper {
