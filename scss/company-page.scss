@@ -1,7 +1,7 @@
 @use "sass:math";
 
 // Кольори
-$accentColor: #28A745;
+$accentColor: #28a745;
 
 // Функції
 @import "_functions.scss";
@@ -134,9 +134,8 @@ body {
 	&__item {
 		display: grid;
 		gap: toRem(5);
-		span{
+		span {
 			font-family: "Roboto";
-
 		}
 	}
 
