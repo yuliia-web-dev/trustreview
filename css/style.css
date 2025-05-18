@@ -438,110 +438,6 @@ body {
   font-weight: 600;
   margin-bottom: 0.625rem;
 }
-.about-company__button {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  background-color: #28a745;
-  color: #fff;
-  font-size: 1rem;
-  border-radius: 0.375rem;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  font-weight: 600;
-}
-@media (min-width: 89.375em) {
-  .about-company__button {
-    padding-top: 0.625rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (padding-top: clamp( 0.3125rem , 0.2224099099rem  +  0.4504504505vw , 0.625rem )) {
-    .about-company__button {
-      padding-top: clamp( 0.3125rem , 0.2224099099rem  +  0.4504504505vw , 0.625rem );
-    }
-  }
-  @supports not (padding-top: clamp( 0.3125rem , 0.2224099099rem  +  0.4504504505vw , 0.625rem )) {
-    .about-company__button {
-      padding-top: calc(0.3125rem + 0.3125 * (100vw - 20rem) / 69.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .about-company__button {
-    padding-top: 0.3125rem;
-  }
-}
-@media (min-width: 89.375em) {
-  .about-company__button {
-    padding-bottom: 0.625rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (padding-bottom: clamp( 0.3125rem , 0.2224099099rem  +  0.4504504505vw , 0.625rem )) {
-    .about-company__button {
-      padding-bottom: clamp( 0.3125rem , 0.2224099099rem  +  0.4504504505vw , 0.625rem );
-    }
-  }
-  @supports not (padding-bottom: clamp( 0.3125rem , 0.2224099099rem  +  0.4504504505vw , 0.625rem )) {
-    .about-company__button {
-      padding-bottom: calc(0.3125rem + 0.3125 * (100vw - 20rem) / 69.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .about-company__button {
-    padding-bottom: 0.3125rem;
-  }
-}
-@media (min-width: 89.375em) {
-  .about-company__button {
-    padding-left: 1.25rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (padding-left: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem )) {
-    .about-company__button {
-      padding-left: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem );
-    }
-  }
-  @supports not (padding-left: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem )) {
-    .about-company__button {
-      padding-left: calc(1.25rem + 0 * (100vw - 20rem) / 69.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .about-company__button {
-    padding-left: 1.25rem;
-  }
-}
-@media (min-width: 89.375em) {
-  .about-company__button {
-    padding-right: 1.25rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (padding-right: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem )) {
-    .about-company__button {
-      padding-right: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem );
-    }
-  }
-  @supports not (padding-right: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem )) {
-    .about-company__button {
-      padding-right: calc(1.25rem + 0 * (100vw - 20rem) / 69.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .about-company__button {
-    padding-right: 1.25rem;
-  }
-}
-@media (any-hover: hover) {
-  .about-company__button:hover {
-    background-color: #157c2d;
-  }
-}
 .about-company__review {
   background: #f8f9fa;
   padding: 20px 50px;
@@ -1354,7 +1250,7 @@ body.menu-open {
   }
 }
 .footer-top__total-companies {
-  background-color: rgba(122, 240, 63, 0.1);
+  background-color: rgba(132, 135, 131, 0.1);
   border-radius: 4px;
   color: #28a745;
   padding: 0.5rem 1rem;
