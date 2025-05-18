@@ -82,31 +82,30 @@ body {
 	// .header__button
 
 	&__button {
-		flex-shrink: 0;
-		@include adaptiveValue("padding-top", 10, 5);
-		@include adaptiveValue("padding-bottom", 10, 5);
-		@include adaptiveValue("padding-left", 20, 20);
-		@include adaptiveValue("padding-right", 20, 20);
-		background-color: $accentColor;
-		color: white;
-		font-size: toRem(18);
-		border-radius: 6px;
-		transition: all 0.3s;
-		font-weight: 600;
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: #157c2d;
-			}
-		}
-		@media (max-width: toEm(560)) {
-			align-items: center;
-		}
+
+	
 	}
 
 	&__menu {
 	}
 }
-
+.button{
+	flex-shrink: 0;
+	@include adaptiveValue("padding-top", 10, 5);
+	@include adaptiveValue("padding-bottom", 10, 5);
+	@include adaptiveValue("padding-left", 20, 20);
+	@include adaptiveValue("padding-right", 20, 20);
+	background-color: $accentColor;
+	color: #fff;
+	border-radius: 6px;
+	transition: all 0.3s;
+	font-weight: 600;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #157c2d;
+		}
+	}
+}
 .menu {
 	// .menu__body
 
@@ -244,9 +243,8 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	min-height: 600px;
+	min-height: toRem(600);
 	padding: toRem(100) 0;
-
 	&__container {
 		display: flex;
 		flex-direction: column;
@@ -330,7 +328,7 @@ body {
 	padding: toRem(18);
 	border: 1px solid rgba(144, 146, 148, 0.2);
 	position: relative;
-	min-height: 50px;
+	min-height: toRem(50);
 	transition: all 0.3s ease-out;
 	max-width: toRem(760);
 	width: 100%;
@@ -542,3 +540,4 @@ body {
 		}
 	}
 }
+
