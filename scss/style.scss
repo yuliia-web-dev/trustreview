@@ -411,7 +411,7 @@ body {
 	&__text {
 		font-family: "Roboto";
 		color: #212529;
-		max-width: calc(100% - 50px);
+		max-width: calc(100% - 20px);
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;
