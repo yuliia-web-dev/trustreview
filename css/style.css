@@ -1063,6 +1063,23 @@ body.menu-open {
   font-size: 1rem;
   color: #727476;
 }
+@media (max-width: 30em) {
+  .hero__input::-webkit-input-placeholder {
+    font-size: 0.875rem;
+  }
+  .hero__input::-moz-placeholder {
+    font-size: 0.875rem;
+  }
+  .hero__input:-ms-input-placeholder {
+    font-size: 0.875rem;
+  }
+  .hero__input::-ms-input-placeholder {
+    font-size: 0.875rem;
+  }
+  .hero__input::placeholder {
+    font-size: 0.875rem;
+  }
+}
 
 .companies {
   padding: 6.25rem 0;

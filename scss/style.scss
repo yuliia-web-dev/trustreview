@@ -310,6 +310,9 @@ body {
 		&::placeholder {
 			font-size: toRem(16);
 			color: #727476;
+			@media(max-width:toEm(480)){
+				font-size: toRem(14);
+			}
 		}
 	}
 }
