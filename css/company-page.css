@@ -229,7 +229,7 @@ body {
   }
 }
 .company-info__right {
-  max-width: 43.75rem;
+  max-width: 41.875rem;
   width: 100%;
 }
 @media (max-width: 47.99875em) {
