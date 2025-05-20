@@ -67,13 +67,14 @@ body {
 		font-weight: 500;
 		color: $accentColor;
 		transition: color 0.3s;
-		span {
-			margin-left: 10px;
+		svg {
+			flex-shrink: 0;
+			width: toRem(14);
+			height: toRem(14);
 			color: #fff;
-			font-size: toRem(12);
 			background: $accentColor;
 			border-radius: 2px;
-			padding: 0 1px 0 1px;
+			padding: toRem(1);
 		}
 		&:not(:last-child) {
 			margin-bottom: toRem(50);

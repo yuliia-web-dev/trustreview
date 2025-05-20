@@ -183,13 +183,15 @@ body {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-.description__link span {
-  margin-left: 10px;
+.description__link svg {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 0.875rem;
+  height: 0.875rem;
   color: #fff;
-  font-size: 0.75rem;
   background: #28a745;
   border-radius: 2px;
-  padding: 0 1px 0 1px;
+  padding: 0.0625rem;
 }
 .description__link:not(:last-child) {
   margin-bottom: 3.125rem;
