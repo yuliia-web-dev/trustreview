@@ -137,7 +137,7 @@ body {
 				content: "";
 				position: fixed;
 				width: 100%;
-				@include adaptiveValue("height", 81, 66, $widthFrom: 800);
+				@include adaptiveValue("height", 81, 47, $widthFrom: 800);
 				top: 0;
 				left: -100%;
 				z-index: 6;
