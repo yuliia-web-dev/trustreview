@@ -75,6 +75,7 @@ body {
 			background: $accentColor;
 			border-radius: 2px;
 			padding: toRem(1);
+			display: block;
 		}
 		&:not(:last-child) {
 			margin-bottom: toRem(50);
