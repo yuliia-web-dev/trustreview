@@ -105,3 +105,20 @@ window.addEventListener('scroll', () => {
 		header.classList.remove('scrolled');
 	}
 });
+
+//===================Placeholder=========
+function updatePlaceholder() {
+	const searchInput = document.getElementById("search");
+
+	if (!searchInput) return;
+
+	if (window.innerWidth <= 495) {
+		searchInput.placeholder = "Enter the website domain";
+	} else {
+		searchInput.placeholder = "Enter the website domain or company name";
+	}
+}
+
+document.addEventListener("DOMContentLoaded", updatePlaceholder);
+
+window.addEventListener("resize", updatePlaceholder);
