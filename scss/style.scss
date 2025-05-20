@@ -60,9 +60,11 @@ body {
 	top: 0;
 	left: 0;
 	z-index: 999;
-	transition: padding 0.3s ease, box-shadow 0.3s ease;
+	transition:
+		padding 0.3s ease,
+		box-shadow 0.3s ease;
 
-	&.scrolled{
+	&.scrolled {
 		padding: toRem(10) 0;
 		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 	}
@@ -71,23 +73,23 @@ body {
 	&__container {
 		display: flex;
 		align-items: center;
-		@include adaptiveValue("gap", 40, 15, $widthTo: 800);
+		@include adaptiveValue("gap", 30, 15, $widthTo: 800);
 		justify-content: space-between;
 	}
 
 	// .header__logo
 
 	&__logo {
+		flex-grow: 1;
 		max-width: toRem(220);
 		height: auto;
 		z-index: 25;
-		flex: 1;
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: contain;
 		}
-		@media(max-width: toEm(480)){
+		@media (max-width: toEm(480)) {
 			max-width: toRem(180);
 		}
 	}
@@ -248,14 +250,11 @@ body {
 
 .hero {
 	background-color: #f8f9fa;
-	min-height: toRem(700);
-	@include adaptiveValue("padding-top", 160, 120);
-	padding-bottom: toRem(100);
+	@include adaptiveValue("padding-top", 140, 120);
+	padding-bottom: toRem(64);
 	display: flex;
 	justify-content: center;
-	@media (max-width: toEm(767.98)) {
-		min-height: toRem(500);
-	}
+
 	&__container {
 		display: flex;
 		flex-direction: column;
@@ -275,7 +274,7 @@ body {
 	&__text {
 		font-family: "Roboto";
 		max-width: toRem(900);
-		color: #212529;
+		color: #4d5154;
 		@include adaptiveValue("font-size", 20, 18);
 		font-weight: 500;
 		&:not(:last-child) {
@@ -295,8 +294,8 @@ body {
 		display: flex;
 		align-items: center;
 		gap: toRem(15);
-		border: toRem(1) solid #E5e5dd;
-		box-shadow: 0 4px 8px 0 hsla(60, 1%, 41%, .1);
+		border: toRem(1) solid #e5e5dd;
+		box-shadow: 0 4px 8px 0 hsla(60, 1%, 41%, 0.1);
 		&:focus-within {
 			border: toRem(1) solid $accentColor;
 		}
@@ -313,7 +312,7 @@ body {
 		&::placeholder {
 			font-size: toRem(16);
 			color: #727476;
-			@media(max-width:toEm(480)){
+			@media (max-width: toEm(480)) {
 				font-size: toRem(14);
 			}
 		}
@@ -379,6 +378,17 @@ body {
 		display: grid;
 		@include adaptiveValue("gap", 20, 10);
 	}
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: toRem(10);
+		@media(max-width: toEm(480)){
+			flex-direction: column;
+			align-items: flex-start;
+			gap: toRem(5);
+
+		}
+	}
 
 	// .item-company__title
 
@@ -408,18 +418,23 @@ body {
 		font-size: toRem(16);
 	}
 	&__descriptor {
+	}
+	&__details {
 		position: absolute;
-		top: 10px;
 		right: 10px;
+		top: 18px;
+		color: #4d5154;
+		font-size: toRem(14);
 	}
 }
 .descriptor {
-	padding: toRem(2) toRem(5);
-	background-color: #83d997;
+	padding: toRem(4) toRem(6);
+	background: #dde0f4;
 	border-radius: toRem(16);
 	width: fit-content;
-	font-size: toRem(12);
 	font-weight: 500;
+	font-size: 0.6rem;
+	color: rgb(33, 37, 41);
 }
 .footer {
 	// .footer__list
