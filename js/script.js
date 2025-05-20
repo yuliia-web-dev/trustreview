@@ -91,3 +91,17 @@ document.addEventListener("DOMContentLoaded", function () {
 		moveElements();
 	});
 });
+
+
+//scrolled header
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+	const scrolled = window.scrollY > 10;
+
+	if (scrolled && !header.classList.contains('scrolled')) {
+		header.classList.add('scrolled');
+	} else if (!scrolled && header.classList.contains('scrolled')) {
+		header.classList.remove('scrolled');
+	}
+});

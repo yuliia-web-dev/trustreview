@@ -55,7 +55,17 @@ body {
 	@include adaptiveValue("padding-top", 20, 10);
 	@include adaptiveValue("padding-bottom", 20, 10);
 	width: 100%;
+	position: fixed;
+	background-color: #fff;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	transition: padding 0.3s ease, box-shadow 0.3s ease;
 
+	&.scrolled{
+		padding: toRem(10) 0;
+		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+	}
 	// .header__container
 
 	&__container {
@@ -82,19 +92,14 @@ body {
 	// .header__button
 
 	&__button {
-
-	
 	}
 
 	&__menu {
 	}
 }
-.button{
+.button {
 	flex-shrink: 0;
-	@include adaptiveValue("padding-top", 10, 5);
-	@include adaptiveValue("padding-bottom", 10, 5);
-	@include adaptiveValue("padding-left", 20, 20);
-	@include adaptiveValue("padding-right", 20, 20);
+	padding: toRem(10) toRem(20);
 	background-color: $accentColor;
 	color: #fff;
 	border-radius: 6px;
@@ -102,7 +107,7 @@ body {
 	font-weight: 600;
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: #157c2d;
+			background-color: #10832b;
 		}
 	}
 }
@@ -124,7 +129,7 @@ body {
 			top: 0;
 			overflow: auto;
 			padding: toRem(150) toRem(15) toRem(50) toRem(15);
-			background: #cbe0d0;
+			background-color: #f8f9fa;
 			transition: left 0.3s;
 			z-index: 20;
 			overflow-y: auto;
@@ -239,12 +244,15 @@ body {
 }
 
 .hero {
-	background: url("../img/bg-image.webp");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	min-height: toRem(600);
-	padding: toRem(100) 0;
+	background-color: #f8f9fa;
+	min-height: toRem(700);
+	@include adaptiveValue("padding-top", 180, 150);
+	padding-bottom: toRem(100);
+	display: flex;
+	justify-content: center;
+	@media (max-width: toEm(767.98)) {
+		min-height: toRem(500);
+	}
 	&__container {
 		display: flex;
 		flex-direction: column;
@@ -264,7 +272,7 @@ body {
 	&__text {
 		font-family: "Roboto";
 		max-width: toRem(900);
-		color: #fff;
+		color: #212529;
 		@include adaptiveValue("font-size", 20, 18);
 		font-weight: 500;
 		&:not(:last-child) {
@@ -540,4 +548,3 @@ body {
 		}
 	}
 }
-

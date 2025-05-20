@@ -47,7 +47,7 @@ body {
 }
 
 .description {
-	padding-top: toRem(50);
+	@include adaptiveValue("padding-top", 180, 150);
 	padding-bottom: toRem(100);
 
 	// .description__container
@@ -68,7 +68,9 @@ body {
 		color: $accentColor;
 		transition: color 0.3s;
 		span {
+			margin-left: 10px;
 			color: #fff;
+			font-size: toRem(12);
 			background: $accentColor;
 			border-radius: 2px;
 			padding: 0 1px 0 1px;
@@ -232,7 +234,6 @@ body {
 	// .about-company__button
 
 	&__button {
-	
 	}
 	&__review {
 		background: #f8f9fa;

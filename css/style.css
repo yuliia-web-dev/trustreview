@@ -256,8 +256,29 @@ body {
 }
 
 .description {
-  padding-top: 3.125rem;
   padding-bottom: 6.25rem;
+}
+@media (min-width: 89.375em) {
+  .description {
+    padding-top: 11.25rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 89.375em) {
+  @supports (padding-top: clamp( 9.375rem , 8.8344594595rem  +  2.7027027027vw , 11.25rem )) {
+    .description {
+      padding-top: clamp( 9.375rem , 8.8344594595rem  +  2.7027027027vw , 11.25rem );
+    }
+  }
+  @supports not (padding-top: clamp( 9.375rem , 8.8344594595rem  +  2.7027027027vw , 11.25rem )) {
+    .description {
+      padding-top: calc(9.375rem + 1.875 * (100vw - 20rem) / 69.375);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .description {
+    padding-top: 9.375rem;
+  }
 }
 .description__container {
   max-width: 62.5rem;
@@ -276,6 +297,7 @@ body {
   transition: color 0.3s;
 }
 .description__link span {
+  margin-left: 10px;
   color: #fff;
   background: #28a745;
   border-radius: 2px;
@@ -506,6 +528,15 @@ body.menu-open {
 
 .header {
   width: 100%;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  -webkit-transition: padding 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: padding 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+  transition: padding 0.3s ease, box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 @media (min-width: 89.375em) {
   .header {
@@ -550,6 +581,11 @@ body.menu-open {
   .header {
     padding-bottom: 0.625rem;
   }
+}
+.header.scrolled {
+  padding: 0.625rem 0;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }
 .header__container {
   display: -webkit-box;
@@ -601,6 +637,7 @@ body.menu-open {
 .button {
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  padding: 0.625rem 1.25rem;
   background-color: #28a745;
   color: #fff;
   border-radius: 6px;
@@ -608,97 +645,9 @@ body.menu-open {
   transition: all 0.3s;
   font-weight: 600;
 }
-@media (min-width: 89.375em) {
-  .button {
-    padding-top: 0.625rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (padding-top: clamp( 0.3125rem , 0.2224099099rem  +  0.4504504505vw , 0.625rem )) {
-    .button {
-      padding-top: clamp( 0.3125rem , 0.2224099099rem  +  0.4504504505vw , 0.625rem );
-    }
-  }
-  @supports not (padding-top: clamp( 0.3125rem , 0.2224099099rem  +  0.4504504505vw , 0.625rem )) {
-    .button {
-      padding-top: calc(0.3125rem + 0.3125 * (100vw - 20rem) / 69.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .button {
-    padding-top: 0.3125rem;
-  }
-}
-@media (min-width: 89.375em) {
-  .button {
-    padding-bottom: 0.625rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (padding-bottom: clamp( 0.3125rem , 0.2224099099rem  +  0.4504504505vw , 0.625rem )) {
-    .button {
-      padding-bottom: clamp( 0.3125rem , 0.2224099099rem  +  0.4504504505vw , 0.625rem );
-    }
-  }
-  @supports not (padding-bottom: clamp( 0.3125rem , 0.2224099099rem  +  0.4504504505vw , 0.625rem )) {
-    .button {
-      padding-bottom: calc(0.3125rem + 0.3125 * (100vw - 20rem) / 69.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .button {
-    padding-bottom: 0.3125rem;
-  }
-}
-@media (min-width: 89.375em) {
-  .button {
-    padding-left: 1.25rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (padding-left: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem )) {
-    .button {
-      padding-left: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem );
-    }
-  }
-  @supports not (padding-left: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem )) {
-    .button {
-      padding-left: calc(1.25rem + 0 * (100vw - 20rem) / 69.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .button {
-    padding-left: 1.25rem;
-  }
-}
-@media (min-width: 89.375em) {
-  .button {
-    padding-right: 1.25rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (padding-right: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem )) {
-    .button {
-      padding-right: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem );
-    }
-  }
-  @supports not (padding-right: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem )) {
-    .button {
-      padding-right: calc(1.25rem + 0 * (100vw - 20rem) / 69.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .button {
-    padding-right: 1.25rem;
-  }
-}
 @media (any-hover: hover) {
   .button:hover {
-    background-color: #157c2d;
+    background-color: #10832b;
   }
 }
 
@@ -726,7 +675,7 @@ body.menu-open {
     top: 0;
     overflow: auto;
     padding: 9.375rem 0.9375rem 3.125rem 0.9375rem;
-    background: #cbe0d0;
+    background-color: #f8f9fa;
     -webkit-transition: left 0.3s;
     transition: left 0.3s;
     z-index: 20;
@@ -906,12 +855,42 @@ body.menu-open {
   }
 }
 .hero {
-  background: url("../img/bg-image.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: 37.5rem;
-  padding: 6.25rem 0;
+  background-color: #f8f9fa;
+  min-height: 43.75rem;
+  padding-bottom: 6.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media (min-width: 89.375em) {
+  .hero {
+    padding-top: 11.25rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 89.375em) {
+  @supports (padding-top: clamp( 9.375rem , 8.8344594595rem  +  2.7027027027vw , 11.25rem )) {
+    .hero {
+      padding-top: clamp( 9.375rem , 8.8344594595rem  +  2.7027027027vw , 11.25rem );
+    }
+  }
+  @supports not (padding-top: clamp( 9.375rem , 8.8344594595rem  +  2.7027027027vw , 11.25rem )) {
+    .hero {
+      padding-top: calc(9.375rem + 1.875 * (100vw - 20rem) / 69.375);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .hero {
+    padding-top: 9.375rem;
+  }
+}
+@media (max-width: 47.99875em) {
+  .hero {
+    min-height: 31.25rem;
+  }
 }
 .hero__container {
   display: -webkit-box;
@@ -980,7 +959,7 @@ body.menu-open {
 .hero__text {
   font-family: "Roboto";
   max-width: 56.25rem;
-  color: #fff;
+  color: #212529;
   font-weight: 500;
 }
 @media (min-width: 89.375em) {
