@@ -87,6 +87,9 @@ body {
 			height: 100%;
 			object-fit: contain;
 		}
+		@media(max-width: toEm(480)){
+			max-width: toRem(180);
+		}
 	}
 
 	// .header__button
@@ -246,7 +249,7 @@ body {
 .hero {
 	background-color: #f8f9fa;
 	min-height: toRem(700);
-	@include adaptiveValue("padding-top", 180, 150);
+	@include adaptiveValue("padding-top", 180, 120);
 	padding-bottom: toRem(100);
 	display: flex;
 	justify-content: center;

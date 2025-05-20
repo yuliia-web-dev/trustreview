@@ -635,6 +635,11 @@ body.menu-open {
   -o-object-fit: contain;
      object-fit: contain;
 }
+@media (max-width: 30em) {
+  .header__logo, .footer-top__logo {
+    max-width: 11.25rem;
+  }
+}
 .button {
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -872,20 +877,20 @@ body.menu-open {
   }
 }
 @media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (padding-top: clamp( 9.375rem , 8.8344594595rem  +  2.7027027027vw , 11.25rem )) {
+  @supports (padding-top: clamp( 7.5rem , 6.4189189189rem  +  5.4054054054vw , 11.25rem )) {
     .hero {
-      padding-top: clamp( 9.375rem , 8.8344594595rem  +  2.7027027027vw , 11.25rem );
+      padding-top: clamp( 7.5rem , 6.4189189189rem  +  5.4054054054vw , 11.25rem );
     }
   }
-  @supports not (padding-top: clamp( 9.375rem , 8.8344594595rem  +  2.7027027027vw , 11.25rem )) {
+  @supports not (padding-top: clamp( 7.5rem , 6.4189189189rem  +  5.4054054054vw , 11.25rem )) {
     .hero {
-      padding-top: calc(9.375rem + 1.875 * (100vw - 20rem) / 69.375);
+      padding-top: calc(7.5rem + 3.75 * (100vw - 20rem) / 69.375);
     }
   }
 }
 @media (max-width: 20em) {
   .hero {
-    padding-top: 9.375rem;
+    padding-top: 7.5rem;
   }
 }
 @media (max-width: 47.99875em) {
