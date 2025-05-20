@@ -143,29 +143,8 @@ body {
 }
 
 .description {
+  padding-top: 8.75rem;
   padding-bottom: 6.25rem;
-}
-@media (min-width: 89.375em) {
-  .description {
-    padding-top: 11.25rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (padding-top: clamp( 9.375rem , 8.8344594595rem  +  2.7027027027vw , 11.25rem )) {
-    .description {
-      padding-top: clamp( 9.375rem , 8.8344594595rem  +  2.7027027027vw , 11.25rem );
-    }
-  }
-  @supports not (padding-top: clamp( 9.375rem , 8.8344594595rem  +  2.7027027027vw , 11.25rem )) {
-    .description {
-      padding-top: calc(9.375rem + 1.875 * (100vw - 20rem) / 69.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .description {
-    padding-top: 9.375rem;
-  }
 }
 .description__container {
   max-width: 62.5rem;

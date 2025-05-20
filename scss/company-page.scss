@@ -47,7 +47,7 @@ body {
 }
 
 .description {
-	@include adaptiveValue("padding-top", 180, 150);
+	padding-top: toRem(140);
 	padding-bottom: toRem(100);
 
 	// .description__container
