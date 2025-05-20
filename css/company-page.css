@@ -212,7 +212,7 @@ body {
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
           box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   border-radius: 2px;
-  max-width: 271px;
+  max-width: 225px;
   width: 100%;
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
@@ -300,6 +300,10 @@ body {
   width: -moz-fit-content;
   width: fit-content;
 }
+.card-company__details {
+  color: rgb(77, 81, 84);
+  font-family: "Roboto";
+}
 
 .item-card__title {
   color: #909294;
@@ -344,6 +348,10 @@ body {
   .about-company__review {
     padding: 10px 20px;
   }
+}
+.about-company__details {
+  color: rgb(77, 81, 84);
+  font-family: "Roboto";
 }
 
 .review__title {

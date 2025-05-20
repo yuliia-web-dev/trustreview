@@ -104,7 +104,7 @@ body {
 		padding: 28px 36px;
 		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 		border-radius: 2px;
-		max-width: 271px;
+		max-width: 225px;
 		width: 100%;
 		max-height: fit-content;
 		flex-shrink: 0;
@@ -184,6 +184,10 @@ body {
 		flex-shrink: 0;
 		width: fit-content;
 	}
+	&__details{
+		color: rgb(77, 81, 84);
+		font-family: "Roboto"
+	}
 }
 .item-card {
 	// .item-card__title
@@ -247,6 +251,10 @@ body {
 		@media (max-width: toEm(767.98)) {
 			padding: 10px 20px;
 		}
+	}
+	&__details{
+		color: rgb(77, 81, 84);
+		font-family: "Roboto"
 	}
 }
 
