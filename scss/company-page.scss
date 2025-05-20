@@ -76,6 +76,7 @@ body {
 			border-radius: 2px;
 			padding: toRem(1);
 			display: block;
+			box-sizing: content-box;
 		}
 		&:not(:last-child) {
 			margin-bottom: toRem(50);

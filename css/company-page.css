@@ -193,6 +193,8 @@ body {
   border-radius: 2px;
   padding: 0.0625rem;
   display: block;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 .description__link:not(:last-child) {
   margin-bottom: 3.125rem;
