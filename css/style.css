@@ -1008,11 +1008,12 @@ body.menu-open {
   }
 }
 .hero__form {
-  max-width: 21.875rem;
+  max-width: 41.25rem;
   width: 100%;
 }
 .hero__search-wrap {
   padding: 0.625rem 1.25rem;
+  min-height: 4rem;
   border-radius: 0.5rem;
   background-color: #fff;
   -webkit-transition: border 0.3s ease;
@@ -1020,8 +1021,13 @@ body.menu-open {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0.9375rem;
-  border: 0.0625rem solid transparent;
+  border: 0.0625rem solid #E5e5dd;
+  -webkit-box-shadow: 0 4px 8px 0 hsla(60, 1%, 41%, 0.1);
+          box-shadow: 0 4px 8px 0 hsla(60, 1%, 41%, 0.1);
 }
 .hero__search-wrap:focus-within {
   border: 0.0625rem solid #28a745;
