@@ -696,18 +696,18 @@ body.menu-open {
 }
 @media (max-width: 50em) and (min-width: 50em) {
   .menu__body::before {
-    height: 5.0625rem;
+    height: 4.3125rem;
   }
 }
 @media (max-width: 50em) and (min-width: 20em) and (max-width: 50em) {
-  @supports (height: clamp( 2.9375rem , 1.5208333333rem  +  7.0833333333vw , 5.0625rem )) {
+  @supports (height: clamp( 2.9375rem , 2.0208333333rem  +  4.5833333333vw , 4.3125rem )) {
     .menu__body::before {
-      height: clamp( 2.9375rem , 1.5208333333rem  +  7.0833333333vw , 5.0625rem );
+      height: clamp( 2.9375rem , 2.0208333333rem  +  4.5833333333vw , 4.3125rem );
     }
   }
-  @supports not (height: clamp( 2.9375rem , 1.5208333333rem  +  7.0833333333vw , 5.0625rem )) {
+  @supports not (height: clamp( 2.9375rem , 2.0208333333rem  +  4.5833333333vw , 4.3125rem )) {
     .menu__body::before {
-      height: calc(2.9375rem + 2.125 * (100vw - 20rem) / 30);
+      height: calc(2.9375rem + 1.375 * (100vw - 20rem) / 30);
     }
   }
 }
