@@ -13,6 +13,8 @@ $accentColor: #28a745;
 // Компоненти
 @import "company-page.scss";
 
+@import "support.scss";
+
 // Мінімальна ширина сторінки
 $minWidth: 320;
 // Ширина полотна (макету)
@@ -54,7 +56,7 @@ body {
 .header {
 	@include adaptiveValue("padding-top", 20, 10);
 	@include adaptiveValue("padding-bottom", 20, 10);
-	width: 100%;
+	width: 100vw;
 	position: fixed;
 	background-color: #fff;
 	top: 0;
@@ -382,11 +384,10 @@ body {
 		display: flex;
 		align-items: center;
 		gap: toRem(10);
-		@media(max-width: toEm(480)){
+		@media (max-width: toEm(480)) {
 			flex-direction: column;
 			align-items: flex-start;
 			gap: toRem(5);
-
 		}
 	}
 
@@ -540,6 +541,7 @@ body {
 	}
 	&__links-wrap {
 		display: flex;
+		flex-wrap: wrap;
 		gap: toRem(15);
 		a {
 			transition: color 0.3s;
@@ -550,24 +552,18 @@ body {
 			}
 		}
 	}
-}
-.social {
-	display: flex;
-	align-items: center;
-	gap: toRem(15);
-	// .social__link
-
-	&__link {
-		color: #fff;
-		&::before {
-			font-size: toRem(25);
-			transition: color 0.3s;
+	&__mail {
+		display: flex;
+		align-items: center;
+		gap: toRem(5);
+		transition: color 0.3s;
+		img {
+			width: toRem(25);
+			height: toRem(25);
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				&::before {
-					color: $accentColor;
-				}
+				color: $accentColor;
 			}
 		}
 	}

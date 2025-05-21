@@ -31,6 +31,10 @@ body {
 	font-family: "Poppins";
 	line-height: 1.2;
 }
+body.lock {
+	overflow: hidden;
+	touch-action: none;
+}
 .wrapper {
 	overflow: clip;
 	display: flex;
@@ -184,9 +188,9 @@ body {
 		flex-shrink: 0;
 		width: fit-content;
 	}
-	&__details{
+	&__details {
 		color: rgb(77, 81, 84);
-		font-family: "Roboto"
+		font-family: "Roboto";
 	}
 }
 .item-card {
@@ -198,9 +202,20 @@ body {
 }
 
 .social {
+	display: flex;
+	gap: toRem(12);
 	&__link {
-		&--dark {
-			color: #4d5853;
+		color: #4d5853;
+		&::before {
+			font-size: toRem(25);
+			transition: color 0.3s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					color: $accentColor;
+				}
+			}
 		}
 	}
 }
@@ -252,9 +267,9 @@ body {
 			padding: 10px 20px;
 		}
 	}
-	&__details{
+	&__details {
 		color: rgb(77, 81, 84);
-		font-family: "Roboto"
+		font-family: "Roboto";
 	}
 }
 
@@ -275,4 +290,154 @@ body {
 			}
 		}
 	}
+}
+
+//========================Popup=====================
+
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.48);
+	backdrop-filter: blur(3px);
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.5s ease 0s;
+	z-index: 1000;
+	// .popup__form
+
+	&__form {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-self: flex-start;
+		&:not(:last-child) {
+			margin-bottom: toRem(27);
+		}
+	}
+	&__body {
+		min-height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: toRem(30) toRem(10);
+		max-height: 100vh;
+	}
+	&__content {
+		overflow: hidden;
+		max-width: toRem(554);
+		max-height: 80vh;
+		background-color: #fff;
+		padding: toRem(55) toRem(47) toRem(40) toRem(47);
+		color: #000;
+		border-radius: 12px;
+		background: #fff;
+		box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.15);
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow-y: auto;
+
+		@media (max-width: toEm(480)) {
+			padding: toRem(50) toRem(10) toRem(20) toRem(10);
+		}
+		span {
+			color: #9b9b9b;
+			text-align: center;
+			font-size: toRem(12);
+		}
+	}
+	// .popup__title
+
+	&__title {
+		color: #28a745;
+		text-align: center;
+		font-size: toRem(32);
+		font-weight: 700;
+		@include adaptiveValue("font-size", 32, 25);
+		&:not(:last-child) {
+			margin-bottom: toRem(12);
+		}
+	}
+	&__text {
+		color: #3f3f3f;
+		text-align: center;
+		font-family: "Poppins";
+		font-size: toRem(15);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 20);
+		}
+	}
+
+	// .popup__input
+
+	&__field {
+		display: grid;
+		gap: toRem(10);
+		input {
+			padding: toRem(10) toRem(15);
+			border-radius: 8px;
+			border: 1px solid #c2bdbd;
+			background: #fff;
+			box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02);
+			transition:
+				box-shadow 0.3s ease,
+				border 0.3s ease;
+
+			&::placeholder {
+				color: #c2bdbd;
+			}
+			&:focus {
+				border-radius: 8px;
+				border: 1px solid #28a745;
+				outline: none;
+				background: #fff;
+				box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02);
+				transition: border 0.3s;
+			}
+		}
+		label {
+			color: #3f3f3f;
+			font-size: toRem(12);
+			font-weight: 500;
+		}
+		&:not(:last-child) {
+			margin-bottom: toRem(17);
+		}
+	}
+
+	// .popup__button
+
+	&__button {
+	}
+	&__close {
+		position: absolute;
+		top: toRem(15);
+		right: toRem(15);
+		@media (any-hover: hover) {
+			&:hover {
+				svg {
+					transform: scale(1.1);
+				}
+			}
+		}
+		svg {
+			width: toRem(20);
+			height: toRem(20);
+			transition: transform 0.3s;
+		}
+	}
+}
+
+.popup.open {
+	visibility: visible;
+	opacity: 1;
+	touch-action: none;
+}
+.popup:not(.open) .popup__close {
+	pointer-events: none;
+	visibility: hidden;
 }

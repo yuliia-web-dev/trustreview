@@ -122,3 +122,183 @@ function updatePlaceholder() {
 document.addEventListener("DOMContentLoaded", updatePlaceholder);
 
 window.addEventListener("resize", updatePlaceholder);
+
+//======================OpenPopup======================
+
+const popupLinks = document.querySelectorAll('.popup-link');
+const body = document.querySelector('body');
+const lockPadding = document.querySelectorAll('.lock-padding');
+
+let unlock = true;
+
+const timeout = 500;
+
+if (popupLinks.length > 0) {
+	for (let index = 0; index < popupLinks.length; index++) {
+		const popupLink = popupLinks[index];
+		popupLink.addEventListener("click", function (e) {
+			const popupName = popupLink.getAttribute('href').replace('#', '');
+			const curentPopup = document.getElementById(popupName);
+			popupOpen(curentPopup);
+			e.preventDefault();
+		})
+	}
+}
+const popupCloseIcon = document.querySelectorAll('.close-popup');
+if (popupCloseIcon.length > 0) {
+	for (let index = 0; index < popupCloseIcon.length; index++) {
+		const el = popupCloseIcon[index];
+		el.addEventListener('click', function (e) {
+			const popup = el.closest('.popup');
+			if (popup) {
+				popupClose(popup);
+			}
+			e.preventDefault();
+		});
+	}
+}
+
+
+function popupOpen(curentPopup) {
+	if (curentPopup && unlock) {
+		const popupActive = document.querySelector('.popup.open');
+		if (popupActive) {
+			popupClose(popupActive, false);
+		}
+		else {
+			bodyLock();
+		}
+	}
+
+	curentPopup.classList.add('open');
+	curentPopup.addEventListener("click", function (e) {
+		if (!e.target.closest('.popup__content')) {
+			popupClose(e.target.closest('.popup'));
+		}
+	});
+}
+
+function popupClose(popupActive, doUnlock = true) {
+	if (unlock) {
+		popupActive.classList.remove('open');
+		if (doUnlock) {
+			bodyUnLock();
+		}
+	}
+}
+
+
+
+
+function bodyLock() {
+	const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+
+
+	body.style.paddingRight = lockPaddingValue;
+	body.classList.add('lock');
+
+	unlock = false;
+	setTimeout(function () {
+		unlock = true;
+	}, timeout);
+}
+
+function bodyUnLock() {
+	setTimeout(function () {
+		for (let index = 0; index < lockPadding.length; index++) {
+			const el = lockPadding[index];
+			el.style.paddingRight = '0px';
+		}
+		body.style.paddingRight = '0px';
+		body.classList.remove('lock');
+	}, timeout);
+}
+
+document.addEventListener('keydown', function (e) {
+	if (e.key === 'Escape') {
+		const popupActive = document.querySelector('.popup.open');
+		if (popupActive) {
+			popupClose(popupActive);
+		}
+	}
+});
+
+
+//=========ContactForm validation===============
+
+document.addEventListener('DOMContentLoaded', function () {
+	const form = document.getElementById('contactForm');
+	if (!form) return;
+
+	const name = document.getElementById('name');
+	const email = document.getElementById('email');
+	const website = document.getElementById('website');
+	const question = document.getElementById('question');
+
+	if (!name || !email || !website || !question) return;
+
+	form.addEventListener('submit', function (e) {
+		let isValid = true;
+
+		const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+		const urlPattern = /^(https?:\/\/)?([\w\d\-]+\.)+\w{2,}(\/\S*)?$/;
+
+	
+		// Validate Name: at least 2 characters
+		if (name.value.trim().length < 2) {
+			isValid = false;
+		}
+
+		// Validate Email using pattern
+		if (!emailPattern.test(email.value.trim())) {
+			isValid = false;
+		}
+
+		// Validate Website using pattern
+		if (!urlPattern.test(website.value.trim())) {
+			isValid = false;
+		}
+
+		// Validate Question: at least 10 characters
+		if (question.value.trim().length < 10) {
+			isValid = false;
+		}
+
+		if (!isValid) {
+			e.preventDefault();
+			alert('Please check your input and try again.');
+		}
+	});
+});
+
+
+//=======ClaimForm validation=============
+
+document.addEventListener('DOMContentLoaded', function () {
+	const form = document.getElementById('claimForm');
+	if (!form) return; 
+
+	form.addEventListener('submit', function (e) {
+		const nameInput = document.getElementById('name');
+		const emailInput = document.getElementById('email');
+
+		const name = nameInput.value.trim();
+		const email = emailInput.value.trim();
+		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+		let isValid = true;
+
+		if (name === '') {
+			isValid = false;
+		}
+
+		if (!emailPattern.test(email)) {
+			isValid = false;
+		}
+
+		if (!isValid) {
+			e.preventDefault();
+			alert('Please fill out all fields correctly.');
+		}
+	});
+});

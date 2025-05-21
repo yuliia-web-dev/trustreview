@@ -22,7 +22,7 @@
 						<ul class="menu__list">
 							<li class="menu__item"><a class="menu__link" href="index.html">Home</a>
 							</li>
-							<li class="menu__item"><a class="menu__link" href="#">Support</a>
+							<li class="menu__item"><a class="menu__link" href="support.html">Support</a>
 							</li>
 
 						</ul>
@@ -41,13 +41,14 @@
 			<div class="description">
 				<div class="description__container">
 					<a class="description__link" href="index.html#companies">
-						<svg class="description__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16">
+						<svg class="description__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+							viewBox="0 0 16 16">
 							<path fill="currentColor"
 								d="M15 8a.5.5 0 0 1-.5.5H2.707l4.147 4.146a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
 						</svg>
 						Back to all companies
 					</a>
-					 
+
 					<div class="description__company company-info">
 						<div class="company-info__left card-company">
 							<div class="card-company__logo">
@@ -73,11 +74,11 @@
 							</div>
 							<a href="#" class="card-company__link" target="_blank">Website</a>
 							<div class="card-company__descriptor descriptor">Trusted</div>
-						
+
 							<div class="card-company__social social">
-								<a href="#" class="social__link social__link--dark _icon-facebook2" aria-label="facebook" target="_blank"></a>
-								<a href="#" class="social__link social__link--dark _icon-instagram" aria-label="instagram" target="_blank"></a>
-								<a href="#" class="social__link social__link--dark _icon-linkedin" aria-label="linkedin" target="_blank"></a>
+								<a href="#" class="social__link  _icon-facebook2" aria-label="facebook" target="_blank"></a>
+								<a href="#" class="social__link  _icon-instagram" aria-label="instagram" target="_blank"></a>
+								<a href="#" class="social__link  _icon-linkedin" aria-label="linkedin" target="_blank"></a>
 							</div>
 						</div>
 						<div class="company-info__right about-company ">
@@ -86,7 +87,7 @@
 									<h2 class="about-company__title">Company 1</h2>
 									<div class="about-company__details">Updated: 1d</div>
 								</div>
-								<a href="#" class="about-company__button button">Claim Listing</a>
+								<a href="#openForm" class="about-company__button button popup-link">Claim Listing</a>
 							</div>
 							<div class="about-company__review review">
 								<h3 class="review__title">AI Review</h3>
@@ -104,7 +105,42 @@
 									</p>
 								</div>
 							</div>
+							<div id="openForm" class="popup">
+								<div class="popup__body">
+									<div class="popup__content">
+										<button aria-label="close popup" class="popup__close close-popup">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+												fill="none">
+												<rect x="2.22183" y="0.807617" width="24" height="2"
+													transform="rotate(45 2.22183 0.807617)" fill="#28a745" />
+												<rect x="0.807648" y="17.7782" width="24" height="2"
+													transform="rotate(-45 0.807648 17.7782)" fill="#28a745" />
+											</svg>
+										</button>
+										<h2 class="popup__title">Claim Your Website</h2>
+										<p class="popup__text">Provide your details to verify ownership, and receive instructions
+											on how to claim and manage your page.</p>
+
+										<form class="popup__form" action="#" method="get" id="claimForm">
+											<div class="popup__field">
+												<label for="name">Name:</label>
+												<input type="text" id="name" name="name" placeholder="Enter your full name"
+													required>
+											</div>
+											<div class="popup__field">
+												<label for="email">Email:</label>
+												<input type="email" id="email" name="email" placeholder="Enter your email" required>
+											</div>
+
+											<button type="submit" class="popup__button button button--background">Submit</button>
+
+										</form>
+										<span>Your data is secure and will only be used for verification</span>
+									</div>
+								</div>
+							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -123,17 +159,12 @@
 				<div class="footer-bottom__container">
 					<div class="footer-bottom__copyright">© 2025 TrustReview</div>
 					<div class="footer-bottom__links-wrap">
-						<a href="#">Contact Support</a>
+						<a href="support.html">Contact Support</a>
 						<a href="#">Terms</a>
 						<a href="#">Privacy</a>
 					</div>
-					<div class="footer-bottom__social social">
-						<a href="#" class="social__link _icon-facebook2" target="_blank" aria-label="facebook"></a>
-						<a href="#" class="social__link _icon-instagram" target="_blank" aria-label="instagram"></a>
-						<a href="#" class="social__link _icon-linkedin" target="_blank" aria-label="linkedin"></a>
-						<a href="#" class="social__link _icon-x" target="_blank" aria-label="twitter"></a>
-
-					</div>
+					<a href="mailto:trustreview@gmail.com" class="footer-bottom__mail"><img src="img/email.svg"
+							alt="emailicon">trustreview@gmail.com</a>
 				</div>
 			</div>
 		</footer>
