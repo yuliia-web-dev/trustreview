@@ -10,10 +10,15 @@ $accentColor: #28a745;
 @import "_icons.scss";
 // Обнулення
 @import "_reset.scss";
+
 // Компоненти
 @import "company-page.scss";
 
 @import "support.scss";
+
+@import "privacy.scss";
+
+
 
 // Мінімальна ширина сторінки
 $minWidth: 320;

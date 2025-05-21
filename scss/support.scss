@@ -11,7 +11,6 @@ $accentColor: #28a745;
 // Обнулення
 @import "_reset.scss";
 // Компоненти
-@import "company-page.scss";
 
 // Мінімальна ширина сторінки
 $minWidth: 320;
@@ -85,9 +84,11 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 
 	&__left {
 		max-width: toRem(405);
+		flex: 1 1 toRem(405);
 		width: 100%;
 		@media (max-width: toEm(767.98)) {
 			max-width: 100%;
+			flex: 1 1 100%;
 		}
 	}
 
@@ -102,7 +103,9 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 			border: 1px solid #c2bdbd;
 			background: #fff;
 			box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02);
-			transition: box-shadow 0.3s ease, border 0.3s ease;
+			transition:
+				box-shadow 0.3s ease,
+				border 0.3s ease;
 
 			&::placeholder {
 				color: #c2bdbd;
@@ -128,24 +131,28 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	// .form__right
 
 	&__right {
+		flex: 1 1 toRem(405);
 		max-width: toRem(405);
 		width: 100%;
 		@media (max-width: toEm(767.98)) {
 			max-width: 100%;
+			flex: 1 1 100%;
 		}
 	}
 
 	// .form__textarea
 
 	&__textarea {
-		min-height: toRem(200);
+		min-height: toRem(213);
 		resize: none;
 		padding: toRem(10) toRem(15);
 		border-radius: 8px;
 		border: 1px solid #c2bdbd;
 		background: #fff;
 		box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02);
-		transition: box-shadow 0.3s ease, border 0.3s ease;
+		transition:
+			box-shadow 0.3s ease,
+			border 0.3s ease;
 
 		@media (max-width: toEm(767.98)) {
 			min-height: toRem(120);
