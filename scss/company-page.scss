@@ -444,7 +444,7 @@ body.lock {
 
 #messageSubmit {
 	border-radius: 12px;
-	background: rgb(207, 255, 219);
+	background: rgb(227, 251, 233);
 	opacity: 0;
 	visibility: hidden;
 	transform: translateY(-10px);
@@ -454,7 +454,7 @@ body.lock {
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 1100;
-	padding: 10px 47px 10px 27px;
+	padding:toRem(10) toRem(47) toRem(10) toRem(27);
 	max-width: toRem(554);
 	width: 90%;     
 

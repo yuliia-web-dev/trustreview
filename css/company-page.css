@@ -612,7 +612,7 @@ body.lock {
 
 #messageSubmit {
   border-radius: 12px;
-  background: rgb(207, 255, 219);
+  background: rgb(227, 251, 233);
   opacity: 0;
   visibility: hidden;
   -webkit-transform: translateY(-10px);
@@ -627,7 +627,7 @@ body.lock {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   z-index: 1100;
-  padding: 10px 47px 10px 27px;
+  padding: 0.625rem 2.9375rem 0.625rem 1.6875rem;
   max-width: 34.625rem;
   width: 90%;
 }
