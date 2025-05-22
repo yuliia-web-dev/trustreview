@@ -124,6 +124,7 @@ document.addEventListener("DOMContentLoaded", updatePlaceholder);
 window.addEventListener("resize", updatePlaceholder);
 
 //======================OpenPopup======================
+
 document.addEventListener('DOMContentLoaded', () => {
 	const popupLinks = document.querySelectorAll('.popup-link');
 	const body = document.querySelector('body');
@@ -173,10 +174,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// Close popup function
-	function popupClose(popupActive, doUnlock = true) {
+	function popupClose(popupActive, doUnlock = true, callback) {
 		if (unlock) {
 			popupActive.classList.remove('open');
-			if (doUnlock) bodyUnLock();
+			if (doUnlock) {
+				bodyUnLock();
+			}
+			// Виконуємо callback після timeout (після анімації закриття)
+			if (callback) {
+				setTimeout(() => {
+					callback();
+				}, timeout);
+			}
 		}
 	}
 
@@ -239,11 +248,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			const popup = form.closest('.popup');
 			if (popup) {
-				popupClose(popup);
+				popupClose(popup, true, showMessage);
+			} else {
+				// Якщо з якихось причин popup немає - просто показуємо повідомлення
+				showMessage();
 			}
-
-			showMessage();
-
 		});
 	});
 });
