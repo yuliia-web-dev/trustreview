@@ -180,7 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (doUnlock) {
 				bodyUnLock();
 			}
-			// Виконуємо callback після timeout (після анімації закриття)
 			if (callback) {
 				setTimeout(() => {
 					callback();
@@ -250,7 +249,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (popup) {
 				popupClose(popup, true, showMessage);
 			} else {
-				// Якщо з якихось причин popup немає - просто показуємо повідомлення
 				showMessage();
 			}
 		});
