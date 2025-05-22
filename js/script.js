@@ -124,103 +124,128 @@ document.addEventListener("DOMContentLoaded", updatePlaceholder);
 window.addEventListener("resize", updatePlaceholder);
 
 //======================OpenPopup======================
+document.addEventListener('DOMContentLoaded', () => {
+	const popupLinks = document.querySelectorAll('.popup-link');
+	const body = document.querySelector('body');
+	const lockPadding = document.querySelectorAll('.lock-padding');
+	const timeout = 500;
+	let unlock = true;
 
-const popupLinks = document.querySelectorAll('.popup-link');
-const body = document.querySelector('body');
-const lockPadding = document.querySelectorAll('.lock-padding');
-
-let unlock = true;
-
-const timeout = 500;
-
-if (popupLinks.length > 0) {
-	for (let index = 0; index < popupLinks.length; index++) {
-		const popupLink = popupLinks[index];
-		popupLink.addEventListener("click", function (e) {
-			const popupName = popupLink.getAttribute('href').replace('#', '');
-			const curentPopup = document.getElementById(popupName);
-			popupOpen(curentPopup);
-			e.preventDefault();
-		})
+	// Open popups
+	if (popupLinks.length > 0) {
+		popupLinks.forEach(popupLink => {
+			popupLink.addEventListener("click", function (e) {
+				e.preventDefault();
+				const popupName = popupLink.getAttribute('href').replace('#', '');
+				const currentPopup = document.getElementById(popupName);
+				popupOpen(currentPopup);
+			});
+		});
 	}
-}
-const popupCloseIcon = document.querySelectorAll('.close-popup');
-if (popupCloseIcon.length > 0) {
-	for (let index = 0; index < popupCloseIcon.length; index++) {
-		const el = popupCloseIcon[index];
+
+	// Close popups by button
+	const popupCloseIcon = document.querySelectorAll('.close-popup');
+	popupCloseIcon.forEach(el => {
 		el.addEventListener('click', function (e) {
+			e.preventDefault();
 			const popup = el.closest('.popup');
+			if (popup) popupClose(popup);
+		});
+	});
+
+	// Open popup function
+	function popupOpen(currentPopup) {
+		if (currentPopup && unlock) {
+			const popupActive = document.querySelector('.popup.open');
+			if (popupActive) {
+				popupClose(popupActive, false);
+			} else {
+				bodyLock();
+			}
+			currentPopup.classList.add('open');
+
+			currentPopup.addEventListener("click", function (e) {
+				if (!e.target.closest('.popup__content')) {
+					popupClose(e.target.closest('.popup'));
+				}
+			});
+		}
+	}
+
+	// Close popup function
+	function popupClose(popupActive, doUnlock = true) {
+		if (unlock) {
+			popupActive.classList.remove('open');
+			if (doUnlock) bodyUnLock();
+		}
+	}
+
+	// Lock body scroll when popup is open
+	function bodyLock() {
+		const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+		body.style.paddingRight = lockPaddingValue;
+		lockPadding.forEach(el => {
+			el.style.paddingRight = lockPaddingValue;
+		});
+		body.classList.add('lock');
+		unlock = false;
+		setTimeout(() => unlock = true, timeout);
+	}
+
+	// Unlock body scroll
+	function bodyUnLock() {
+		setTimeout(() => {
+			lockPadding.forEach(el => el.style.paddingRight = '0px');
+			body.style.paddingRight = '0px';
+			body.classList.remove('lock');
+		}, timeout);
+	}
+
+	// Close popup on Escape key press
+	document.addEventListener('keydown', e => {
+		if (e.key === 'Escape') {
+			const popupActive = document.querySelector('.popup.open');
+			if (popupActive) popupClose(popupActive);
+		}
+	});
+
+	// Message popup logic
+	const messageSubmit = document.getElementById('messageSubmit');
+
+	function showMessage() {
+		if (!messageSubmit) return;
+		messageSubmit.classList.add('show');
+		// Automatically hide after 3 seconds
+		setTimeout(() => {
+			messageSubmit.classList.remove('show');
+		}, 3000);
+	}
+
+	if (messageSubmit) {
+		const messageCloseBtn = messageSubmit.querySelector('.close-message');
+		if (messageCloseBtn) {
+			messageCloseBtn.addEventListener('click', () => {
+				messageSubmit.classList.remove('show');
+			});
+		}
+	}
+
+	// Handle form submit inside popup
+	const popupForms = document.querySelectorAll('.popup__form');
+
+	popupForms.forEach(form => {
+		form.addEventListener('submit', e => {
+			e.preventDefault();
+
+			const popup = form.closest('.popup');
 			if (popup) {
 				popupClose(popup);
 			}
-			e.preventDefault();
+
+			showMessage();
+
 		});
-	}
-}
-
-
-function popupOpen(curentPopup) {
-	if (curentPopup && unlock) {
-		const popupActive = document.querySelector('.popup.open');
-		if (popupActive) {
-			popupClose(popupActive, false);
-		}
-		else {
-			bodyLock();
-		}
-	}
-
-	curentPopup.classList.add('open');
-	curentPopup.addEventListener("click", function (e) {
-		if (!e.target.closest('.popup__content')) {
-			popupClose(e.target.closest('.popup'));
-		}
 	});
-}
-
-function popupClose(popupActive, doUnlock = true) {
-	if (unlock) {
-		popupActive.classList.remove('open');
-		if (doUnlock) {
-			bodyUnLock();
-		}
-	}
-}
-
-
-
-
-function bodyLock() {
-	const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
-
-
-	body.style.paddingRight = lockPaddingValue;
-	body.classList.add('lock');
-
-	unlock = false;
-	setTimeout(function () {
-		unlock = true;
-	}, timeout);
-}
-
-function bodyUnLock() {
-	setTimeout(function () {
-		for (let index = 0; index < lockPadding.length; index++) {
-			const el = lockPadding[index];
-			el.style.paddingRight = '0px';
-		}
-		body.style.paddingRight = '0px';
-		body.classList.remove('lock');
-	}, timeout);
-}
-
-document.addEventListener('keydown', function (e) {
-	if (e.key === 'Escape') {
-		const popupActive = document.querySelector('.popup.open');
-		if (popupActive) {
-			popupClose(popupActive);
-		}
-	}
 });
 
 
@@ -243,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 		const urlPattern = /^(https?:\/\/)?([\w\d\-]+\.)+\w{2,}(\/\S*)?$/;
 
-	
+
 		// Validate Name: at least 2 characters
 		if (name.value.trim().length < 2) {
 			isValid = false;
@@ -274,31 +299,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //=======ClaimForm validation=============
 
-document.addEventListener('DOMContentLoaded', function () {
-	const form = document.getElementById('claimForm');
-	if (!form) return; 
+// document.addEventListener('DOMContentLoaded', function () {
+// 	const form = document.getElementById('claimForm');
+// 	if (!form) return;
 
-	form.addEventListener('submit', function (e) {
-		const nameInput = document.getElementById('name');
-		const emailInput = document.getElementById('email');
+// 	form.addEventListener('submit', function (e) {
+// 		const nameInput = document.getElementById('name');
+// 		const emailInput = document.getElementById('email');
 
-		const name = nameInput.value.trim();
-		const email = emailInput.value.trim();
-		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// 		const name = nameInput.value.trim();
+// 		const email = emailInput.value.trim();
+// 		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-		let isValid = true;
+// 		let isValid = true;
 
-		if (name === '') {
-			isValid = false;
-		}
+// 		if (name === '') {
+// 			isValid = false;
+// 		}
 
-		if (!emailPattern.test(email)) {
-			isValid = false;
-		}
+// 		if (!emailPattern.test(email)) {
+// 			isValid = false;
+// 		}
 
-		if (!isValid) {
-			e.preventDefault();
-			alert('Please fill out all fields correctly.');
-		}
-	});
-});
+// 		if (!isValid) {
+// 			e.preventDefault();
+// 			alert('Please fill out all fields correctly.');
+// 		}
+// 	});
+// });

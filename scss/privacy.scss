@@ -25,7 +25,7 @@ $containerPadding: 30;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 .privacy {
-	@include adaptiveValue("padding-top", 140, 100);
+	padding-top: toRem(37);
 	padding-bottom: toRem(90);
 
 	// .privacy__container
@@ -37,9 +37,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	// .privacy__title
 
 	&__title {
-		color: $accentColor;
-		@include adaptiveValue("font-size", 35, 30);
-		font-weight: 600;
 		&:not(:last-child) {
 			margin-bottom: toRem(30);
 		}
@@ -90,6 +87,7 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	}
 }
 .subtitle {
+	color: #000;
 	font-size: toRem(18);
 	font-weight: 600;
 	text-transform: capitalize;

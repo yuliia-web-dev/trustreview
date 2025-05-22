@@ -112,58 +112,11 @@ textarea {
 }
 
 .privacy {
+  padding-top: 2.3125rem;
   padding-bottom: 5.625rem;
-}
-@media (min-width: 89.375em) {
-  .privacy {
-    padding-top: 8.75rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (padding-top: clamp( 6.25rem , 5.5292792793rem  +  3.6036036036vw , 8.75rem )) {
-    .privacy {
-      padding-top: clamp( 6.25rem , 5.5292792793rem  +  3.6036036036vw , 8.75rem );
-    }
-  }
-  @supports not (padding-top: clamp( 6.25rem , 5.5292792793rem  +  3.6036036036vw , 8.75rem )) {
-    .privacy {
-      padding-top: calc(6.25rem + 2.5 * (100vw - 20rem) / 69.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .privacy {
-    padding-top: 6.25rem;
-  }
 }
 .privacy__container {
   max-width: 47.5rem;
-}
-.privacy__title {
-  color: #28a745;
-  font-weight: 600;
-}
-@media (min-width: 89.375em) {
-  .privacy__title {
-    font-size: 2.1875rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (font-size: clamp( 1.875rem , 1.7849099099rem  +  0.4504504505vw , 2.1875rem )) {
-    .privacy__title {
-      font-size: clamp( 1.875rem , 1.7849099099rem  +  0.4504504505vw , 2.1875rem );
-    }
-  }
-  @supports not (font-size: clamp( 1.875rem , 1.7849099099rem  +  0.4504504505vw , 2.1875rem )) {
-    .privacy__title {
-      font-size: calc(1.875rem + 0.3125 * (100vw - 20rem) / 69.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .privacy__title {
-    font-size: 1.875rem;
-  }
 }
 .privacy__title:not(:last-child) {
   margin-bottom: 1.875rem;
@@ -207,6 +160,7 @@ textarea {
 }
 
 .subtitle {
+  color: #000;
   font-size: 1.125rem;
   font-weight: 600;
   text-transform: capitalize;

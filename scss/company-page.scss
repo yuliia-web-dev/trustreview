@@ -441,3 +441,44 @@ body.lock {
 	pointer-events: none;
 	visibility: hidden;
 }
+
+#messageSubmit {
+	border-radius: 12px;
+	background: rgb(207, 255, 219);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-10px);
+	transition: all 0.3s ease;
+	position: fixed;
+	top: toRem(70);
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1100;
+	padding: 10px 47px 10px 27px;
+	max-width: toRem(554);
+	width: 90%;     
+
+
+	p {
+		color: #3f3f3f;
+		font-size: 12px;
+		margin: 0;
+	}
+}
+
+#messageSubmit.show {
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(-50%) translateY(0);
+}
+
+#messageSubmit .close-message {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+	right: 10px;
+}
