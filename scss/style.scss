@@ -400,7 +400,7 @@ body {
 		color: #212529;
 		font-weight: 600;
 		white-space: nowrap;
-		max-width: calc(100% - 200px);
+		max-width: toRem(150);
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;
