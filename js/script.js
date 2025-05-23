@@ -334,3 +334,37 @@ document.addEventListener('DOMContentLoaded', function () {
 // 		}
 // 	});
 // });
+
+//==========Rating===============
+
+document.querySelectorAll('[data-rating]').forEach(rating => {
+	const value = parseFloat(rating.dataset.rating);
+	const items = rating.querySelectorAll('.rating__item');
+	const number = rating.querySelector('.rating__number');
+
+	// Determine background color for active stars
+	let activeBg = '#ccc'; // default gray
+	if (value >= 1 && value < 4) {
+		activeBg = '#FF3B30'; // red for ratings between 1 and 3.99
+	} else if (value >= 4) {
+		activeBg = '#28A745'; // green for ratings 4 and above
+	}
+
+	items.forEach((item, index) => {
+		// Initially, all stars are gray
+		item.style.background = '#DCDBDB';
+
+		// Fully filled stars for the integer part of the rating
+		if (index < Math.floor(value)) {
+			item.style.background = activeBg;
+		}
+		// Partially filled star for the decimal part
+		else if (index === Math.floor(value) && value % 1 !== 0) {
+			const percent = value % 1 * 100;
+			item.style.background = `linear-gradient(to right, ${activeBg} ${percent}%, #ccc ${percent}%)`;
+		}
+	});
+
+	// Display the numeric rating value if the element exists
+	if (number) number.textContent = value.toFixed(1);
+});

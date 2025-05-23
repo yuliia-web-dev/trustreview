@@ -727,6 +727,54 @@ body.lock {
   visibility: hidden;
 }
 
+#messageSubmit {
+  border-radius: 12px;
+  background: rgb(227, 251, 233);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 4.375rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 1100;
+  padding: 0.625rem 2.9375rem 0.625rem 1.6875rem;
+  max-width: 34.625rem;
+  width: 90%;
+}
+#messageSubmit p {
+  color: #3f3f3f;
+  font-size: 12px;
+  margin: 0;
+}
+
+#messageSubmit.show {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateX(-50%) translateY(0);
+      -ms-transform: translateX(-50%) translateY(0);
+          transform: translateX(-50%) translateY(0);
+}
+
+#messageSubmit .close-message {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 10px;
+}
+
 @font-face {
   font-family: "icons";
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
@@ -867,7 +915,6 @@ textarea {
   max-width: 37.5rem;
   line-height: 1.2;
 }
-
 .support {
   padding-top: 2.9375rem;
   padding-bottom: 7.1875rem;
@@ -1305,37 +1352,11 @@ textarea {
 }
 
 .privacy {
+  padding-top: 2.3125rem;
   padding-bottom: 5.625rem;
-}
-@media (min-width: 89.375em) {
-  .privacy {
-    padding-top: 8.75rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 89.375em) {
-  @supports (padding-top: clamp( 7.5rem , 7.1396396396rem  +  1.8018018018vw , 8.75rem )) {
-    .privacy {
-      padding-top: clamp( 7.5rem , 7.1396396396rem  +  1.8018018018vw , 8.75rem );
-    }
-  }
-  @supports not (padding-top: clamp( 7.5rem , 7.1396396396rem  +  1.8018018018vw , 8.75rem )) {
-    .privacy {
-      padding-top: calc(7.5rem + 1.25 * (100vw - 20rem) / 69.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .privacy {
-    padding-top: 7.5rem;
-  }
 }
 .privacy__container {
   max-width: 47.5rem;
-}
-.privacy__title {
-  color: #28a745;
-  font-size: 2.1875rem;
-  font-weight: 600;
 }
 .privacy__title:not(:last-child) {
   margin-bottom: 1.875rem;
@@ -1344,6 +1365,8 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 0.625rem;
 }
 .privacy__wrapper {
@@ -1377,6 +1400,7 @@ textarea {
 }
 
 .subtitle {
+  color: #000;
   font-size: 1.125rem;
   font-weight: 600;
   text-transform: capitalize;
@@ -1403,20 +1427,24 @@ textarea {
 }
 .item-privacy__list li {
   font-size: 1.125rem;
+  position: relative;
+  padding-left: 0.9375rem;
 }
 .item-privacy__list li::before {
   content: "";
+  position: absolute;
+  top: 0.9375rem;
+  left: 0;
   width: 0.5rem;
   height: 0.5rem;
   background-color: #5d5b5b;
   border-radius: 50%;
-  margin-top: -0.625rem;
-  margin-right: 0.625rem;
 }
 .item-privacy__list li span {
   font-size: 1.125rem;
   font-weight: 600;
   text-transform: capitalize;
+  white-space: nowrap;
 }
 .item-privacy a {
   font-weight: 500;
@@ -2118,7 +2146,7 @@ body.menu-open {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0.625rem;
+  gap: 1.25rem;
 }
 @media (max-width: 30em) {
   .item-company__header {
@@ -2164,16 +2192,44 @@ body.menu-open {
   font-size: 0.875rem;
 }
 
-.descriptor {
-  padding: 0.25rem 0.375rem;
-  background: #dde0f4;
-  border-radius: 1rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-weight: 500;
-  font-size: 0.6rem;
-  color: rgb(33, 37, 41);
+.rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.625rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.rating__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.3125rem;
+}
+.rating__item {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background: #28a745;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1.125rem;
+  height: 1.0625rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.rating__item svg {
+  width: 12px;
+  height: 12px;
+}
+.rating__number {
+  color: #4d5154;
+  font-size: 1rem;
 }
 
 .footer-top {

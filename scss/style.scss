@@ -18,8 +18,6 @@ $accentColor: #28a745;
 
 @import "privacy.scss";
 
-
-
 // Мінімальна ширина сторінки
 $minWidth: 320;
 // Ширина полотна (макету)
@@ -388,7 +386,7 @@ body {
 	&__header {
 		display: flex;
 		align-items: center;
-		gap: toRem(10);
+		gap: toRem(20);
 		@media (max-width: toEm(480)) {
 			flex-direction: column;
 			align-items: flex-start;
@@ -423,7 +421,7 @@ body {
 		overflow: hidden;
 		font-size: toRem(16);
 	}
-	&__descriptor {
+	&__raiting {
 	}
 	&__details {
 		position: absolute;
@@ -433,15 +431,36 @@ body {
 		font-size: toRem(14);
 	}
 }
-.descriptor {
-	padding: toRem(4) toRem(6);
-	background: #dde0f4;
-	border-radius: toRem(16);
-	width: fit-content;
-	font-weight: 500;
-	font-size: 0.6rem;
-	color: rgb(33, 37, 41);
+
+.rating {
+	display: flex;
+	gap: toRem(10);
+	align-items: center;
+	&__items {
+		display: flex;
+		gap: toRem(5);
+	}
+	// .raiting__item
+
+	&__item {
+		flex-shrink: 0;
+		background: #28a745;
+		display: flex;
+		width: toRem(18);
+		height: toRem(17);
+		justify-content: center;
+		align-items: center;
+		svg {
+			width: 12px;
+			height: 12px;
+		}
+	}
+	&__number {
+		color: #4d5154;
+		font-size: toRem(16);
+	}
 }
+
 .footer {
 	// .footer__list
 
