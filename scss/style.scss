@@ -34,7 +34,7 @@ html {
 }
 body {
 	font-family: "Poppins";
-	line-height: 1.3;
+	line-height: 1.2;
 	&.menu-open {
 		overflow: hidden;
 		touch-action: none;
@@ -49,7 +49,6 @@ body {
 		flex-grow: 1;
 	}
 }
-
 [class*="__container"] {
 	max-width: toRem(1430);
 	margin: 0 auto;
