@@ -23,6 +23,23 @@ $maxWidthContainer: 1400;
 $containerPadding: 30;
 // Ширина спрацьовування першого брейкпоінту
 $containerWidth: $maxWidthContainer + $containerPadding;
+body {
+	font-family: "Poppins";
+	line-height: 1.3;
+	&.menu-open {
+		overflow: hidden;
+		touch-action: none;
+	}
+}
+.wrapper {
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	main {
+		flex-grow: 1;
+	}
+}
 
 .hero {
 	&---padding {
