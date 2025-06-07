@@ -40,10 +40,14 @@ body {
 }
 
 .claim-listing {
-	padding-top: toRem(200);
+	padding-top: toRem(140);
+	padding-bottom: toRem(40);
+	border-bottom: 1px solid #e2e8f0;
+	background: #f8fafc;
 	// .claim-listing__container
 
 	&__container {
+		max-width: toRem(1230);
 	}
 
 	// .claim-listing__title
@@ -53,10 +57,247 @@ body {
 		font-size: 40px;
 		font-weight: 600;
 		line-height: 116%; /* 46.4px */
+		margin-bottom: toRem(16);
 	}
 
 	// .claim-listing__text
 
 	&__text {
+		color: #475569;
+		font-weight: 500;
 	}
+}
+
+//============Stepper===================
+
+.stepper {
+	padding: 48px 0;
+	// .stepper__container
+
+	&__container {
+		max-width: toRem(1230);
+
+	}
+
+	// .stepper__wrapper
+
+	&__wrapper {
+		display: flex;
+		gap: toRem(60);
+		@media (max-width: toEm(900)) {
+			flex-direction: column;
+		}
+	}
+
+	// .stepper__left
+
+	&__left {
+		border-radius: 12px;
+		padding: toRem(12);
+		border: 1px solid #e2e8f0;
+		background: #f8fafc;
+		max-width: toRem(260);
+		width: 100%;
+		@media (max-width: toEm(900)) {
+			max-width: 100%;
+		}
+	}
+
+	// .stepper__item
+
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: toRem(12);
+		&:not(:last-child) {
+			margin-bottom: toRem(4);
+		}
+	}
+
+	// .stepper__right
+
+	&__right {
+		max-width: toRem(880);
+		width: 100%;
+	}
+}
+.item-step {
+	cursor: pointer;
+	padding: toRem(6) toRem(12);
+	&.active {
+		border-radius: 8px;
+		background: #cef3d6;
+	}
+	// .item-step__progress
+
+	&__progress {
+		display: flex;
+		width: 36px;
+		height: 36px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
+		border-radius: 36px;
+		color: #64748b;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 116%; /* 16.24px */
+		border-radius: 1000px;
+		&--default {
+			border: 1px solid #e2e8f0;
+			background: #fff;
+		}
+		&--current {
+			background: #fff;
+			border: 1px solid #28a745;
+		}
+		&--filled {
+			background: #28a745;
+		}
+	}
+
+	&__title {
+		color: #64748b;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 116%;
+		&.active {
+			color: #041007;
+		}
+	}
+}
+
+.step-details {
+	// .step-details__form
+
+	&__form {
+	}
+}
+.step-form {
+	// .step-form__title
+
+	&__title {
+		color: #0f172a;
+		font-size: 32px;
+		font-weight: 600;
+		line-height: 116%; /* 37.12px */
+		margin-bottom: toRem(32);
+		text-transform: capitalize;
+	}
+
+	// .step-form__wrapper
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(24);
+	}
+
+	// .step-form__row
+
+	&__row {
+		display: flex;
+		gap: toRem(16);
+		@media (max-width: toEm(900)) {
+			flex-direction: column;
+		}
+	}
+
+	// .step-form__field
+
+	&__field {
+		width: 100%;
+	}
+	&__button {
+		align-self: flex-end;
+		padding: 16px 24px;
+		border-radius: 8px;
+		background: $accentColor;
+		color: #fff;
+		font-family: "Poppins";
+		font-weight: 600;
+		line-height: 135%; /* 21.6px */
+		letter-spacing: -0.2px;
+		transition: all 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #10832b;
+			}
+		}
+	}
+}
+
+.step-form__field {
+	display: grid;
+	gap: toRem(8);
+	label {
+		color: #1e293b;
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 110%; /* 13.2px */
+	}
+	input {
+		border-radius: 8px;
+		padding: toRem(17) toRem(12);
+		border: 1px solid #e2e8f0;
+		&::placeholder {
+			color: #64748b;
+			line-height: 135%; /* 21.6px */
+		}
+		&:focus {
+			border-radius: 8px;
+			border: 1px solid #28a745;
+			outline: none;
+			background: #fff;
+			box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02);
+		}
+	}
+}
+
+.custom-select {
+	position: relative;
+	width: 100%;
+	cursor: pointer;
+}
+
+.custom-select__trigger {
+	padding: 17px 12px;
+	border-radius: 8px;
+	border: 1px solid #e2e8f0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	span {
+		color: #64748b;
+	}
+}
+
+.custom-select__options {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background: white;
+	border: 1px solid #ccc;
+	display: none;
+	z-index: 50;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.custom-select__option {
+	padding: 10px;
+	cursor: pointer;
+}
+
+.custom-select__option:hover {
+	background: #eee;
+}
+
+.custom-select.open .custom-select__options {
+	display: block;
 }

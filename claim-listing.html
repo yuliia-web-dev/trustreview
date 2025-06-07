@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="TrustReview">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/claim-listing.css">
+
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<title>TrustReview</title>
 </head>
@@ -69,14 +71,90 @@
 		<main class="page">
 			<section class="claim-listing">
 				<div class="claim-listing__container">
-					<h1 class="claim-listing__title">Claim Your Listing
-					</h1>
-					<div class="claim-listing__text ">Enter your details to claim this listing.
-						We’ll verify ownership and help you pick a plan for extra features.
-					</div>
-
+					<h2 class="claim-listing__title">Claim Your Listing</h2>
+					<div class="claim-listing__text">Enter your details to claim this listing. <br>
+						We’ll verify ownership and help you pick a plan for extra features.</div>
 				</div>
 			</section>
+			<div class="stepper">
+				<div class="stepper__container">
+					<div class="stepper__wrapper">
+						<div class="stepper__left">
+							<div class="stepper__item item-step active">
+								<div class="item-step__progress item-step__progress--current">1</div>
+								<h3 class="item-step__title active">Ownership Details</h3>
+							</div>
+							<div class="stepper__item item-step">
+								<div class="item-step__progress item-step__progress--default">2</div>
+								<h3 class="item-step__title">Verification</h3>
+							</div>
+							<div class="stepper__item item-step">
+								<div class="item-step__progress item-step__progress--default">3</div>
+								<h3 class="item-step__title">Create Password</h3>
+							</div>
+							<div class="stepper__item item-step">
+								<div class="item-step__progress item-step__progress--default">4</div>
+								<h3 class="item-step__title">Choose Plan</h3>
+							</div>
+							<div class="stepper__item item-step">
+								<div class="item-step__progress item-step__progress--default">5</div>
+								<h3 class="item-step__title">Payment</h3>
+							</div>
+							<div class="stepper__item item-step">
+								<div class="item-step__progress item-step__progress--default">6</div>
+								<h3 class="item-step__title">Confirmation</h3>
+							</div>
+						</div>
+						<div class="stepper__right step-details">
+							<form action="#" class="step-details__form step-form active">
+								<h3 class="step-form__title">Get started</h3>
+								<div class="step-form__wrapper">
+									<div class="step-form__row">
+										<div class="step-form__field">
+											<label for="name">Name</label>
+											<input type="text" id="name" name="name" placeholder="Enter your full name"
+												required="">
+										</div>
+										<div class="step-form__field">
+											<label for="email">Email</label>
+											<input type="email" id="email" name="email" placeholder="Enter your email" required="">
+										</div>
+									</div>
+									<div class="step-form__field">
+										<label for="name">Company Name</label>
+										<input type="text" id="name" name="name" placeholder="Enter your company  name"
+											required="">
+									</div>
+									<div class="step-form__field">
+										<label for="role">Role*</label>
+
+										<div class="collection__select custom-select">
+											<div class="custom-select__trigger">
+												<span>Select your role</span>
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+													fill="none">
+													<path fill-rule="evenodd" clip-rule="evenodd"
+														d="M8.47221 10.4712C8.34719 10.5962 8.17766 10.6664 8.00088 10.6664C7.8241 10.6664 7.65456 10.5962 7.52955 10.4712L3.75821 6.6999C3.69454 6.63841 3.64375 6.56484 3.60881 6.48351C3.57387 6.40217 3.55548 6.31469 3.55471 6.22617C3.55394 6.13765 3.57081 6.04986 3.60433 5.96793C3.63785 5.886 3.68735 5.81157 3.74995 5.74897C3.81254 5.68638 3.88698 5.63688 3.96891 5.60336C4.05084 5.56983 4.13863 5.55297 4.22715 5.55374C4.31567 5.55451 4.40315 5.5729 4.48448 5.60784C4.56582 5.64277 4.63938 5.69356 4.70088 5.75724L8.00088 9.05724L11.3009 5.75724C11.4266 5.6358 11.595 5.5686 11.7698 5.57012C11.9446 5.57164 12.1118 5.64175 12.2354 5.76536C12.359 5.88896 12.4291 6.05617 12.4307 6.23097C12.4322 6.40577 12.365 6.57417 12.2435 6.6999L8.47221 10.4712Z"
+														fill="#1E293B" />
+												</svg>
+											</div>
+											<ul class="custom-select__options">
+												<li class="custom-select__option" data-value="1">Admin</li>
+												<li class="custom-select__option" data-value="2">Owner</li>
+											</ul>
+										</div>
+
+									</div>
+
+									<button type="submit" class="step-form__button">Continue</button>
+								</div>
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
 
 		</main>
 		<footer class="footer">

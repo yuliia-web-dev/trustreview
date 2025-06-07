@@ -353,3 +353,39 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 });
+
+//================Select===============
+
+const customSelects = document.querySelectorAll('.custom-select');
+
+customSelects.forEach(select => {
+	const trigger = select.querySelector('.custom-select__trigger span');
+	const options = select.querySelectorAll('.custom-select__option');
+
+	// Toggle the dropdown on trigger click
+	select.querySelector('.custom-select__trigger').addEventListener('click', (e) => {
+		e.stopPropagation(); // Prevent immediate closing due to document click
+		// Close other open dropdowns
+		customSelects.forEach(other => {
+			if (other !== select) {
+				other.classList.remove('open');
+			}
+		});
+		select.classList.toggle('open');
+	});
+
+	// Set selected option and close dropdown
+	options.forEach(option => {
+		option.addEventListener('click', (e) => {
+			trigger.textContent = option.textContent.trim(); // Set selected option text
+			select.classList.remove('open');
+		});
+	});
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', () => {
+	customSelects.forEach(select => {
+		select.classList.remove('open');
+	});
+});

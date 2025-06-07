@@ -74,6 +74,7 @@ body {
 	// .header__container
 
 	&__container {
+		max-width: toRem(1375);
 		display: flex;
 		align-items: center;
 		@include adaptiveValue("gap", 40, 15, $widthTo: 800);
