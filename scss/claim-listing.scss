@@ -132,6 +132,13 @@ body {
 .item-step {
 	cursor: pointer;
 	padding: toRem(6) toRem(12);
+	transition: background-color 0.3s;
+	@media(any-hover:hover){
+		&:hover{
+			background-color: #cef3d6;
+
+		}
+	}
 	&.active {
 		border-radius: 8px;
 		background: #cef3d6;

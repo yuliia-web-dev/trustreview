@@ -229,6 +229,13 @@ body.menu-open {
 .item-step {
   cursor: pointer;
   padding: 0.375rem 0.75rem;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+@media (any-hover: hover) {
+  .item-step:hover {
+    background-color: #cef3d6;
+  }
 }
 .item-step.active {
   border-radius: 8px;
