@@ -173,6 +173,8 @@ body.lock {
 		@media (max-width: toEm(480)) {
 			grid-template-columns: 1fr;
 			gap: toRem(20);
+			text-align: left;
+
 		}
 		&:not(:last-child) {
 			margin-bottom: toRem(32);
