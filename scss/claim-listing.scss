@@ -524,6 +524,11 @@ body {
 		&--selected {
 			background: #cef3d6;
 			color: #1f8437;
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: #90c99e;
+				}
+			}
 		}
 	}
 	&__badge {

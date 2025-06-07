@@ -691,6 +691,11 @@ body.menu-open {
   background: #cef3d6;
   color: #1f8437;
 }
+@media (any-hover: hover) {
+  .item-plan__button--selected:hover {
+    background-color: #90c99e;
+  }
+}
 .item-plan__badge {
   border-radius: 32px;
   background: #1e293b;
