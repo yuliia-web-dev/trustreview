@@ -78,79 +78,321 @@
 			</section>
 			<div class="stepper">
 				<div class="stepper__container">
-					<div class="stepper__wrapper">
+					<div class="stepper__wrapper stepper__wrapper--flex">
 						<div class="stepper__left">
-							<div class="stepper__item item-step active">
+							<div class="stepper__item item-step active" data-step="0">
 								<div class="item-step__progress item-step__progress--current">1</div>
+
+
 								<h3 class="item-step__title active">Ownership Details</h3>
 							</div>
-							<div class="stepper__item item-step">
+							<div class="stepper__item item-step" data-step="1">
 								<div class="item-step__progress item-step__progress--default">2</div>
 								<h3 class="item-step__title">Verification</h3>
 							</div>
-							<div class="stepper__item item-step">
+							<div class="stepper__item item-step" data-step="2">
 								<div class="item-step__progress item-step__progress--default">3</div>
 								<h3 class="item-step__title">Create Password</h3>
 							</div>
-							<div class="stepper__item item-step">
+							<div class="stepper__item item-step" data-step="3">
 								<div class="item-step__progress item-step__progress--default">4</div>
 								<h3 class="item-step__title">Choose Plan</h3>
 							</div>
-							<div class="stepper__item item-step">
+							<div class="stepper__item item-step" data-step="4">
 								<div class="item-step__progress item-step__progress--default">5</div>
 								<h3 class="item-step__title">Payment</h3>
 							</div>
-							<div class="stepper__item item-step">
+							<div class="stepper__item item-step" data-step="5">
 								<div class="item-step__progress item-step__progress--default">6</div>
 								<h3 class="item-step__title">Confirmation</h3>
 							</div>
 						</div>
 						<div class="stepper__right step-details">
-							<form action="#" class="step-details__form step-form active">
-								<h3 class="step-form__title">Get started</h3>
+							<form action="#" class="step-details__form step-form active" data-step-content="0">
+								<h3 class="step-form__title">Get Started</h3>
 								<div class="step-form__wrapper">
-									<div class="step-form__row">
-										<div class="step-form__field">
-											<label for="name">Name</label>
-											<input type="text" id="name" name="name" placeholder="Enter your full name"
-												required="">
-										</div>
-										<div class="step-form__field">
-											<label for="email">Email</label>
-											<input type="email" id="email" name="email" placeholder="Enter your email" required="">
-										</div>
-									</div>
-									<div class="step-form__field">
-										<label for="name">Company Name</label>
-										<input type="text" id="name" name="name" placeholder="Enter your company  name"
-											required="">
-									</div>
-									<div class="step-form__field">
-										<label for="role">Role*</label>
-
-										<div class="collection__select custom-select">
-											<div class="custom-select__trigger">
-												<span>Select your role</span>
-												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-													fill="none">
-													<path fill-rule="evenodd" clip-rule="evenodd"
-														d="M8.47221 10.4712C8.34719 10.5962 8.17766 10.6664 8.00088 10.6664C7.8241 10.6664 7.65456 10.5962 7.52955 10.4712L3.75821 6.6999C3.69454 6.63841 3.64375 6.56484 3.60881 6.48351C3.57387 6.40217 3.55548 6.31469 3.55471 6.22617C3.55394 6.13765 3.57081 6.04986 3.60433 5.96793C3.63785 5.886 3.68735 5.81157 3.74995 5.74897C3.81254 5.68638 3.88698 5.63688 3.96891 5.60336C4.05084 5.56983 4.13863 5.55297 4.22715 5.55374C4.31567 5.55451 4.40315 5.5729 4.48448 5.60784C4.56582 5.64277 4.63938 5.69356 4.70088 5.75724L8.00088 9.05724L11.3009 5.75724C11.4266 5.6358 11.595 5.5686 11.7698 5.57012C11.9446 5.57164 12.1118 5.64175 12.2354 5.76536C12.359 5.88896 12.4291 6.05617 12.4307 6.23097C12.4322 6.40577 12.365 6.57417 12.2435 6.6999L8.47221 10.4712Z"
-														fill="#1E293B" />
-												</svg>
+									<div class="step-form__fields-wrap">
+										<div class="step-form__row">
+											<div class="step-form__field">
+												<label for="name">Name</label>
+												<input type="text" id="name" name="name" placeholder="Enter your full name"
+													required="">
 											</div>
-											<ul class="custom-select__options">
-												<li class="custom-select__option" data-value="1">Admin</li>
-												<li class="custom-select__option" data-value="2">Owner</li>
-											</ul>
+											<div class="step-form__field">
+												<label for="email">Email</label>
+												<input type="email" id="email" name="email" placeholder="Enter your email"
+													required="">
+											</div>
 										</div>
+										<div class="step-form__field">
+											<label for="companyName">Company Name</label>
+											<input type="text" id="companyName" name="companyName"
+												placeholder="Enter your company  name" required="">
+										</div>
+										<div class="step-form__field">
+											<label for="role">Role*</label>
 
+											<div class="collection__select custom-select">
+												<div class="custom-select__trigger">
+													<span>Select your role</span>
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+														viewBox="0 0 16 16" fill="none">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M8.47221 10.4712C8.34719 10.5962 8.17766 10.6664 8.00088 10.6664C7.8241 10.6664 7.65456 10.5962 7.52955 10.4712L3.75821 6.6999C3.69454 6.63841 3.64375 6.56484 3.60881 6.48351C3.57387 6.40217 3.55548 6.31469 3.55471 6.22617C3.55394 6.13765 3.57081 6.04986 3.60433 5.96793C3.63785 5.886 3.68735 5.81157 3.74995 5.74897C3.81254 5.68638 3.88698 5.63688 3.96891 5.60336C4.05084 5.56983 4.13863 5.55297 4.22715 5.55374C4.31567 5.55451 4.40315 5.5729 4.48448 5.60784C4.56582 5.64277 4.63938 5.69356 4.70088 5.75724L8.00088 9.05724L11.3009 5.75724C11.4266 5.6358 11.595 5.5686 11.7698 5.57012C11.9446 5.57164 12.1118 5.64175 12.2354 5.76536C12.359 5.88896 12.4291 6.05617 12.4307 6.23097C12.4322 6.40577 12.365 6.57417 12.2435 6.6999L8.47221 10.4712Z"
+															fill="#1E293B" />
+													</svg>
+												</div>
+												<ul class="custom-select__options">
+													<li class="custom-select__option" data-value="1">Admin</li>
+													<li class="custom-select__option" data-value="2">Owner</li>
+												</ul>
+											</div>
+
+										</div>
 									</div>
 
 									<button type="submit" class="step-form__button">Continue</button>
 								</div>
 
 							</form>
+							<form action="#" class="step-details__form step-form" data-step-content="1">
+								<h3 class="step-form__title step-form__title--margin">Verify your ownership</h3>
+								<div class="step-form__text">We will send a confirmation email to verify that you are indeed
+									associated with this website. <br>
+									Please click the link in the email to confirm your ownership.</div>
+								<div class="step-form__wrapper">
+									<div class="step-form__verification verification">
+										<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+											fill="none">
+											<g clip-path="url(#clip0_85_433)">
+												<path fill-rule="evenodd" clip-rule="evenodd"
+													d="M22.666 4C23.6863 3.99994 24.668 4.38977 25.4104 5.08971C26.1527 5.78966 26.5995 6.74681 26.6593 7.76533L26.666 8V13.8L27.458 13.448C28.2767 13.084 29.2207 13.648 29.3247 14.512L29.3327 14.6667V25.3333C29.3329 26.0061 29.0788 26.6541 28.6214 27.1474C28.1639 27.6407 27.5369 27.9429 26.866 27.9933L26.666 28H5.33268C4.65991 28.0002 4.01193 27.7461 3.51862 27.2887C3.02531 26.8312 2.72314 26.2042 2.67268 25.5333L2.66602 25.3333V14.6667C2.66602 13.7707 3.56602 13.1373 4.39535 13.3933L4.54202 13.448L5.33268 13.8V8C5.33263 6.97972 5.72245 5.99798 6.42239 5.25565C7.12234 4.51332 8.07949 4.06652 9.09802 4.00667L9.33268 4H22.666ZM26.666 16.7187L17.082 20.9773C16.7412 21.1288 16.3723 21.207 15.9993 21.207C15.6264 21.207 15.2575 21.1288 14.9167 20.9773L5.33268 16.72V25.3333H26.666V16.7187ZM22.666 6.66667H9.33268C8.97906 6.66667 8.63992 6.80714 8.38987 7.05719C8.13982 7.30724 7.99935 7.64638 7.99935 8V14.9853L15.9993 18.5413L23.9993 14.9853V8C23.9993 7.64638 23.8589 7.30724 23.6088 7.05719C23.3588 6.80714 23.0196 6.66667 22.666 6.66667ZM15.9993 10.6667C16.3392 10.667 16.6661 10.7972 16.9132 11.0305C17.1603 11.2638 17.309 11.5826 17.3289 11.9219C17.3488 12.2611 17.2384 12.5952 17.0203 12.8558C16.8022 13.1164 16.4928 13.2839 16.1553 13.324L15.9993 13.3333H13.3327C12.9928 13.333 12.666 13.2028 12.4189 12.9695C12.1717 12.7362 12.023 12.4174 12.0031 12.0781C11.9832 11.7389 12.0936 11.4048 12.3117 11.1442C12.5298 10.8836 12.8392 10.7161 13.1767 10.676L13.3327 10.6667H15.9993Z"
+													fill="#28A745" />
+											</g>
+											<defs>
+												<clipPath id="clip0_85_433">
+													<rect width="32" height="32" fill="white" />
+												</clipPath>
+											</defs>
+										</svg>
+										<h3 class="verification__title">Verification Email Sent!</h3>
+										<p class="verification__text">We’ve sent a verification link to <span
+												id="user-email">[user’s email]</span> . <br>
+											Please click the link in that email to confirm yourownership.</p>
+										<button class="verification__resend-btn">Resend verification email</button>
+									</div>
+									<div class="step-form__buttons-wrap">
+										<button type="submit" class="step-form__button step-form__button--back">Back</button>
+										<button type="submit" class="step-form__button">Continue</button>
+									</div>
+								</div>
+							</form>
+							<form action="#" class="step-details__form step-form" data-step-content="2">
+								<h3 class="step-form__title step-form__title--margin">Create Your Password</h3>
+								<div class="step-form__text">Please create a secure password for your account. <br>
+									Make sure it’s at least 8 characters long and includes a mix of letters, numbers, and
+									symbols.</div>
+								<div class="step-form__wrapper">
+									<div class="step-form__fields-wrap">
+										<div class="step-form__field">
+											<label for="password">Password</label>
+											<div class="step-form__password-wrap"><input type="password" id="password"
+													name="password" placeholder="Enter your password" required="">
+												<span class="toggle-password">
+													<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+														viewBox="0 0 16 16" fill="none">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M2.66732 8.00059V7.99992C2.66932 7.98925 2.67865 7.93058 2.73065 7.81525C2.78798 7.68792 2.88065 7.52792 3.01332 7.34325C3.27865 6.97459 3.67532 6.54859 4.17665 6.14459C5.18532 5.33059 6.54198 4.66659 8.00065 4.66659C9.45932 4.66659 10.816 5.33058 11.8247 6.14392C12.326 6.54792 12.7227 6.97392 12.988 7.34259C13.1213 7.52725 13.2133 7.68725 13.2707 7.81459C13.3227 7.92992 13.332 7.98858 13.334 7.99925V7.99992C13.332 8.01058 13.3227 8.06925 13.2707 8.18459C13.2133 8.31192 13.1207 8.47192 12.988 8.65658C12.7227 9.02525 12.326 9.45125 11.8247 9.85525C10.8167 10.6693 9.45998 11.3333 8.00065 11.3333C6.54198 11.3333 5.18532 10.6693 4.17665 9.85592C3.67532 9.45192 3.27865 9.02592 3.01332 8.65725C2.90392 8.50952 2.80925 8.35143 2.73065 8.18525C2.70151 8.12675 2.68022 8.06466 2.66732 8.00059ZM8.00065 3.33325C6.14532 3.33325 4.50198 4.16925 3.33998 5.10592C2.75532 5.57659 2.27332 6.08858 1.93132 6.56392C1.75998 6.80125 1.61732 7.03925 1.51465 7.26725C1.41598 7.48659 1.33398 7.74058 1.33398 7.99992C1.33398 8.25858 1.41598 8.51392 1.51398 8.73258C1.61732 8.96059 1.76065 9.19925 1.93132 9.43592C2.27332 9.91125 2.75532 10.4226 3.33998 10.8939C4.50198 11.8306 6.14532 12.6666 8.00065 12.6666C9.85598 12.6666 11.4993 11.8306 12.6613 10.8939C13.246 10.4233 13.728 9.91125 14.07 9.43592C14.2413 9.19859 14.384 8.96059 14.4867 8.73258C14.5853 8.51392 14.6673 8.25925 14.6673 7.99992C14.6673 7.74125 14.5853 7.48592 14.4873 7.26725C14.3718 7.01958 14.232 6.78398 14.07 6.56392C13.728 6.08858 13.246 5.57725 12.6613 5.10592C11.4993 4.16925 9.85598 3.33325 8.00065 3.33325ZM7.33398 7.99992C7.33398 7.82311 7.40422 7.65354 7.52925 7.52851C7.65427 7.40349 7.82384 7.33325 8.00065 7.33325C8.17746 7.33325 8.34703 7.40349 8.47205 7.52851C8.59708 7.65354 8.66732 7.82311 8.66732 7.99992C8.66732 8.17673 8.59708 8.3463 8.47205 8.47132C8.34703 8.59635 8.17746 8.66658 8.00065 8.66658C7.82384 8.66658 7.65427 8.59635 7.52925 8.47132C7.40422 8.3463 7.33398 8.17673 7.33398 7.99992ZM8.00065 5.99992C7.47022 5.99992 6.96151 6.21063 6.58644 6.5857C6.21136 6.96078 6.00065 7.46949 6.00065 7.99992C6.00065 8.53035 6.21136 9.03906 6.58644 9.41413C6.96151 9.7892 7.47022 9.99992 8.00065 9.99992C8.53108 9.99992 9.03979 9.7892 9.41486 9.41413C9.78994 9.03906 10.0007 8.53035 10.0007 7.99992C10.0007 7.46949 9.78994 6.96078 9.41486 6.5857C9.03979 6.21063 8.53108 5.99992 8.00065 5.99992Z"
+															fill="#1E293B" />
+													</svg>
+												</span>
+											</div>
+										</div>
+										<div class="step-form__field">
+											<label for="confirmPassword">Confirm Password</label>
+											<div class="step-form__password-wrap">
+												<input type="password" id="confirmPassword" name="confirmPassword"
+													placeholder="Confirm your password" required>
+												<span class="toggle-password" >
+													<!-- SVG-іконка -->
+													<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+														viewBox="0 0 16 16" fill="none">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M2.66732 8.00059V7.99992C2.66932 7.98925 2.67865 7.93058 2.73065 7.81525C2.78798 7.68792 2.88065 7.52792 3.01332 7.34325C3.27865 6.97459 3.67532 6.54859 4.17665 6.14459C5.18532 5.33059 6.54198 4.66659 8.00065 4.66659C9.45932 4.66659 10.816 5.33058 11.8247 6.14392C12.326 6.54792 12.7227 6.97392 12.988 7.34259C13.1213 7.52725 13.2133 7.68725 13.2707 7.81459C13.3227 7.92992 13.332 7.98858 13.334 7.99925V7.99992C13.332 8.01058 13.3227 8.06925 13.2707 8.18459C13.2133 8.31192 13.1207 8.47192 12.988 8.65658C12.7227 9.02525 12.326 9.45125 11.8247 9.85525C10.8167 10.6693 9.45998 11.3333 8.00065 11.3333C6.54198 11.3333 5.18532 10.6693 4.17665 9.85592C3.67532 9.45192 3.27865 9.02592 3.01332 8.65725C2.90392 8.50952 2.80925 8.35143 2.73065 8.18525C2.70151 8.12675 2.68022 8.06466 2.66732 8.00059ZM8.00065 3.33325C6.14532 3.33325 4.50198 4.16925 3.33998 5.10592C2.75532 5.57659 2.27332 6.08858 1.93132 6.56392C1.75998 6.80125 1.61732 7.03925 1.51465 7.26725C1.41598 7.48659 1.33398 7.74058 1.33398 7.99992C1.33398 8.25858 1.41598 8.51392 1.51398 8.73258C1.61732 8.96059 1.76065 9.19925 1.93132 9.43592C2.27332 9.91125 2.75532 10.4226 3.33998 10.8939C4.50198 11.8306 6.14532 12.6666 8.00065 12.6666C9.85598 12.6666 11.4993 11.8306 12.6613 10.8939C13.246 10.4233 13.728 9.91125 14.07 9.43592C14.2413 9.19859 14.384 8.96059 14.4867 8.73258C14.5853 8.51392 14.6673 8.25925 14.6673 7.99992C14.6673 7.74125 14.5853 7.48592 14.4873 7.26725C14.3718 7.01958 14.232 6.78398 14.07 6.56392C13.728 6.08858 13.246 5.57725 12.6613 5.10592C11.4993 4.16925 9.85598 3.33325 8.00065 3.33325ZM7.33398 7.99992C7.33398 7.82311 7.40422 7.65354 7.52925 7.52851C7.65427 7.40349 7.82384 7.33325 8.00065 7.33325C8.17746 7.33325 8.34703 7.40349 8.47205 7.52851C8.59708 7.65354 8.66732 7.82311 8.66732 7.99992C8.66732 8.17673 8.59708 8.3463 8.47205 8.47132C8.34703 8.59635 8.17746 8.66658 8.00065 8.66658C7.82384 8.66658 7.65427 8.59635 7.52925 8.47132C7.40422 8.3463 7.33398 8.17673 7.33398 7.99992ZM8.00065 5.99992C7.47022 5.99992 6.96151 6.21063 6.58644 6.5857C6.21136 6.96078 6.00065 7.46949 6.00065 7.99992C6.00065 8.53035 6.21136 9.03906 6.58644 9.41413C6.96151 9.7892 7.47022 9.99992 8.00065 9.99992C8.53108 9.99992 9.03979 9.7892 9.41486 9.41413C9.78994 9.03906 10.0007 8.53035 10.0007 7.99992C10.0007 7.46949 9.78994 6.96078 9.41486 6.5857C9.03979 6.21063 8.53108 5.99992 8.00065 5.99992Z"
+															fill="#1E293B" />
+													</svg>
+												</span>
+											</div>
+										</div>
 
+									</div>
+									<div class="step-form__buttons-wrap">
+										<button type="submit" class="step-form__button step-form__button--back">Back</button>
+										<button type="submit" class="step-form__button">Continue</button>
+									</div>
+								</div>
+							</form>
+							<form action="#" class="step-details__form step-form" data-step-content="3">
+								<h3 class="step-form__title step-form__title--margin">Select a Plan</h3>
+								<div class="step-form__text">Choose the plan that best fits your business needs.</div>
+								<div class="step-form__wrapper">
+									<div class="step-form__plan plan">
+										<div class="plan-item item-plan">
+											<h4 class="item-plan__title">Free</h4>
+											<div class="item-plan__price price">
+												<div class="price__info">
+													<span class="price__number">$0</span>
+													<span class="price__text">/month</span>
+												</div>
+												<span class="price__payment-info">No payment required</span>
+											</div>
+
+											<div class="item-plan__text">
+												Perfect for getting started
+											</div>
+											<ul class="item-plan__list list-plan">
+												<li class="list-plan__item">Basic listing</li>
+												<li class="list-plan__item">Limited analytics</li>
+
+											</ul>
+											<button class="item-plan__button">Choose Plan</button>
+										</div>
+										<div class="plan-item item-plan item-plan--popular selected">
+											<h4 class="item-plan__title">Pro</h4>
+											<div class="item-plan__price price">
+												<div class="price__info">
+													<span class="price__number">$29</span>
+													<span class="price__text">/month</span>
+												</div>
+												<span class="price__payment-info">No payment required</span>
+											</div>
+
+											<div class="item-plan__text">
+												Best for growing business
+											</div>
+											<ul class="item-plan__list list-plan">
+												<li class="list-plan__item">Detailed analytics</li>
+												<li class="list-plan__item">Boosted visibility</li>
+												<li class="list-plan__item">Priority support</li>
+
+											</ul>
+											<button
+												class="item-plan__button item-plan__button--background item-plan__button--selected">Selected</button>
+											<div class="item-plan__badge">MOST POPULAR</div>
+										</div>
+										<div class="plan-item item-plan">
+											<h4 class="item-plan__title">Premium</h4>
+											<div class="item-plan__price price">
+												<div class="price__info">
+													<span class="price__number">$99</span>
+													<span class="price__text">/month</span>
+												</div>
+												<span class="price__payment-info">No payment required</span>
+											</div>
+
+											<div class="item-plan__text text-plan">
+												Complete enterprise solution </div>
+											<ul class="item-plan__list list-plan">
+												<li class="list-plan__item">Maximum listing</li>
+												<li class="list-plan__item">Advanced AI-powered analytics</li>
+												<li class="list-plan__item">Advanced marketing features</li>
+
+											</ul>
+											<button class="item-plan__button">Choose Plan</button>
+										</div>
+									</div>
+									<div class="step-form__buttons-wrap">
+										<button type="submit" class="step-form__button step-form__button--back">Back</button>
+										<button type="submit" class="step-form__button">Continue</button>
+									</div>
+								</div>
+							</form>
+							<form action="#" class="step-details__form step-form" data-step-content="4">
+								<h3 class="step-form__title step-form__title--margin">Payment Details</h3>
+								<div class="step-form__text">Complete your Pro plan subsription</div>
+								<div class="step-form__wrapper">
+									<div class="step-form__payment payment">
+										<div class="payment__left selected-plan">
+											<div class="selected-plan__badge">Selected Plan</div>
+											<div class="selected-plan__header">
+												<h4 class="selected-plan__title">Pro plan</h4>
+												<span>Monthly subscription</span>
+											</div>
+											<div class="selected-plan__price price">
+												<div class="price__info">
+													<span class="price__number price__number--size">$29</span>
+													<span class="price__text">/month</span>
+												</div>
+											</div>
+											<div class="selected-plan__text text-plan">Best for growing business</div>
+											<ul class="item-plan__list list-plan">
+												<li class="list-plan__item">Detailed analytics</li>
+												<li class="list-plan__item">Boosted visibility</li>
+												<li class="list-plan__item">Priority support</li>
+
+											</ul>
+										</div>
+										<div class="payment__right">
+											<label class="payment__option payment__option--border">
+												<input class="payment__radio" type="radio" name="payment" value="card">
+												<span class="payment__custom-radio"></span>
+												<div class="payment__content">
+													<div class="payment__text">
+														<h4 class="payment__title">Credit or Debit Card</h4>
+														<p class="payment__description">In order to verify your card, we may make a
+															temporary charge of $0.01</p>
+													</div>
+													<div class="payment__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+															height="24" viewBox="0 0 24 24" fill="none">
+															<g clip-path="url(#clip0_100_1016)">
+																<path
+																	d="M19 4C19.7956 4 20.5587 4.31607 21.1213 4.87868C21.6839 5.44129 22 6.20435 22 7V17C22 17.7956 21.6839 18.5587 21.1213 19.1213C20.5587 19.6839 19.7956 20 19 20H5C4.20435 20 3.44129 19.6839 2.87868 19.1213C2.31607 18.5587 2 17.7956 2 17V7C2 6.20435 2.31607 5.44129 2.87868 4.87868C3.44129 4.31607 4.20435 4 5 4H19ZM20 10H4V17C4.00003 17.2449 4.08996 17.4813 4.25272 17.6644C4.41547 17.8474 4.63975 17.9643 4.883 17.993L5 18H19C19.2449 18 19.4813 17.91 19.6644 17.7473C19.8474 17.5845 19.9643 17.3603 19.993 17.117L20 17V10ZM17 13C17.2549 13.0003 17.5 13.0979 17.6854 13.2728C17.8707 13.4478 17.9822 13.687 17.9972 13.9414C18.0121 14.1958 17.9293 14.4464 17.7657 14.6418C17.6021 14.8373 17.3701 14.9629 17.117 14.993L17 15H14C13.7451 14.9997 13.5 14.9021 13.3146 14.7272C13.1293 14.5522 13.0178 14.313 13.0028 14.0586C12.9879 13.8042 13.0707 13.5536 13.2343 13.3582C13.3979 13.1627 13.6299 13.0371 13.883 13.007L14 13H17ZM19 6H5C4.73478 6 4.48043 6.10536 4.29289 6.29289C4.10536 6.48043 4 6.73478 4 7V8H20V7C20 6.73478 19.8946 6.48043 19.7071 6.29289C19.5196 6.10536 19.2652 6 19 6Z"
+																	fill="#1F8437" />
+															</g>
+															<defs>
+																<clipPath id="clip0_100_1016">
+																	<rect width="24" height="24" fill="white" />
+																</clipPath>
+															</defs>
+														</svg></div>
+												</div>
+											</label>
+											<label class="payment__option payment__option--padding">
+												<input class="payment__radio" type="radio" name="payment" value="paypal">
+												<span class="payment__custom-radio"></span>
+												<div class="payment__content">
+													<div class="payment__text">
+														<h4 class="payment__title">Paypal</h4>
+														<p class="payment__description">
+															You must have verified PayPal account. Don’t have a PayPal account?<br />
+														</p>
+														<a class="payment__link" href="#">Visit Paypal website</a>
+
+													</div>
+													<div class="payment__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+															height="24" viewBox="0 0 24 24" fill="none">
+															<g clip-path="url(#clip0_100_1016)">
+																<path
+																	d="M19 4C19.7956 4 20.5587 4.31607 21.1213 4.87868C21.6839 5.44129 22 6.20435 22 7V17C22 17.7956 21.6839 18.5587 21.1213 19.1213C20.5587 19.6839 19.7956 20 19 20H5C4.20435 20 3.44129 19.6839 2.87868 19.1213C2.31607 18.5587 2 17.7956 2 17V7C2 6.20435 2.31607 5.44129 2.87868 4.87868C3.44129 4.31607 4.20435 4 5 4H19ZM20 10H4V17C4.00003 17.2449 4.08996 17.4813 4.25272 17.6644C4.41547 17.8474 4.63975 17.9643 4.883 17.993L5 18H19C19.2449 18 19.4813 17.91 19.6644 17.7473C19.8474 17.5845 19.9643 17.3603 19.993 17.117L20 17V10ZM17 13C17.2549 13.0003 17.5 13.0979 17.6854 13.2728C17.8707 13.4478 17.9822 13.687 17.9972 13.9414C18.0121 14.1958 17.9293 14.4464 17.7657 14.6418C17.6021 14.8373 17.3701 14.9629 17.117 14.993L17 15H14C13.7451 14.9997 13.5 14.9021 13.3146 14.7272C13.1293 14.5522 13.0178 14.313 13.0028 14.0586C12.9879 13.8042 13.0707 13.5536 13.2343 13.3582C13.3979 13.1627 13.6299 13.0371 13.883 13.007L14 13H17ZM19 6H5C4.73478 6 4.48043 6.10536 4.29289 6.29289C4.10536 6.48043 4 6.73478 4 7V8H20V7C20 6.73478 19.8946 6.48043 19.7071 6.29289C19.5196 6.10536 19.2652 6 19 6Z"
+																	fill="#1F8437" />
+															</g>
+															<defs>
+																<clipPath id="clip0_100_1016">
+																	<rect width="24" height="24" fill="white" />
+																</clipPath>
+															</defs>
+														</svg></div>
+												</div>
+											</label>
+										</div>
+
+									</div>
+									<div class="step-form__buttons-wrap">
+										<button type="submit" class="step-form__button step-form__button--back">Back</button>
+										<button type="submit" class="step-form__button">Confirm Payment</button>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>

@@ -354,6 +354,52 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 });
 
+//==============Stepper==================
+const stepItems = document.querySelectorAll('.item-step');
+
+stepItems.forEach((step, index) => {
+	step.addEventListener('click', () => {
+		stepItems.forEach((item, i) => {
+			const progress = item.querySelector('.item-step__progress');
+			const title = item.querySelector('.item-step__title');
+
+			// Знімаємо активні класи
+			item.classList.remove('active');
+			title.classList.remove('active');
+
+			if (i < index) {
+				progress.className = 'item-step__progress item-step__progress--filled';
+				progress.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path fill="white" d="M12.53 4.97a.75.75 0 010 1.06L7.03 11.53a.75.75 0 01-1.06 0L3.47 9.03a.75.75 0 111.06-1.06L6.5 9.94l4.97-4.97a.75.75 0 011.06 0z"/>
+          </svg>
+        `;
+			} else if (i === index) {
+				progress.className = 'item-step__progress item-step__progress--current';
+				progress.textContent = i + 1;
+
+				// Додаємо активні класи для поточного кроку
+				item.classList.add('active');
+				title.classList.add('active');
+			} else {
+				progress.className = 'item-step__progress item-step__progress--default';
+				progress.textContent = i + 1;
+			}
+		});
+
+		// Перемикаємо контент
+		const currentActiveContent = document.querySelector('.step-form.active');
+		const nextActiveContent = document.querySelector(`.step-form[data-step-content="${index}"]`);
+
+		if (currentActiveContent !== nextActiveContent) {
+			if (currentActiveContent) currentActiveContent.classList.remove('active');
+			if (nextActiveContent) nextActiveContent.classList.add('active');
+		}
+	});
+});
+
+
+
 //================Select===============
 
 const customSelects = document.querySelectorAll('.custom-select');
@@ -389,3 +435,5 @@ document.addEventListener('click', () => {
 		select.classList.remove('open');
 	});
 });
+
+
