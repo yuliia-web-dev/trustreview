@@ -114,6 +114,9 @@ body.lock {
 			max-width: 100%;
 			align-items: center;
 		}
+		@media (max-width: toEm(480)) {
+			align-items: flex-start;
+		}
 	}
 	&__right {
 		max-width: toRem(850);

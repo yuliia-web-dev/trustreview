@@ -236,6 +236,13 @@ body.lock {
             align-items: center;
   }
 }
+@media (max-width: 30em) {
+  .company-info__left {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
 .company-info__right {
   max-width: 53.125rem;
   width: 100%;
