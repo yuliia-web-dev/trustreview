@@ -824,8 +824,6 @@ body.lock {
 }
 #messageSubmit p {
   color: #475569;
-  font-family: "Plus Jakarta Sans";
-  font-size: 16px;
   font-weight: 700;
   line-height: 122%; /* 19.52px */
   letter-spacing: -0.2px;
