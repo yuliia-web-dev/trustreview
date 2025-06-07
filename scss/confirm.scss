@@ -131,6 +131,7 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	&__item {
 		display: flex;
 		align-items: center;
+		flex-wrap: wrap;
 		gap: 10px;
 		justify-content: space-between;
 		padding: 16px 0;
