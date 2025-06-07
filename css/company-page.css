@@ -569,8 +569,6 @@ body.lock {
   color: #0f172a;
   font-size: 16px;
   line-height: 128%; /* 20.48px */
-  leading-trim: both;
-  text-edge: cap;
 }
 .review__text p:not(:last-child) {
   margin-bottom: 1.25rem;

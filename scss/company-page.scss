@@ -174,7 +174,6 @@ body.lock {
 			grid-template-columns: 1fr;
 			gap: toRem(20);
 			text-align: left;
-
 		}
 		&:not(:last-child) {
 			margin-bottom: toRem(32);
@@ -397,9 +396,6 @@ body.lock {
 		color: #0f172a;
 		font-size: 16px;
 		line-height: 128%; /* 20.48px */
-		leading-trim: both;
-
-		text-edge: cap;
 		p {
 			&:not(:last-child) {
 				margin-bottom: toRem(20);
