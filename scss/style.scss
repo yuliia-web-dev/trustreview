@@ -18,6 +18,7 @@ $accentColor: #28a745;
 
 @import "claim-listing.scss";
 
+@import "confirm.scss";
 // Мінімальна ширина сторінки
 $minWidth: 320;
 // Ширина полотна (макету)
@@ -533,7 +534,7 @@ body {
 		align-items: center;
 		justify-content: space-between;
 		gap: toRem(20);
-		@media (max-width: toEm(767.98)) {
+		@media (max-width: toEm(480)) {
 			flex-direction: column;
 		}
 	}

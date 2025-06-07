@@ -356,14 +356,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //==============Stepper==================
 const stepItems = document.querySelectorAll('.item-step');
+const stepContents = document.querySelectorAll('.step-form');
 
 stepItems.forEach((step, index) => {
 	step.addEventListener('click', () => {
+		if (index === stepItems.length - 1) {
+			window.location.href = 'confirm.html';
+			return;
+		}
+
 		stepItems.forEach((item, i) => {
 			const progress = item.querySelector('.item-step__progress');
 			const title = item.querySelector('.item-step__title');
 
-			// Знімаємо активні класи
 			item.classList.remove('active');
 			title.classList.remove('active');
 
@@ -377,8 +382,6 @@ stepItems.forEach((step, index) => {
 			} else if (i === index) {
 				progress.className = 'item-step__progress item-step__progress--current';
 				progress.textContent = i + 1;
-
-				// Додаємо активні класи для поточного кроку
 				item.classList.add('active');
 				title.classList.add('active');
 			} else {
@@ -387,16 +390,16 @@ stepItems.forEach((step, index) => {
 			}
 		});
 
-		// Перемикаємо контент
-		const currentActiveContent = document.querySelector('.step-form.active');
-		const nextActiveContent = document.querySelector(`.step-form[data-step-content="${index}"]`);
+		const currentActive = document.querySelector('.step-form.active');
+		const nextActive = document.querySelector(`.step-form[data-step-content="${index}"]`);
 
-		if (currentActiveContent !== nextActiveContent) {
-			if (currentActiveContent) currentActiveContent.classList.remove('active');
-			if (nextActiveContent) nextActiveContent.classList.add('active');
+		if (currentActive !== nextActive) {
+			if (currentActive) currentActive.classList.remove('active');
+			if (nextActive) nextActive.classList.add('active');
 		}
 	});
 });
+
 
 
 
