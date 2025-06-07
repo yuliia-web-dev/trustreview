@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:regular,500,600,700,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700,700italic&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Inter:500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500&display=swap");
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+[class*=_icon-]::before {
+  display: inline-block;
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-x:before {
+  content: "\e904";
+}
+
+._icon-facebook2:before {
+  content: "\ea91";
+}
+
+._icon-instagram:before {
+  content: "\ea92";
+}
+
+._icon-linkedin:before {
+  content: "\eac9";
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  line-height: 1;
+  height: 100%;
+}
+
+/* FORM */
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+body.menu-open {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
+.wrapper {
+  overflow: clip;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+}
+.wrapper main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.privacy {
+  padding-top: 2.3125rem;
+  padding-bottom: 5.625rem;
+}
+.privacy__container {
+  max-width: 47.5rem;
+}
+.privacy__title:not(:last-child) {
+  margin-bottom: 1.875rem;
+}
+.privacy__date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.625rem;
+}
+.privacy__wrapper {
+  display: grid;
+  gap: 1.25rem;
+}
+.date:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+.date__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.625rem;
+}
+.item-date__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.item-date span {
+  font-size: 1.125rem;
+}
+
+.subtitle {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.item-privacy__title:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+.item-privacy__text {
+  line-height: 1.2;
+  font-size: 1.125rem;
+}
+.item-privacy__text:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+.item-privacy__text p:not(:last-of-type) {
+  margin-bottom: 1.25rem;
+}
+.item-privacy__list {
+  padding-left: 1.25rem;
+}
+.item-privacy__list > *:not(:last-of-type) {
+  margin-bottom: 0.625rem;
+}
+.item-privacy__list li {
+  font-size: 1.125rem;
+  position: relative;
+  padding-left: 0.9375rem;
+}
+.item-privacy__list li::before {
+  content: "";
+  position: absolute;
+  top: 0.3125rem;
+  left: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #5d5b5b;
+  border-radius: 50%;
+}
+.item-privacy__list li span {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+.item-privacy a {
+  font-weight: 500;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+@media (any-hover: hover) {
+  .item-privacy a:hover {
+    color: #28a745;
+  }
+}

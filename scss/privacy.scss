@@ -1,0 +1,174 @@
+@use "sass:math";
+
+// Кольори
+$accentColor: #28a745;
+// Функції
+@import "_functions.scss";
+// Шрифти
+@import "_fonts.scss";
+// Іконки
+@import "_icons.scss";
+// Обнулення
+@import "_reset.scss";
+// Компоненти
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1400;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+body {
+	
+	&.menu-open {
+		overflow: hidden;
+		touch-action: none;
+	}
+}
+.wrapper {
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	main {
+		flex-grow: 1;
+	}
+}
+.privacy {
+	padding-top: toRem(37);
+	padding-bottom: toRem(90);
+
+	// .privacy__container
+
+	&__container {
+		max-width: toRem(760);
+	}
+
+	// .privacy__title
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(30);
+		}
+	}
+
+	// .privacy__date
+
+	&__date {
+		display: flex;
+		flex-wrap: wrap;
+		gap: toRem(10);
+	}
+
+	// .privacy__wrapper
+
+	&__wrapper {
+		display: grid;
+		gap: toRem(20);
+	}
+
+	// .privacy__item
+
+	&__item {
+	}
+}
+.date {
+	&:not(:last-child) {
+		margin-bottom: toRem(20);
+	}
+	// .date__item
+
+	&__item {
+		display: flex;
+		align-items: center;
+	}
+}
+.item-date {
+	display: flex;
+	gap: toRem(10);
+	// .item-date__title
+
+	&__title {
+		font-size: toRem(20);
+		font-weight: 600;
+	}
+	span {
+		font-size: toRem(18);
+	}
+}
+.subtitle {
+	color: #000;
+	font-size: toRem(18);
+	font-weight: 600;
+	text-transform: capitalize;
+}
+.item-privacy {
+	// .item-privacy__title
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+	}
+
+	// .item-privacy__text
+
+	&__text {
+		line-height: 1.2;
+		font-size: toRem(18);
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+		p {
+			&:not(:last-of-type) {
+				margin-bottom: toRem(20);
+			}
+		}
+	}
+
+	// .item-privacy__list
+
+	&__list {
+		padding-left: toRem(20);
+		& > * {
+			&:not(:last-of-type) {
+				margin-bottom: toRem(10);
+			}
+		}
+		li {
+			font-size: toRem(18);
+			position: relative;
+			padding-left: toRem(15);
+			&::before {
+				content: "";
+				position: absolute;
+				top: toRem(5);
+				left: 0;
+				width: toRem(8);
+				height: toRem(8);
+				background-color: #5d5b5b;
+				border-radius: 50%;
+			}
+			span {
+				font-size: toRem(18);
+				font-weight: 600;
+				text-transform: capitalize;
+				white-space: nowrap;
+			}
+		}
+	}
+	a {
+		font-weight: 500;
+		transition: color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor;
+			}
+		}
+	}
+}

@@ -1,0 +1,194 @@
+@use "sass:math";
+
+// Кольори
+$accentColor: #28a745;
+// Функції
+@import "_functions.scss";
+// Шрифти
+@import "_fonts.scss";
+// Іконки
+@import "_icons.scss";
+// Обнулення
+@import "_reset.scss";
+// Компоненти
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1440;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1400;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+body {
+
+	&.menu-open {
+		overflow: hidden;
+		touch-action: none;
+	}
+}
+.wrapper {
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	main {
+		flex-grow: 1;
+	}
+}
+
+.hero {
+	&__text {
+		&--width {
+			max-width: toRem(600);
+			line-height: 1.2;
+		}
+	}
+	&__title {
+	}
+}
+
+.support {
+	padding-top: toRem(47);
+	padding-bottom: toRem(115);
+
+	// .support__container
+
+	&__container {
+	}
+
+	// .support__title
+
+	&__title {
+		@include adaptiveValue("font-size", 40, 28);
+		font-weight: 700;
+		color: $accentColor;
+		text-align: center;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 25, 20);
+		}
+	}
+
+	// .support__form
+
+	&__form {
+	}
+}
+.form {
+	max-width: toRem(845);
+	margin: 0 auto;
+
+	// .form__wrapper
+
+	&__wrapper {
+		display: flex;
+		gap: toRem(32);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 20);
+		}
+		@media (max-width: toEm(767.98)) {
+			flex-direction: column;
+		}
+	}
+
+	// .form__left
+
+	&__left {
+		max-width: toRem(405);
+		flex: 1 1 toRem(405);
+		width: 100%;
+		@media (max-width: toEm(767.98)) {
+			max-width: 100%;
+			flex: 1 1 100%;
+		}
+	}
+
+	// .form__field
+
+	&__field {
+		display: grid;
+		gap: toRem(5);
+		input {
+			padding: toRem(10) toRem(15);
+			border-radius: 8px;
+			border: 1px solid #c2bdbd;
+			background: #fff;
+			box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02);
+			transition:
+				box-shadow 0.3s ease,
+				border 0.3s ease;
+
+			&::placeholder {
+				color: #c2bdbd;
+			}
+			&:focus {
+				border-radius: 8px;
+				outline: none;
+				border: 1px solid $accentColor;
+				background: #fff;
+				box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02);
+			}
+		}
+		label {
+			color: #3f3f3f;
+			font-size: toRem(12);
+			font-weight: 500;
+		}
+		&:not(:last-of-type) {
+			@include adaptiveValue("margin-bottom", 19, 12);
+		}
+	}
+
+	// .form__right
+
+	&__right {
+		flex: 1 1 toRem(405);
+		max-width: toRem(405);
+		width: 100%;
+		@media (max-width: toEm(767.98)) {
+			max-width: 100%;
+			flex: 1 1 100%;
+		}
+	}
+
+	// .form__textarea
+
+	&__textarea {
+		min-height: toRem(213);
+		resize: none;
+		padding: toRem(10) toRem(15);
+		border-radius: 8px;
+		border: 1px solid #c2bdbd;
+		background: #fff;
+		box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02);
+		transition:
+			box-shadow 0.3s ease,
+			border 0.3s ease;
+
+		@media (max-width: toEm(767.98)) {
+			min-height: toRem(120);
+		}
+		&::placeholder {
+			color: #c2bdbd;
+		}
+		&:focus {
+			border-radius: 8px;
+			border: 1px solid #28a745;
+			outline: none;
+			background: #fff;
+			box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02);
+		}
+	}
+	&__button {
+		display: grid;
+		justify-self: center;
+		padding: toRem(12) toRem(65);
+		@include adaptiveValue("padding-top", 12, 10);
+		@include adaptiveValue("padding-bottom", 12, 10);
+		@include adaptiveValue("padding-right", 65, 15);
+		@include adaptiveValue("padding-left", 65, 15);
+	}
+}
