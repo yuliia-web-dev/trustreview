@@ -2011,6 +2011,7 @@ body.menu-open {
   color: #1e293b;
   text-align: center;
   font-weight: 500;
+  line-height: 136%;
 }
 .verification__text span {
   font-weight: 700;
@@ -2066,6 +2067,7 @@ body.menu-open {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   height: auto;
+  cursor: pointer;
 }
 @media (any-hover: hover) {
   .item-plan:hover {

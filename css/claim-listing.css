@@ -583,6 +583,7 @@ body.menu-open {
   color: #1e293b;
   text-align: center;
   font-weight: 500;
+  line-height: 136%;
 }
 .verification__text span {
   font-weight: 700;

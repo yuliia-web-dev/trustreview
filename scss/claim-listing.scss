@@ -133,12 +133,10 @@ body {
 	cursor: pointer;
 	padding: toRem(6) toRem(12);
 	transition: all 0.3s;
-	@media(any-hover:hover){
-		&:hover{
+	@media (any-hover: hover) {
+		&:hover {
 			background-color: #cef3d6;
 			border-radius: 8px;
-
-
 		}
 	}
 	&.active {
@@ -415,6 +413,8 @@ body {
 		color: #1e293b;
 		text-align: center;
 		font-weight: 500;
+		line-height: 136%;
+
 		span {
 			font-weight: 700;
 		}
