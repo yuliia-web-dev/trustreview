@@ -465,6 +465,7 @@ body {
 	background: #fff;
 	transition: all 0.3s;
 	height: auto;
+	cursor: pointer;
 	@media (any-hover: hover) {
 		&:hover {
 			border: 1px solid #28a746;

@@ -638,6 +638,7 @@ body.menu-open {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   height: auto;
+  cursor: pointer;
 }
 @media (any-hover: hover) {
   .item-plan:hover {

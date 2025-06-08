@@ -422,14 +422,6 @@ body.lock {
   width: 32px;
   height: 32px;
 }
-.about-company__title {
-  text-wrap: wrap;
-  font-size: 30px;
-  color: #212529;
-  line-height: 1.5em;
-  font-weight: 600;
-  margin-bottom: 0.625rem;
-}
 .about-company__button {
   background-color: #1e293b;
   color: #fff;
