@@ -737,12 +737,14 @@ body {
 	}
 
 	&__content {
+		display: block;
 		display: flex;
 		justify-content: space-between;
 		max-width: toRem(418);
 	}
 
 	&__text {
+		display: block;
 		flex-grow: 1;
 	}
 
