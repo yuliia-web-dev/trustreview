@@ -65,7 +65,7 @@ body.lock {
 	// .description__container
 
 	&__container {
-		max-width: toRem(1145);
+		max-width: toRem(1174);
 	}
 
 	// .description__company
@@ -121,6 +121,7 @@ body.lock {
 	&__right {
 		max-width: toRem(850);
 		width: 100%;
+		flex: 1;
 		@media (max-width: toEm(767.98)) {
 			max-width: 100%;
 		}
@@ -238,6 +239,7 @@ body.lock {
 	display: flex;
 	gap: toRem(12);
 	&__link {
+		flex-shrink: 0;
 		transition: transform 0.3s;
 		@media (any-hover: hover) {
 			&:hover {

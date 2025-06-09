@@ -21,22 +21,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-._icon-x:before {
-  content: "\e904";
-}
-
-._icon-facebook2:before {
-  content: "\ea91";
-}
-
-._icon-instagram:before {
-  content: "\ea92";
-}
-
-._icon-linkedin:before {
-  content: "\eac9";
-}
-
 *,
 *::before,
 *::after {
@@ -167,7 +151,7 @@ body.lock {
   padding-bottom: 13rem;
 }
 .description__container {
-  max-width: 71.5625rem;
+  max-width: 73.375rem;
 }
 .description__link {
   display: -webkit-box;
@@ -246,6 +230,9 @@ body.lock {
 .company-info__right {
   max-width: 53.125rem;
   width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 @media (max-width: 47.99875em) {
   .company-info__right {
@@ -363,6 +350,8 @@ body.lock {
   gap: 0.75rem;
 }
 .social__link {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;

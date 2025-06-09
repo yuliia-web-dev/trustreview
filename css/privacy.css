@@ -21,22 +21,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-._icon-x:before {
-  content: "\e904";
-}
-
-._icon-facebook2:before {
-  content: "\ea91";
-}
-
-._icon-instagram:before {
-  content: "\ea92";
-}
-
-._icon-linkedin:before {
-  content: "\eac9";
-}
-
 *,
 *::before,
 *::after {
