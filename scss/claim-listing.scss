@@ -474,11 +474,30 @@ body {
 	&.selected {
 		border: 1px solid #28a746;
 		background: #ebfff0;
+		.item-plan__button {
+			background: #cef3d6;
+			color: #1f8437;
+			@media (any-hover: hover) {
+				&:hover {
+					background: #cef3d6;
+					color: #1f8437;
+				}
+			}
+		}
 	}
-	&--popular {
-		border: 1px #e2e8f0;
+	&.popular {
+		border: 1px solid #e2e8f0;
 		background: #ebfff0;
 		position: relative;
+		.item-plan__button {
+			color: #fff;
+			background-color: $accentColor;
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: #10832b;
+				}
+			}
+		}
 	}
 
 	// .item-plan__title
@@ -520,24 +539,6 @@ body {
 		@media (any-hover: hover) {
 			&:hover {
 				background-color: #c6c6c6;
-			}
-		}
-		&--background {
-			color: #fff;
-			background-color: $accentColor;
-			@media (any-hover: hover) {
-				&:hover {
-					background-color: #10832b;
-				}
-			}
-		}
-		&--selected {
-			background: #cef3d6;
-			color: #1f8437;
-			@media (any-hover: hover) {
-				&:hover {
-					background-color: #90c99e;
-				}
 			}
 		}
 	}
