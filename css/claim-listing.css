@@ -953,6 +953,10 @@ body.menu-open {
     color: #041007;
   }
 }
+.payment__icon {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
 .payment__icon svg {
   width: 24px;
   height: 24px;

@@ -776,6 +776,7 @@ body {
 	}
 
 	&__icon {
+		flex-shrink: 0;
 		svg {
 			width: 24px;
 			height: 24px;
