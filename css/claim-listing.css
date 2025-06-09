@@ -658,6 +658,11 @@ body.menu-open {
     background-color: #10832b;
   }
 }
+@media (any-hover: hover) {
+  .item-plan.popular:hover {
+    border: 1px solid #28a746;
+  }
+}
 .item-plan__title {
   color: #041007;
   font-weight: 600;

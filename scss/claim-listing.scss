@@ -498,6 +498,11 @@ body {
 				}
 			}
 		}
+		@media (any-hover: hover) {
+			&:hover {
+				border: 1px solid #28a746;
+			}
+		}
 	}
 
 	// .item-plan__title
