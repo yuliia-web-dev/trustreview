@@ -19,6 +19,7 @@ $accentColor: #28a745;
 @import "claim-listing.scss";
 
 @import "confirm.scss";
+
 // Мінімальна ширина сторінки
 $minWidth: 320;
 // Ширина полотна (макету)
@@ -78,7 +79,7 @@ body {
 		max-width: toRem(1375);
 		display: flex;
 		align-items: center;
-		@include adaptiveValue("gap", 40, 15, $widthTo: 800);
+		@include adaptiveValue("gap", 40, 10, $widthTo: 800);
 		justify-content: space-between;
 	}
 
@@ -91,9 +92,10 @@ body {
 		svg {
 			width: 180px;
 			height: 55.8px;
-		}
-		@media (max-width: toEm(480)) {
-			max-width: toRem(180);
+			@media (max-width: toEm(480)) {
+				width: 145px;
+				height: auto;
+			}
 		}
 	}
 
@@ -103,6 +105,45 @@ body {
 	}
 
 	&__menu {
+	}
+	&__wrap {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		@media (max-width: toEm(480)) {
+			gap: 10px;
+		}
+	}
+	&__badge {
+		display: flex;
+		padding: 6px 10px 6px 8px;
+		justify-content: center;
+		align-items: center;
+		gap: 4px;
+		color: #1e293b;
+		text-align: center;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 20px;
+		border-radius: 6px;
+		border: 1px solid #e2e8f0;
+		background: #fff;
+		text-transform: uppercase;
+		flex-shrink: 0;
+	}
+	&__user {
+		width: 48px;
+		height: 48px;
+		flex-shrink: 0;
+		color: #0f172a;
+		font-family: "Inter";
+		font-size: 20px;
+		line-height: 122%;
+		background-color: #e2e8f0;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 }
 .button {
@@ -415,6 +456,10 @@ body {
 		font-weight: 700;
 		line-height: 135%;
 		letter-spacing: -0.2px;
+		max-width: calc(100% - 20px);
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
 		&:not(:last-child) {
 			margin-bottom: toRem(6);
 		}

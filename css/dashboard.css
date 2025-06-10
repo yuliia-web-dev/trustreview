@@ -146,42 +146,9 @@ body.lock {
   padding: 0 0.9375rem;
 }
 
-.renewal {
-  padding-top: 8.0625rem;
-  padding-bottom: 0.75rem;
-}
-.renewal__container {
-  max-width: 1400px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 6px;
-  color: #475569;
-  font-size: 14px;
-  font-weight: 500;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding: 8px;
-}
-.renewal__container span {
-  color: #1e293b;
-  font-size: 14px;
-  font-weight: 700;
-}
-.renewal__container svg {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-
 .description {
   padding-top: 7.5rem;
   padding-bottom: 13rem;
-}
-.description--padding {
-  padding-top: 1.5rem;
 }
 .description__container {
   max-width: 73.375rem;
@@ -273,57 +240,6 @@ body.lock {
   }
 }
 
-.card-company__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 80px;
-  justify-items: space-between;
-}
-.card-company__header:not(:last-child) {
-  margin-bottom: 2rem;
-}
-.card-company__edit-btn, .review__edit-btn {
-  width: 40px;
-  height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 96px;
-  border: 1px solid #28a745;
-  background: #fff;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -webkit-transition: border 0.3s;
-  transition: border 0.3s;
-}
-.card-company__edit-btn svg, .review__edit-btn svg {
-  width: 16px;
-  height: 16px;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
-}
-@media (any-hover: hover) {
-  .card-company__edit-btn:hover, .review__edit-btn:hover {
-    border: 1px solid #1bbe41;
-  }
-  .card-company__edit-btn:hover svg, .review__edit-btn:hover svg {
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-}
 .card-company__logo {
   -ms-flex-item-align: center;
       align-self: center;
@@ -378,13 +294,8 @@ body.lock {
   color: rgb(77, 81, 84);
   font-family: "Roboto";
 }
-.card-company__rating--margin:not(:last-child) {
+.card-company__rating:not(:last-child) {
   margin-bottom: 2rem;
-}
-.card-company__rating--dashboard {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 .card-company__update {
   color: #94a3b8;
@@ -477,44 +388,7 @@ body.lock {
   font-weight: 600;
   line-height: 110%;
 }
-.about-company__title-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-}
-.about-company__badge {
-  border-radius: 6px;
-  background: #3b82f6;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: capitalize;
-  padding: 6px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.about-company__badge svg {
-  width: 16px;
-  height: 16px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-.about-company__logo, .popup__logo {
+.about-company__logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -530,10 +404,10 @@ body.lock {
   border-radius: 12px;
   background: #f1f5f9;
 }
-.about-company__logo:not(:last-child), .popup__logo:not(:last-child) {
+.about-company__logo:not(:last-child) {
   margin-bottom: 1rem;
 }
-.about-company__logo svg, .popup__logo svg {
+.about-company__logo svg {
   width: 32px;
   height: 32px;
 }
@@ -651,23 +525,6 @@ body.lock {
   }
 }
 
-.review__title-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 10px;
-}
-.review__title-wrap:not(:last-child) {
-  margin-bottom: 1.25rem;
-}
 .review__title {
   color: #0f172a;
   font-weight: 700;
@@ -686,7 +543,7 @@ body.lock {
   width: 24px;
   height: 24px;
 }
-.review__title--margin:not(:last-child) {
+.review__title:not(:last-child) {
   margin-bottom: 1.25rem;
 }
 .review__text {
@@ -743,8 +600,7 @@ body.lock {
 .popup__content {
   overflow: hidden;
   max-width: 30rem;
-  width: 100%;
-  max-height: 90vh;
+  max-height: 80vh;
   background-color: #fff;
   padding: 2rem 1.5rem;
   border-radius: 12px;
@@ -762,11 +618,6 @@ body.lock {
           align-items: center;
   overflow-y: auto;
 }
-.popup__content--flex {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
 @media (max-width: 30em) {
   .popup__content {
     padding: 2.5rem 1.5rem;
@@ -776,45 +627,6 @@ body.lock {
   color: #9b9b9b;
   text-align: center;
   font-size: 0.75rem;
-}
-.popup__wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 12px;
-}
-.popup__avatar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 12px;
-}
-.popup__upload {
-  color: #28a745;
-  font-family: "Inter";
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 14px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 4px;
-}
-.popup__upload svg {
-  width: 16px;
-  height: 16px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
 }
 .popup__title {
   color: #1e293b;
@@ -826,9 +638,6 @@ body.lock {
 }
 .popup__title:not(:last-child) {
   margin-bottom: 0.75rem;
-}
-.popup__title--margin:not(:last-child) {
-  margin-bottom: 2rem;
 }
 .popup__text {
   color: #64748b;
@@ -857,39 +666,6 @@ body.lock {
   .popup__text:not(:last-child) {
     margin-bottom: 1.25rem;
   }
-}
-@media (min-width: 73.375em) {
-  .popup__fields:not(:last-child) {
-    margin-bottom: 2rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 73.375em) {
-  @supports (margin-bottom: clamp( 1.25rem , 0.968969555rem  +  1.4051522248vw , 2rem )) {
-    .popup__fields:not(:last-child) {
-      margin-bottom: clamp( 1.25rem , 0.968969555rem  +  1.4051522248vw , 2rem );
-    }
-  }
-  @supports not (margin-bottom: clamp( 1.25rem , 0.968969555rem  +  1.4051522248vw , 2rem )) {
-    .popup__fields:not(:last-child) {
-      margin-bottom: calc(1.25rem + 0.75 * (100vw - 20rem) / 53.375);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .popup__fields:not(:last-child) {
-    margin-bottom: 1.25rem;
-  }
-}
-.popup__btn-wrap {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 28px;
 }
 .popup__field {
   display: grid;
@@ -955,21 +731,6 @@ body.lock {
 .popup__field:not(:last-child) {
   margin-bottom: 1.0625rem;
 }
-.popup__button--cancel {
-  color: #475569;
-  font-family: "Poppins";
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 135%;
-  letter-spacing: -0.2px;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-@media (any-hover: hover) {
-  .popup__button--cancel:hover {
-    color: #28a745;
-  }
-}
 .popup__close {
   position: absolute;
   top: 1rem;
@@ -989,24 +750,6 @@ body.lock {
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
-}
-.popup--edit label {
-  color: #1e293b;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 110%;
-}
-.popup--edit .custom-select {
-  color: #0f172a;
-  font-size: 14px;
-  line-height: 135%;
-  border-radius: 8px;
-  border: 1px solid #94a3b8;
-}
-.popup--edit .custom-select span {
-  color: #0f172a;
-  font-size: 14px;
-  line-height: 135%;
 }
 
 .popup.open {
