@@ -1153,6 +1153,9 @@ body.lock {
   font-size: 14px;
   line-height: 135%;
 }
+.popup--edit .custom-select__trigger {
+  padding: 14px 8px;
+}
 
 .popup.open {
   visibility: visible;
