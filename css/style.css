@@ -2194,7 +2194,7 @@ body.menu-open {
   overflow: visible;
 }
 .custom-select__options--popup {
-  max-height: 100px;
+  max-height: 80px;
   overflow: auto;
 }
 
