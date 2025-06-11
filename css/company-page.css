@@ -813,12 +813,19 @@ body.lock {
       -ms-flex-align: center;
           align-items: center;
   gap: 4px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 .popup__upload svg {
   width: 16px;
   height: 16px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+@media (any-hover: hover) {
+  .popup__upload:hover {
+    color: #1e8937;
+  }
 }
 .popup__title {
   color: #1e293b;
