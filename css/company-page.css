@@ -280,8 +280,11 @@ body.lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 80px;
-  justify-items: space-between;
+  gap: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
 }
 .card-company__header:not(:last-child) {
   margin-bottom: 2rem;
@@ -316,7 +319,7 @@ body.lock {
 }
 @media (any-hover: hover) {
   .card-company__edit-btn:hover, .review__edit-btn:hover {
-    border: 1px solid #1bbe41;
+    border: 1px solid #157d2d;
   }
   .card-company__edit-btn:hover svg, .review__edit-btn:hover svg {
     -webkit-transform: scale(1.1);
@@ -352,6 +355,7 @@ body.lock {
 .card-company__wrap {
   display: grid;
   border-left: 5px solid #28a745;
+  width: 100%;
 }
 @media (max-width: 47.99875em) {
   .card-company__wrap {
