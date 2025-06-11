@@ -518,7 +518,7 @@ body.lock {
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
-.about-company__logo, .popup__logo {
+.about-company__logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -534,10 +534,10 @@ body.lock {
   border-radius: 12px;
   background: #f1f5f9;
 }
-.about-company__logo:not(:last-child), .popup__logo:not(:last-child) {
+.about-company__logo:not(:last-child) {
   margin-bottom: 1rem;
 }
-.about-company__logo svg, .popup__logo svg {
+.about-company__logo svg {
   width: 32px;
   height: 32px;
 }
@@ -744,6 +744,26 @@ body.lock {
   padding: 1.875rem 0.625rem;
   max-height: 100vh;
 }
+.popup__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 72px;
+  height: 72px;
+  padding: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 12px;
+  background: #f1f5f9;
+}
+.popup__logo svg {
+  width: 32px;
+  height: 32px;
+}
 .popup__content {
   overflow: hidden;
   max-width: 30rem;
@@ -790,6 +810,9 @@ body.lock {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 12px;
+}
+.popup__wrap:not(:last-child) {
+  margin-bottom: 1rem;
 }
 .popup__avatar {
   display: -webkit-box;

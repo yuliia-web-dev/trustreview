@@ -535,7 +535,18 @@ body.lock {
 		max-height: 100vh;
 	}
 	&__logo {
-		@extend .about-company__logo;
+		display: flex;
+		width: 72px;
+		height: 72px;
+		padding: 20px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 12px;
+		background: #f1f5f9;
+		svg {
+			width: 32px;
+			height: 32px;
+		}
 	}
 	&__content {
 		overflow: hidden;
@@ -568,11 +579,15 @@ body.lock {
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
+		&:not(:last-child){
+			margin-bottom: toRem(16);
+		}
 	}
 	&__avatar {
 		display: flex;
 		align-items: center;
 		gap: 12px;
+	
 	}
 	&__upload {
 		color: #28a745;
@@ -589,8 +604,8 @@ body.lock {
 			height: 16px;
 			flex-shrink: 0;
 		}
-		@media(any-hover:hover){
-			&:hover{
+		@media (any-hover: hover) {
+			&:hover {
 				color: #1e8937;
 			}
 		}
