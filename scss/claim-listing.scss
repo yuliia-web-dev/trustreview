@@ -365,10 +365,12 @@ body {
 	display: none;
 	z-index: 50;
 	list-style: none;
-	margin: 0;
-	padding: 0;
 	border-radius: 8px;
-	overflow: hidden;
+	overflow: visible;
+	&--popup {
+		max-height: 100px;
+		overflow: auto;
+	}
 }
 
 .custom-select__option {
@@ -520,7 +522,6 @@ body {
 	// .item-plan__text
 
 	&__text {
-	
 		flex: 1;
 	}
 

@@ -579,7 +579,7 @@ body.lock {
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
-		&:not(:last-child){
+		&:not(:last-child) {
 			margin-bottom: toRem(16);
 		}
 	}
@@ -587,7 +587,6 @@ body.lock {
 		display: flex;
 		align-items: center;
 		gap: 12px;
-	
 	}
 	&__upload {
 		color: #28a745;
@@ -689,7 +688,8 @@ body.lock {
 			margin-bottom: toRem(17);
 		}
 	}
-
+	&__select {
+	}
 	// .popup__button
 
 	&__button {
