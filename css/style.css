@@ -1146,7 +1146,6 @@ body.lock {
   font-size: 14px;
   line-height: 135%;
   border-radius: 8px;
-  border: 1px solid #94a3b8;
 }
 .popup--edit .custom-select span {
   color: #0f172a;
@@ -1155,6 +1154,7 @@ body.lock {
 }
 .popup--edit .custom-select__trigger {
   padding: 14px 8px;
+  border: 1px solid #94A3B8;
 }
 
 .popup.open {
