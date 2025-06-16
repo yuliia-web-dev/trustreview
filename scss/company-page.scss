@@ -204,7 +204,7 @@ body.lock {
 		border: 1px solid $accentColor;
 		background: #fff;
 		flex-shrink: 0;
-		transition: border 0.3s;
+		transition: all 0.3s;
 		svg {
 			width: 16px;
 			height: 16px;
@@ -216,6 +216,8 @@ body.lock {
 					transform: scale(1.1);
 				}
 				border: 1px solid #157d2d;
+				background-color: #dbf2e3;
+
 			}
 		}
 	}
