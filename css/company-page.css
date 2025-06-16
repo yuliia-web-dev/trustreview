@@ -155,25 +155,57 @@ body.lock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 0.625rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.renewal__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 6px;
   color: #475569;
   font-size: 14px;
   font-weight: 500;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   padding: 8px;
+  justify-items: end;
 }
-.renewal__container span {
+.renewal__content span {
+  margin-left: auto;
   color: #1e293b;
   font-size: 14px;
   font-weight: 700;
 }
-.renewal__container svg {
+.renewal__content svg {
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+.renewal__link {
+  padding: 10px 20px;
+  color: #28a745;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 135%; /* 18.9px */
+  letter-spacing: -0.2px;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media (any-hover: hover) {
+  .renewal__link:hover {
+    background-color: #dbf2e3;
+  }
 }
 
 .description {
@@ -750,7 +782,6 @@ body.lock {
   display: flex;
   width: 72px;
   height: 72px;
-  padding: 20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -759,10 +790,19 @@ body.lock {
           align-items: center;
   border-radius: 12px;
   background: #f1f5f9;
+  border: 1.44px solid #e2e8f0;
+  overflow: hidden;
 }
 .popup__logo svg {
   width: 32px;
   height: 32px;
+}
+.popup__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: none;
 }
 .popup__content {
   overflow: hidden;
@@ -824,6 +864,8 @@ body.lock {
   gap: 12px;
 }
 .popup__upload {
+  cursor: pointer;
+  display: block;
   color: #28a745;
   font-family: "Inter";
   font-size: 14px;
@@ -844,11 +886,6 @@ body.lock {
   height: 16px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-}
-@media (any-hover: hover) {
-  .popup__upload:hover {
-    color: #1e8937;
-  }
 }
 .popup__title {
   color: #1e293b;
@@ -981,7 +1018,6 @@ body.lock {
 }
 .popup__field label {
   color: #1e293b;
-  font-family: "Plus Jakarta Sans";
   font-size: 12px;
   font-weight: 700;
   line-height: 110%;
@@ -1024,11 +1060,14 @@ body.lock {
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
-.popup--edit label {
+.popup__label {
   color: #1e293b;
   font-size: 12px;
   font-weight: 700;
   line-height: 110%;
+  display: block;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 .popup--edit .custom-select {
   color: #0f172a;
@@ -1043,7 +1082,40 @@ body.lock {
 }
 .popup--edit .custom-select__trigger {
   padding: 14px 8px;
-  border: 1px solid #94A3B8;
+  border: 1px solid #94a3b8;
+}
+.popup__avatar-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.75rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.popup__upload {
+  color: #28a745;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+}
+@media (any-hover: hover) {
+  .popup__upload:hover {
+    color: #0f172a;
+  }
+}
+.popup__upload-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  display: none;
 }
 
 .popup.open {

@@ -439,4 +439,99 @@ document.addEventListener('click', () => {
 	});
 });
 
+//===========================UPLOAD IMAGE================
 
+document.addEventListener('DOMContentLoaded', function () {
+	const fileInput = document.getElementById('avatar-upload');
+	const img = document.querySelector('.popup__img');
+	const placeholder = document.querySelector('.popup__placeholder');
+	const uploadLabel = document.getElementById('upload-label');
+	const uploadWrap = document.querySelector('.popup__upload-wrap');
+	const removeBtn = document.getElementById('remove-btn');
+	const uploadNewBtn = document.getElementById('upload-new-btn'); // "Upload new" button
+
+	// Check if all elements exist before adding event listeners
+	if (fileInput && img && placeholder && uploadLabel && uploadWrap && removeBtn && uploadNewBtn) {
+
+		// When a file is selected
+		fileInput.addEventListener('change', function () {
+			const file = this.files[0];
+			if (file) {
+				const reader = new FileReader();
+				reader.onload = function (e) {
+					img.src = e.target.result;
+					img.style.display = 'block';         // Show image
+					placeholder.style.display = 'none';   // Hide SVG placeholder
+					uploadLabel.style.display = 'none';   // Hide initial label
+					uploadWrap.style.display = 'flex';    // Show "Upload new" and "Remove" buttons
+				};
+				reader.readAsDataURL(file);
+			}
+		});
+
+		// Remove uploaded image and reset UI
+		removeBtn.addEventListener('click', function (e) {
+			e.preventDefault();
+			fileInput.value = '';                       // Clear the file input
+			img.src = '';
+			img.style.display = 'none';                 // Hide image
+			placeholder.style.display = 'block';        // Show SVG placeholder again
+			uploadLabel.style.display = 'flex';         // Show upload label again
+			uploadWrap.style.display = 'none';          // Hide control buttons
+		});
+
+		// Trigger file selection again when clicking "Upload new"
+		uploadNewBtn.addEventListener('click', function (e) {
+			e.preventDefault();
+			fileInput.click();                          // Programmatically open file dialog
+		});
+	}
+});
+
+
+//============header dropdown===============
+
+document.addEventListener('DOMContentLoaded', () => {
+	// Get references to elements
+	const profileBtn = document.getElementById('profileBtn');
+	const dropdownMenu = document.getElementById('dropdownMenu');
+
+	// Check if both elements exist
+	if (!profileBtn || !dropdownMenu) return;
+
+	let isDropdownHovered = false;
+
+	// Toggle dropdown on button click
+	profileBtn.addEventListener('click', (e) => {
+		e.preventDefault();
+		dropdownMenu.classList.toggle('show');
+	});
+
+	// Mark when mouse enters dropdown
+	dropdownMenu.addEventListener('mouseenter', () => {
+		isDropdownHovered = true;
+	});
+
+	// Mark when mouse leaves dropdown
+	dropdownMenu.addEventListener('mouseleave', () => {
+		isDropdownHovered = false;
+	});
+
+	// Hide dropdown when clicking outside
+	document.addEventListener('click', (e) => {
+		if (
+			!profileBtn.contains(e.target) &&
+			!dropdownMenu.contains(e.target)
+		) {
+			dropdownMenu.classList.remove('show');
+		}
+	});
+
+	// Optional: close dropdown when focusing away (e.g., keyboard nav)
+	profileBtn.addEventListener('blur', () => {
+		if (!isDropdownHovered) {
+			dropdownMenu.classList.remove('show');
+		}
+	});
+});
+ 

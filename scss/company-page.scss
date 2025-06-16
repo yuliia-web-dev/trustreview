@@ -63,21 +63,50 @@ body.lock {
 	&__container {
 		max-width: 1400px;
 		display: flex;
+		gap: toRem(10);
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
+	&__content {
+		display: flex;
 		flex-wrap: wrap;
 		gap: 6px;
 		color: #475569;
 		font-size: 14px;
 		font-weight: 500;
-		justify-content: flex-end;
 		padding: 8px;
-
+		justify-items: end;
 		span {
+			margin-left: auto; 
 			color: #1e293b;
 			font-size: 14px;
 			font-weight: 700;
 		}
 		svg {
 			flex-shrink: 0;
+		}
+	}
+	&__text{
+
+	}
+	&__link {
+		padding: 10px 20px;
+		color:  #28a745;
+		font-family: "Poppins";
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 135%; /* 18.9px */
+		letter-spacing: -0.2px;
+		border-radius: 8px;
+		background-color:  #f8fafc;
+		transition: all 0.3s;
+		@media(any-hover: hover){
+			&:hover{
+				background-color:  #dbf2e3;
+
+			}
 		}
 	}
 }
@@ -538,15 +567,22 @@ body.lock {
 		display: flex;
 		width: 72px;
 		height: 72px;
-		padding: 20px;
 		justify-content: center;
 		align-items: center;
 		border-radius: 12px;
 		background: #f1f5f9;
+		border: 1.44px solid #e2e8f0;
+		overflow: hidden;
 		svg {
 			width: 32px;
 			height: 32px;
 		}
+	}
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: none;
 	}
 	&__content {
 		overflow: hidden;
@@ -589,6 +625,8 @@ body.lock {
 		gap: 12px;
 	}
 	&__upload {
+		cursor: pointer;
+		display: block;
 		color: #28a745;
 		font-family: "Inter";
 		font-size: 14px;
@@ -603,12 +641,8 @@ body.lock {
 			height: 16px;
 			flex-shrink: 0;
 		}
-		@media (any-hover: hover) {
-			&:hover {
-				color: #1e8937;
-			}
-		}
 	}
+
 	// .popup__title
 
 	&__title {
@@ -679,7 +713,6 @@ body.lock {
 		}
 		label {
 			color: #1e293b;
-			font-family: "Plus Jakarta Sans";
 			font-size: 12px;
 			font-weight: 700;
 			line-height: 110%;
@@ -725,13 +758,15 @@ body.lock {
 			transition: transform 0.3s;
 		}
 	}
+	&__label {
+		color: #1e293b;
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 110%;
+		display: block;
+		transition: color 0.3s;
+	}
 	&--edit {
-		label {
-			color: #1e293b;
-			font-size: 12px;
-			font-weight: 700;
-			line-height: 110%;
-		}
 		.custom-select {
 			color: #0f172a;
 			font-size: 14px;
@@ -743,12 +778,35 @@ body.lock {
 				line-height: 135%;
 			}
 		}
-		.custom-select__trigger{
+		.custom-select__trigger {
 			padding: 14px 8px;
-			border: 1px solid #94A3B8;
-		
-
+			border: 1px solid #94a3b8;
 		}
+	}
+	&__avatar-wrap {
+		display: flex;
+		gap: toRem(12);
+
+		flex: 1;
+	}
+	&__upload {
+		color: #28a745;
+		font-family: "Inter";
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 14px;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #0f172a;
+			}
+		}
+	}
+	&__upload-wrap {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: toRem(8);
+		display: none;
 	}
 }
 

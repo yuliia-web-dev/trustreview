@@ -353,7 +353,6 @@ body {
 	span {
 		color: #64748b;
 	}
-
 }
 
 .custom-select__options {
@@ -504,6 +503,33 @@ body {
 		@media (any-hover: hover) {
 			&:hover {
 				border: 1px solid #28a746;
+			}
+		}
+	}
+	&.current {
+		position: relative;
+		border: 1px solid #28a745;
+		background: #ebfff0;
+		.item-plan__button {
+			border-radius: 8px;
+			opacity: 0.6;
+			background-color: #cef3d6;
+			color: #1f8437;
+			font-weight: 700;
+			line-height: 135%;
+			letter-spacing: -0.2px;
+			display: flex;
+			align-items: center;
+			gap: toRem(10);
+			svg {
+				flex-shrink: 0;
+				width: 20px;
+				height: 20px;
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: #cef3d6;
+				}
 			}
 		}
 	}

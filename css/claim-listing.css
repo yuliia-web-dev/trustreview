@@ -665,6 +665,38 @@ body.menu-open {
     border: 1px solid #28a746;
   }
 }
+.item-plan.current {
+  position: relative;
+  border: 1px solid #28a745;
+  background: #ebfff0;
+}
+.item-plan.current .item-plan__button {
+  border-radius: 8px;
+  opacity: 0.6;
+  background-color: #cef3d6;
+  color: #1f8437;
+  font-weight: 700;
+  line-height: 135%;
+  letter-spacing: -0.2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.625rem;
+}
+.item-plan.current .item-plan__button svg {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+@media (any-hover: hover) {
+  .item-plan.current .item-plan__button:hover {
+    background-color: #cef3d6;
+  }
+}
 .item-plan__title {
   color: #041007;
   font-weight: 600;
