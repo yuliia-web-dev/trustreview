@@ -70,6 +70,7 @@ body.lock {
 	}
 	&__content {
 		display: flex;
+		align-items: center;
 		flex-wrap: wrap;
 		gap: 6px;
 		color: #475569;
@@ -77,22 +78,23 @@ body.lock {
 		font-weight: 500;
 		padding: 8px;
 		justify-items: end;
+		@media (max-width: toEm(480)) {
+			font-size: 13px;
+		}
 		span {
-			margin-left: auto; 
+			margin-left: auto;
 			color: #1e293b;
-			font-size: 14px;
 			font-weight: 700;
 		}
 		svg {
 			flex-shrink: 0;
 		}
 	}
-	&__text{
-
+	&__text {
 	}
 	&__link {
 		padding: 10px 20px;
-		color:  #28a745;
+		color: #28a745;
 		font-family: "Poppins";
 		font-size: 14px;
 		font-style: normal;
@@ -100,12 +102,11 @@ body.lock {
 		line-height: 135%; /* 18.9px */
 		letter-spacing: -0.2px;
 		border-radius: 8px;
-		background-color:  #f8fafc;
+		background-color: #f8fafc;
 		transition: all 0.3s;
-		@media(any-hover: hover){
-			&:hover{
-				background-color:  #dbf2e3;
-
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #dbf2e3;
 			}
 		}
 	}
@@ -605,7 +606,6 @@ body.lock {
 		@media (max-width: toEm(480)) {
 			padding: toRem(40) toRem(24);
 			max-height: 70vh;
-
 		}
 		span {
 			color: #9b9b9b;

@@ -169,6 +169,9 @@ body.lock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 6px;
@@ -178,10 +181,14 @@ body.lock {
   padding: 8px;
   justify-items: end;
 }
+@media (max-width: 30em) {
+  .renewal__content {
+    font-size: 13px;
+  }
+}
 .renewal__content span {
   margin-left: auto;
   color: #1e293b;
-  font-size: 14px;
   font-weight: 700;
 }
 .renewal__content svg {

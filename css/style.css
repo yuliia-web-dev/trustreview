@@ -289,10 +289,14 @@ body.lock {
   padding: 8px;
   justify-items: end;
 }
+@media (max-width: 30em) {
+  .renewal__content {
+    font-size: 13px;
+  }
+}
 .renewal__content span {
   margin-left: auto;
   color: #1e293b;
-  font-size: 14px;
   font-weight: 700;
 }
 .renewal__content svg {
@@ -945,6 +949,7 @@ body.lock {
 @media (max-width: 30em) {
   .popup__content {
     padding: 2.5rem 1.5rem;
+    max-height: 70vh;
   }
 }
 .popup__content span {
