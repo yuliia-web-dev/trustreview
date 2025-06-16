@@ -604,6 +604,8 @@ body.lock {
 
 		@media (max-width: toEm(480)) {
 			padding: toRem(40) toRem(24);
+			max-height: 70vh;
+
 		}
 		span {
 			color: #9b9b9b;
