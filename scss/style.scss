@@ -254,7 +254,7 @@ body {
 			left: -100%;
 			top: 0;
 			overflow: auto;
-			padding: toRem(150) toRem(15) toRem(50) toRem(15);
+			padding: toRem(100) toRem(15) toRem(50) toRem(15);
 			background-color: #f8f9fa;
 			transition: left 0.3s;
 			z-index: 20;
@@ -263,7 +263,7 @@ body {
 				content: "";
 				position: fixed;
 				width: 100%;
-				@include adaptiveValue("height", 83, 78, $widthFrom: 800);
+				@include adaptiveValue("height", 82, 67, $widthFrom: 800);
 				top: 0;
 				left: -100%;
 				z-index: 6;
@@ -292,7 +292,7 @@ body {
 			align-items: center;
 			justify-content: center;
 			text-align: right;
-			row-gap: toRem(15);
+			row-gap: toRem(6);
 		}
 	}
 

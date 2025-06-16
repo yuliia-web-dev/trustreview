@@ -3414,7 +3414,7 @@ body.menu-open {
     left: -100%;
     top: 0;
     overflow: auto;
-    padding: 9.375rem 0.9375rem 3.125rem 0.9375rem;
+    padding: 6.25rem 0.9375rem 3.125rem 0.9375rem;
     background-color: #f8f9fa;
     -webkit-transition: left 0.3s;
     transition: left 0.3s;
@@ -3435,24 +3435,24 @@ body.menu-open {
 }
 @media (max-width: 50em) and (min-width: 50em) {
   .menu__body::before {
-    height: 5.1875rem;
+    height: 5.125rem;
   }
 }
 @media (max-width: 50em) and (min-width: 20em) and (max-width: 50em) {
-  @supports (height: clamp( 4.875rem , 4.6666666667rem  +  1.0416666667vw , 5.1875rem )) {
+  @supports (height: clamp( 4.1875rem , 3.5625rem  +  3.125vw , 5.125rem )) {
     .menu__body::before {
-      height: clamp( 4.875rem , 4.6666666667rem  +  1.0416666667vw , 5.1875rem );
+      height: clamp( 4.1875rem , 3.5625rem  +  3.125vw , 5.125rem );
     }
   }
-  @supports not (height: clamp( 4.875rem , 4.6666666667rem  +  1.0416666667vw , 5.1875rem )) {
+  @supports not (height: clamp( 4.1875rem , 3.5625rem  +  3.125vw , 5.125rem )) {
     .menu__body::before {
-      height: calc(4.875rem + 0.3125 * (100vw - 20rem) / 30);
+      height: calc(4.1875rem + 0.9375 * (100vw - 20rem) / 30);
     }
   }
 }
 @media (max-width: 50em) and (max-width: 20em) {
   .menu__body::before {
-    height: 4.875rem;
+    height: 4.1875rem;
   }
 }
 .menu-open .menu__body {
@@ -3485,7 +3485,7 @@ body.menu-open {
         -ms-flex-pack: center;
             justify-content: center;
     text-align: right;
-    row-gap: 0.9375rem;
+    row-gap: 0.375rem;
   }
 }
 .menu__item {
