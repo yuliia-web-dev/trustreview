@@ -3494,6 +3494,11 @@ body.menu-open {
 .menu__item--after {
   border-bottom: 2px solid var(--Primary-color, #28a745);
 }
+@media (max-width: 50em) {
+  .menu__item--after {
+    border-bottom: none;
+  }
+}
 @media (any-hover: hover) {
   .menu__item:hover .menu__link {
     color: #28a745;

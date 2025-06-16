@@ -302,6 +302,9 @@ body {
 		padding: 12px;
 		&--after {
 			border-bottom: 2px solid var(--Primary-color, #28a745);
+			@media (max-width: toEm(800)) {
+				border-bottom: none;
+			}
 		}
 		@media (any-hover: hover) {
 			&:hover {
