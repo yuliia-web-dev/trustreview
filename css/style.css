@@ -2757,6 +2757,12 @@ body.menu-open {
       touch-action: none;
 }
 
+body.lock {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
 .wrapper {
   overflow: clip;
   display: -webkit-box;
