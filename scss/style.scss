@@ -20,6 +20,8 @@ $accentColor: #28a745;
 
 @import "confirm.scss";
 
+@import "privacy.scss";
+
 // Мінімальна ширина сторінки
 $minWidth: 320;
 // Ширина полотна (макету)
@@ -51,7 +53,6 @@ body {
 	}
 }
 [class*="__container"] {
-	max-width: toRem(1430);
 	margin: 0 auto;
 	padding: 0 toRem(15);
 }
@@ -625,6 +626,8 @@ body {
 	// .footer-top__container
 
 	&__container {
+		max-width: toRem(1430);
+
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -687,6 +690,8 @@ body {
 	// .footer-botton__container
 
 	&__container {
+		max-width: toRem(1430);
+
 		display: flex;
 		gap: toRem(20);
 		justify-content: space-between;

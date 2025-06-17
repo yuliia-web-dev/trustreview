@@ -4,13 +4,7 @@
 $accentColor: #28a745;
 // Функції
 @import "_functions.scss";
-// Шрифти
-@import "_fonts.scss";
-// Іконки
-@import "_icons.scss";
-// Обнулення
-@import "_reset.scss";
-// Компоненти
+
 
 // Мінімальна ширина сторінки
 $minWidth: 320;
@@ -23,22 +17,8 @@ $maxWidthContainer: 1400;
 $containerPadding: 30;
 // Ширина спрацьовування першого брейкпоінту
 $containerWidth: $maxWidthContainer + $containerPadding;
-body {
-	
-	&.menu-open {
-		overflow: hidden;
-		touch-action: none;
-	}
-}
-.wrapper {
-	overflow: clip;
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-	main {
-		flex-grow: 1;
-	}
-}
+
+
 .privacy {
 	padding-top: toRem(37);
 	padding-bottom: toRem(90);

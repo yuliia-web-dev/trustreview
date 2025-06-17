@@ -5,12 +5,7 @@ $accentColor: #28a745;
 
 // Функції
 @import "_functions.scss";
-// Шрифти
-@import "_fonts.scss";
-// Іконки
-@import "_icons.scss";
-// Обнулення
-@import "_reset.scss";
+
 // Компоненти
 
 // Мінімальна ширина сторінки
@@ -24,39 +19,10 @@ $maxWidthContainer: 1144;
 $containerPadding: 30;
 // Ширина спрацьовування першого брейкпоінту
 $containerWidth: $maxWidthContainer + $containerPadding;
-html {
-	scroll-behavior: smooth;
-}
-body {
-}
-.wrapper {
-	overflow: clip;
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-	main {
-		flex-grow: 1;
-	}
-}
 
-body.lock {
-	overflow: hidden;
-	touch-action: none;
-}
-.wrapper {
-	overflow: clip;
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-	main {
-		flex-grow: 1;
-	}
-}
 
-[class*="__container"] {
-	margin: 0 auto;
-	padding: 0 toRem(15);
-}
+
+
 .renewal {
 	padding-top: toRem(129);
 	padding-bottom: toRem(12);
@@ -811,6 +777,32 @@ body.lock {
 		align-items: center;
 		gap: toRem(8);
 		display: none;
+	}
+	&__textarea {
+		min-height: 200px;
+		resize: none;
+		border: 1px solid #94a3b8;
+		padding: toRem(15) toRem(8);
+		border-radius: 8px;
+		background: #fff;
+		transition:
+			box-shadow 0.3s ease,
+			border 0.3s ease;
+
+		&::placeholder {
+			color: #64748b;
+			font-family: "Plus Jakarta Sans";
+			font-size: 14px;
+			line-height: 135%; /* 18.9px */
+		}
+		&:focus {
+			border-radius: 8px;
+			border: 1px solid #28a745;
+			outline: none;
+			background: #fff;
+			box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02);
+			transition: border 0.3s;
+		}
 	}
 }
 

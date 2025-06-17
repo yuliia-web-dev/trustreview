@@ -1,151 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:regular,500,600,700,800&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700,700italic&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Inter:500,600,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:500&display=swap");
-@font-face {
-  font-family: "icons";
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-[class*=_icon-]::before {
-  display: inline-block;
-  font-family: "icons";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-*::before,
-*::after {
-  display: inline-block;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  display: inline-block;
-}
-
-li {
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: inherit;
-  font-size: inherit;
-}
-
-html,
-body {
-  line-height: 1;
-  height: 100%;
-}
-
-/* FORM */
-input,
-button,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-  background-color: transparent;
-}
-
-input,
-textarea {
-  width: 100%;
-}
-
-button,
-select,
-option {
-  cursor: pointer;
-}
-
-input[type=text],
-input[type=email],
-input[type=tel],
-textarea {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.wrapper {
-  overflow: clip;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  min-height: 100%;
-}
-.wrapper main {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-body.lock {
-  overflow: hidden;
-  -ms-touch-action: none;
-      touch-action: none;
-}
-
-.wrapper {
-  overflow: clip;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  min-height: 100%;
-}
-.wrapper main {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-[class*=__container] {
-  margin: 0 auto;
-  padding: 0 0.9375rem;
-}
-
 .renewal {
   padding-top: 8.0625rem;
   padding-bottom: 0.75rem;
@@ -1125,6 +977,58 @@ body.lock {
           align-items: center;
   gap: 0.5rem;
   display: none;
+}
+.popup__textarea {
+  min-height: 200px;
+  resize: none;
+  border: 1px solid #94a3b8;
+  padding: 0.9375rem 0.5rem;
+  border-radius: 8px;
+  background: #fff;
+  -webkit-transition: border 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: border 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+  transition: box-shadow 0.3s ease, border 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+.popup__textarea::-webkit-input-placeholder {
+  color: #64748b;
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  line-height: 135%; /* 18.9px */
+}
+.popup__textarea::-moz-placeholder {
+  color: #64748b;
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  line-height: 135%; /* 18.9px */
+}
+.popup__textarea:-ms-input-placeholder {
+  color: #64748b;
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  line-height: 135%; /* 18.9px */
+}
+.popup__textarea::-ms-input-placeholder {
+  color: #64748b;
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  line-height: 135%; /* 18.9px */
+}
+.popup__textarea::placeholder {
+  color: #64748b;
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  line-height: 135%; /* 18.9px */
+}
+.popup__textarea:focus {
+  border-radius: 8px;
+  border: 1px solid #28a745;
+  outline: none;
+  background: #fff;
+  -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02);
+          box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02);
+  -webkit-transition: border 0.3s;
+  transition: border 0.3s;
 }
 
 .popup.open {
