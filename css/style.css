@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:regular,500,600,700,800&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700,700italic&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Inter:500,600,700&display=swap");
@@ -1829,11 +1828,6 @@ textarea {
           justify-content: space-between;
   position: relative;
 }
-.step-form__payment {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
 .toggle-password {
   position: absolute;
   top: 50%;
@@ -2013,7 +2007,9 @@ textarea {
 .plan {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
   row-gap: 30px;
   align-self: stretch;
   width: 100%;
@@ -2027,7 +2023,7 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 1.25rem; /* toRem(20) ~ 20px */
+  gap: 1.25rem;
   padding: 20px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -2109,7 +2105,7 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0.625rem; /* toRem(10) ~ 10px */
+  gap: 0.625rem;
 }
 
 .item-plan.current .item-plan__button svg {
@@ -2148,7 +2144,6 @@ textarea {
   margin-bottom: 0.5rem;
 }
 
-/* Кнопки */
 .item-plan__button {
   text-align: center;
   width: 100%;
@@ -2194,7 +2189,6 @@ textarea {
     letter-spacing: -0.2px;
   }
 }
-/* Сховані радіо-кнопки */
 .visually-hidden {
   position: absolute;
   opacity: 0;
@@ -2205,7 +2199,6 @@ textarea {
   height: 100%;
 }
 
-/* Позиціонування label як контейнера для абсолютного input */
 .item-plan__button-label {
   position: relative;
   width: 100%;
@@ -2213,7 +2206,6 @@ textarea {
   cursor: pointer;
 }
 
-/* Стиль для вибраного radio (через суміжний sibling) */
 .item-plan__button-label input[type=radio]:checked + .item-plan__button {
   border-radius: 8px;
   background: #cef3d6;
@@ -2286,6 +2278,11 @@ textarea {
   border-right: 1px solid #e2e8f0;
   max-width: 18.75rem;
   width: 100%;
+}
+@media (max-width: 30em) {
+  .selected-plan {
+    border-right: none;
+  }
 }
 .selected-plan__badge {
   border-radius: 4px;

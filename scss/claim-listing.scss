@@ -273,7 +273,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 		position: relative;
 	}
 	&__payment {
-		display: flex;
 	}
 	&__plan {
 	}
@@ -436,7 +435,7 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 .item-plan {
 	display: flex;
 	flex-direction: column;
-	gap: 1.25rem; /* toRem(20) ~ 20px */
+	gap: 1.25rem;
 	padding: 20px;
 	justify-content: space-between;
 	flex: 1 0 0;
@@ -503,7 +502,7 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	letter-spacing: -0.2px;
 	display: flex;
 	align-items: center;
-	gap: 0.625rem; /* toRem(10) ~ 10px */
+	gap: 0.625rem;
 }
 
 .item-plan.current .item-plan__button svg {
@@ -538,8 +537,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	margin-bottom: 0.5rem;
 }
 
-/* Кнопки */
-
 .item-plan__button {
 	text-align: center;
 	width: 100%;
@@ -553,7 +550,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	letter-spacing: -0.2px;
 	transition: all 0.3s;
 }
-
 
 .item-plan__badge {
 	border-radius: 32px;
@@ -570,7 +566,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	line-height: 110%;
 }
 
-
 @media (any-hover: hover) {
 	.item-plan__button-label:hover .item-plan__button {
 		background-color: #c6c6c6;
@@ -586,8 +581,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	}
 }
 
-/* Сховані радіо-кнопки */
-
 .visually-hidden {
 	position: absolute;
 	opacity: 0;
@@ -598,16 +591,12 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	height: 100%;
 }
 
-/* Позиціонування label як контейнера для абсолютного input */
-
 .item-plan__button-label {
 	position: relative;
 	width: 100%;
 	display: block;
 	cursor: pointer;
 }
-
-/* Стиль для вибраного radio (через суміжний sibling) */
 
 .item-plan__button-label input[type="radio"]:checked + .item-plan__button {
 	border-radius: 8px;
@@ -680,6 +669,9 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	border-right: 1px solid #e2e8f0;
 	max-width: toRem(300);
 	width: 100%;
+	@media (max-width: toEm(480)) {
+		border-right: none;
+	}
 	// .selected-plan__badge
 
 	&__badge {
