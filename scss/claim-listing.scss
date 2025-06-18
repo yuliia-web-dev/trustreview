@@ -454,17 +454,15 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	}
 }
 
-.item-plan.selected {
-	border: 1px solid #28a746;
-	background: #ebfff0;
-}
-
 .item-plan.popular {
 	border: 1px solid #e2e8f0;
 	background: #ebfff0;
 	position: relative;
 }
-
+.item-plan.selected {
+	border: 1px solid #28a746;
+	background: #ebfff0;
+}
 .item-plan.popular .item-plan__button {
 	color: #fff;
 	background: #28a745;
@@ -833,4 +831,10 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 			height: 24px;
 		}
 	}
+}
+
+.item-plan--active {
+	border-radius: 16px;
+	border: 1px solid var(--Primary-color, #28a745);
+	background: #ebfff0;
 }

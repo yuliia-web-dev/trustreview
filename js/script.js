@@ -534,4 +534,24 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 });
- 
+
+
+
+const planRadios = document.querySelectorAll('input[name="plan_id"]');
+
+planRadios.forEach(radio => {
+	radio.addEventListener('change', () => {
+		// Remove 'selected' class from all elements with class 'item-plan'
+		document.querySelectorAll('.item-plan').forEach(item => {
+			item.classList.remove('selected');
+		});
+
+		// Find the closest parent with class 'item-plan'
+		const selectedPlan = radio.closest('.item-plan');
+
+		// Add 'selected' class if found
+		if (selectedPlan) {
+			selectedPlan.classList.add('selected');
+		}
+	});
+});
