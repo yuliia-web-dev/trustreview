@@ -1536,6 +1536,23 @@ textarea {
   }
 }
 
+.wrapper {
+  overflow: clip;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+}
+.wrapper main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
 .claim-listing {
   padding-top: 8.75rem;
   padding-bottom: 2.5rem;
@@ -2056,12 +2073,6 @@ textarea {
   background: #cef3d6;
   color: #1f8437;
 }
-@media (any-hover: hover) {
-  .item-plan.selected .item-plan__button:hover {
-    background: #cef3d6;
-    color: #1f8437;
-  }
-}
 .item-plan.popular {
   border: 1px solid #e2e8f0;
   background: #ebfff0;
@@ -2072,13 +2083,13 @@ textarea {
   background-color: #28a745;
 }
 @media (any-hover: hover) {
-  .item-plan.popular .item-plan__button:hover {
-    background-color: #10832b;
+  .item-plan.popular:hover {
+    border: 1px solid #28a746;
   }
 }
 @media (any-hover: hover) {
-  .item-plan.popular:hover {
-    border: 1px solid #28a746;
+  .item-plan.popular .item-plan__button-label:hover .item-plan__button {
+    background-color: #10832b;
   }
 }
 .item-plan.current {
@@ -2109,7 +2120,7 @@ textarea {
   height: 20px;
 }
 @media (any-hover: hover) {
-  .item-plan.current .item-plan__button:hover {
+  .item-plan.current .item-plan__button-label:hover .item-plan__button {
     background-color: #cef3d6;
   }
 }
@@ -2128,10 +2139,10 @@ textarea {
           flex: 1;
 }
 .item-plan__button {
+  text-align: center;
+  width: 100%;
+  display: block;
   padding: 10px 20px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   border-radius: 8px;
   background-color: #f1f5f9;
   color: #1e293b;
@@ -2140,11 +2151,6 @@ textarea {
   letter-spacing: -0.2px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-@media (any-hover: hover) {
-  .item-plan__button:hover {
-    background-color: #c6c6c6;
-  }
 }
 .item-plan__badge {
   border-radius: 32px;
@@ -2165,6 +2171,40 @@ textarea {
   width: fit-content;
   text-wrap: nowrap;
   line-height: 110%;
+}
+
+@media (any-hover: hover) {
+  .item-plan__button-label:hover .item-plan__button {
+    background-color: #c6c6c6;
+  }
+  .item-plan__button-label input[type=radio]:checked + .item-plan__button:hover {
+    border-radius: 8px;
+    background: #cef3d6;
+    color: #1f8437;
+    font-weight: 700;
+    line-height: 135%; /* 21.6px */
+    letter-spacing: -0.2px;
+  }
+}
+.visually-hidden {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.item-plan__button-label input[type=radio]:checked + .item-plan__button {
+  border-radius: 8px;
+  background: #cef3d6;
+  color: #1f8437;
+  font-weight: 700;
+  line-height: 135%; /* 21.6px */
+  letter-spacing: -0.2px;
+}
+
+.item-plan__button-label {
+  width: 100%;
+  display: block;
+  cursor: pointer;
 }
 
 .price {

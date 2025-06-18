@@ -5,7 +5,6 @@ $accentColor: #28a745;
 // Функції
 @import "_functions.scss";
 
-
 // Мінімальна ширина сторінки
 $minWidth: 320;
 // Ширина полотна (макету)
@@ -17,9 +16,15 @@ $maxWidthContainer: 1400;
 $containerPadding: 30;
 // Ширина спрацьовування першого брейкпоінту
 $containerWidth: $maxWidthContainer + $containerPadding;
-
-
-
+.wrapper {
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	main {
+		flex-grow: 1;
+	}
+}
 .claim-listing {
 	padding-top: toRem(140);
 	padding-bottom: toRem(40);
@@ -460,12 +465,7 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 		.item-plan__button {
 			background: #cef3d6;
 			color: #1f8437;
-			@media (any-hover: hover) {
-				&:hover {
-					background: #cef3d6;
-					color: #1f8437;
-				}
-			}
+		
 		}
 	}
 	&.popular {
@@ -475,15 +475,19 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 		.item-plan__button {
 			color: #fff;
 			background-color: $accentColor;
-			@media (any-hover: hover) {
-				&:hover {
-					background-color: #10832b;
-				}
-			}
 		}
 		@media (any-hover: hover) {
 			&:hover {
 				border: 1px solid #28a746;
+			}
+		}
+		.item-plan__button-label {
+			@media (any-hover: hover) {
+				&:hover {
+					.item-plan__button {
+						background-color: #10832b;
+					}
+				}
 			}
 		}
 	}
@@ -507,9 +511,13 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 				width: 20px;
 				height: 20px;
 			}
+		}
+		.item-plan__button-label {
 			@media (any-hover: hover) {
 				&:hover {
-					background-color: #cef3d6;
+					.item-plan__button {
+						background-color: #cef3d6;
+					}
 				}
 			}
 		}
@@ -542,8 +550,10 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	// .item-plan__button
 
 	&__button {
+		text-align: center;
+		width: 100%;
+		display: block;
 		padding: 10px 20px;
-		justify-content: center;
 		border-radius: 8px;
 		background-color: #f1f5f9;
 		color: #1e293b;
@@ -551,11 +561,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 		line-height: 135%;
 		letter-spacing: -0.2px;
 		transition: all 0.3s;
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: #c6c6c6;
-			}
-		}
 	}
 	&__badge {
 		border-radius: 32px;
@@ -573,6 +578,38 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 		text-wrap: nowrap;
 		line-height: 110%;
 	}
+}
+@media (any-hover: hover) {
+	.item-plan__button-label:hover .item-plan__button {
+		background-color: #c6c6c6;
+	}
+
+	.item-plan__button-label input[type="radio"]:checked + .item-plan__button:hover {
+		border-radius: 8px;
+		background: #cef3d6;
+		color: #1f8437;
+		font-weight: 700;
+		line-height: 135%; /* 21.6px */
+		letter-spacing: -0.2px;
+	}
+}
+.visually-hidden {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+.item-plan__button-label input[type="radio"]:checked + .item-plan__button {
+	border-radius: 8px;
+	background: #cef3d6;
+	color: #1f8437;
+	font-weight: 700;
+	line-height: 135%; /* 21.6px */
+	letter-spacing: -0.2px;
+}
+.item-plan__button-label {
+	width: 100%;
+	display: block;
+	cursor: pointer;
 }
 .price {
 	display: grid;
