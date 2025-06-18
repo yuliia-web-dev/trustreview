@@ -130,7 +130,7 @@
 					<h2 class="subscription-plan__title">Subscriptions</h2>
 					<div class="subscription-plan__text">Choose the plan that best fits your business needs.</div>
 					<div class="subscription-plan__wrap plan">
-						<div class="plan-item item-plan">
+						<div class="plan__item item-plan">
 							<h4 class="item-plan__title">Free</h4>
 							<div class="item-plan__price price">
 								<div class="price__info">
@@ -139,21 +139,22 @@
 								</div>
 								<span class="price__payment-info">No payment required</span>
 							</div>
-						
+
 							<div class="item-plan__text text-plan">
 								Perfect for getting started
 							</div>
 							<ul class="item-plan__list list-plan">
 								<li class="list-plan__item">Basic listing</li>
 								<li class="list-plan__item">Limited analytics</li>
-						
+
 							</ul>
 							<label class="item-plan__button-label">
 								<input type="radio" name="plan_id" value="free" class="visually-hidden">
 								<span class="item-plan__button">Choose Plan</span>
 							</label>
+
 						</div>
-						<div class="plan-item item-plan popular">
+						<div class="plan__item item-plan current">
 							<h4 class="item-plan__title">Pro</h4>
 							<div class="item-plan__price price">
 								<div class="price__info">
@@ -162,7 +163,7 @@
 								</div>
 								<span class="price__payment-info">No payment required</span>
 							</div>
-						
+
 							<div class="item-plan__text text-plan">
 								Best for growing business
 							</div>
@@ -170,15 +171,33 @@
 								<li class="list-plan__item">Detailed analytics</li>
 								<li class="list-plan__item">Boosted visibility</li>
 								<li class="list-plan__item">Priority support</li>
-						
 							</ul>
+
 							<label class="item-plan__button-label">
-								<input type="radio" name="plan_id" value="pro" class="visually-hidden">
-								<span class="item-plan__button">Choose Plan</span>
+								<input type="radio" name="plan_id" value="current" class="visually-hidden" checked disabled>
+								<span class="item-plan__button">
+									<span class="item-plan__button-inner">
+										Current Plan
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+											fill="none">
+											<g clip-path="url(#clip0_211_1781)">
+												<path fill-rule="evenodd" clip-rule="evenodd"
+													d="M17.6619 5.35434C17.8181 5.51061 17.9059 5.72254 17.9059 5.94351C17.9059 6.16448 17.8181 6.3764 17.6619 6.53267L8.29354 15.9018C8.20841 15.987 8.10734 16.0546 7.9961 16.1007C7.88485 16.1468 7.76562 16.1705 7.6452 16.1705C7.52479 16.1705 7.40555 16.1468 7.29431 16.1007C7.18307 16.0546 7.082 15.987 6.99687 15.9018L2.34187 11.2468C2.26444 11.1694 2.20303 11.0775 2.16113 10.9763C2.11922 10.8752 2.09766 10.7668 2.09766 10.6573C2.09766 10.5478 2.11922 10.4393 2.16113 10.3382C2.20303 10.237 2.26444 10.1451 2.34187 10.0677C2.41929 9.99025 2.51121 9.92883 2.61237 9.88693C2.71353 9.84503 2.82196 9.82346 2.93145 9.82346C3.04095 9.82346 3.14937 9.84503 3.25053 9.88693C3.35169 9.92883 3.44361 9.99025 3.52104 10.0677L7.64604 14.1927L16.4827 5.35434C16.639 5.19811 16.8509 5.11035 17.0719 5.11035C17.2928 5.11035 17.5056 5.19811 17.6619 5.35434Z"
+													fill="#28A745" />
+											</g>
+											<defs>
+												<clipPath id="clip0_211_1781">
+													<rect width="20" height="20" fill="white" transform="translate(0 0.799805)" />
+												</clipPath>
+											</defs>
+										</svg>
+									</span>
+								</span>
 							</label>
+
 							<div class="item-plan__badge">MOST POPULAR</div>
 						</div>
-						<div class="plan-item item-plan">
+						<div class="plan__item item-plan">
 							<h4 class="item-plan__title">Premium</h4>
 							<div class="item-plan__price price">
 								<div class="price__info">
@@ -187,14 +206,14 @@
 								</div>
 								<span class="price__payment-info">No payment required</span>
 							</div>
-						
+
 							<div class="item-plan__text text-plan">
 								Complete enterprise solution </div>
 							<ul class="item-plan__list list-plan">
 								<li class="list-plan__item">Maximum listing</li>
 								<li class="list-plan__item">Advanced AI-powered analytics</li>
 								<li class="list-plan__item">Advanced marketing features</li>
-						
+
 							</ul>
 							<label class="item-plan__button-label">
 								<input type="radio" name="plan_id" value="premium" class="visually-hidden">

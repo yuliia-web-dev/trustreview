@@ -16,15 +16,7 @@ $maxWidthContainer: 1400;
 $containerPadding: 30;
 // Ширина спрацьовування першого брейкпоінту
 $containerWidth: $maxWidthContainer + $containerPadding;
-.wrapper {
-	overflow: clip;
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-	main {
-		flex-grow: 1;
-	}
-}
+
 .claim-listing {
 	padding-top: toRem(140);
 	padding-bottom: toRem(40);
@@ -437,14 +429,14 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 16px;
 	align-self: stretch;
+	width: 100%;
 }
 
 .item-plan {
 	display: flex;
 	flex-direction: column;
-	gap: toRem(20);
+	gap: 1.25rem; /* toRem(20) ~ 20px */
 	padding: 20px;
-	flex-direction: column;
 	justify-content: space-between;
 	flex: 1 0 0;
 	align-self: stretch;
@@ -454,131 +446,132 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	transition: all 0.3s;
 	height: auto;
 	cursor: pointer;
-	@media (any-hover: hover) {
-		&:hover {
-			border: 1px solid #28a746;
-		}
-	}
-	&.selected {
+}
+
+@media (any-hover: hover) {
+	.item-plan:hover {
 		border: 1px solid #28a746;
-		background: #ebfff0;
-		.item-plan__button {
-			background: #cef3d6;
-			color: #1f8437;
-		
-		}
-	}
-	&.popular {
-		border: 1px solid #e2e8f0;
-		background: #ebfff0;
-		position: relative;
-		.item-plan__button {
-			color: #fff;
-			background-color: $accentColor;
-		}
-		@media (any-hover: hover) {
-			&:hover {
-				border: 1px solid #28a746;
-			}
-		}
-		.item-plan__button-label {
-			@media (any-hover: hover) {
-				&:hover {
-					.item-plan__button {
-						background-color: #10832b;
-					}
-				}
-			}
-		}
-	}
-	&.current {
-		position: relative;
-		border: 1px solid #28a745;
-		background: #ebfff0;
-		.item-plan__button {
-			border-radius: 8px;
-			opacity: 0.6;
-			background-color: #cef3d6;
-			color: #1f8437;
-			font-weight: 700;
-			line-height: 135%;
-			letter-spacing: -0.2px;
-			display: flex;
-			align-items: center;
-			gap: toRem(10);
-			svg {
-				flex-shrink: 0;
-				width: 20px;
-				height: 20px;
-			}
-		}
-		.item-plan__button-label {
-			@media (any-hover: hover) {
-				&:hover {
-					.item-plan__button {
-						background-color: #cef3d6;
-					}
-				}
-			}
-		}
-	}
-
-	// .item-plan__title
-
-	&__title {
-		color: #041007;
-		font-weight: 600;
-	}
-
-	// .item-plan__price
-
-	&__price {
-	}
-
-	// .item-plan__text
-
-	&__text {
-		flex: 1;
-	}
-
-	// .item-plan__list
-
-	&__list {
-		flex: 1;
-	}
-
-	// .item-plan__button
-
-	&__button {
-		text-align: center;
-		width: 100%;
-		display: block;
-		padding: 10px 20px;
-		border-radius: 8px;
-		background-color: #f1f5f9;
-		color: #1e293b;
-		font-weight: 600;
-		line-height: 135%;
-		letter-spacing: -0.2px;
-		transition: all 0.3s;
-	}
-	&__badge {
-		border-radius: 32px;
-		background: #1e293b;
-		padding: 8px 12px;
-		position: absolute;
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		top: -13px;
-		color: #fff;
-		font-size: 12px;
-		font-weight: 700;
-		width: fit-content;
-		text-wrap: nowrap;
-		line-height: 110%;
 	}
 }
+
+.item-plan.selected {
+	border: 1px solid #28a746;
+	background: #ebfff0;
+}
+
+.item-plan.popular {
+	border: 1px solid #e2e8f0;
+	background: #ebfff0;
+	position: relative;
+}
+
+.item-plan.popular .item-plan__button {
+	color: #fff;
+	background: #28a745;
+}
+
+@media (any-hover: hover) {
+	.item-plan.popular:hover {
+		border: 1px solid #28a746;
+	}
+
+	.item-plan.popular .item-plan__button-label:hover .item-plan__button {
+		background-color: #10832b;
+	}
+}
+
+.item-plan.current {
+	position: relative;
+	border: 1px solid #28a745;
+	background: #ebfff0;
+}
+.item-plan__button-inner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+}
+.item-plan.current .item-plan__button {
+	border-radius: 8px;
+	opacity: 0.6;
+	background-color: #cef3d6;
+	color: #1f8437;
+	font-weight: 700;
+	line-height: 135%;
+	letter-spacing: -0.2px;
+	display: flex;
+	align-items: center;
+	gap: 0.625rem; /* toRem(10) ~ 10px */
+}
+
+.item-plan.current .item-plan__button svg {
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+}
+
+@media (any-hover: hover) {
+	.item-plan.current .item-plan__button-label:hover .item-plan__button {
+		background-color: #cef3d6;
+	}
+}
+
+.item-plan__title {
+	color: #041007;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.item-plan__text {
+	flex: 1;
+}
+
+.item-plan__list {
+	flex: 1;
+	list-style: none;
+	padding-left: 0;
+}
+
+.item-plan__list .list-plan__item {
+	margin-bottom: 0.5rem;
+}
+
+/* Кнопки */
+
+.item-plan__button {
+	text-align: center;
+	width: 100%;
+	display: block;
+	padding: 10px 20px;
+	border-radius: 8px;
+	background-color: #f1f5f9;
+	color: #1e293b;
+	font-weight: 600;
+	line-height: 135%;
+	letter-spacing: -0.2px;
+	transition: all 0.3s;
+}
+
+/* Значок популярності */
+
+.item-plan__badge {
+	border-radius: 32px;
+	background: #1e293b;
+	padding: 8px 12px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: -13px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	white-space: nowrap;
+	line-height: 110%;
+}
+
+/* Hover для кнопок через label */
+
 @media (any-hover: hover) {
 	.item-plan__button-label:hover .item-plan__button {
 		background-color: #c6c6c6;
@@ -589,27 +582,41 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 		background: #cef3d6;
 		color: #1f8437;
 		font-weight: 700;
-		line-height: 135%; /* 21.6px */
+		line-height: 135%;
 		letter-spacing: -0.2px;
 	}
 }
+
+/* Сховані радіо-кнопки */
+
 .visually-hidden {
 	position: absolute;
 	opacity: 0;
 	pointer-events: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
+
+/* Позиціонування label як контейнера для абсолютного input */
+
+.item-plan__button-label {
+	position: relative;
+	width: 100%;
+	display: block;
+	cursor: pointer;
+}
+
+/* Стиль для вибраного radio (через суміжний sibling) */
+
 .item-plan__button-label input[type="radio"]:checked + .item-plan__button {
 	border-radius: 8px;
 	background: #cef3d6;
 	color: #1f8437;
 	font-weight: 700;
-	line-height: 135%; /* 21.6px */
+	line-height: 135%;
 	letter-spacing: -0.2px;
-}
-.item-plan__button-label {
-	width: 100%;
-	display: block;
-	cursor: pointer;
 }
 .price {
 	display: grid;

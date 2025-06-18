@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:regular,500,600,700,800&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700,700italic&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Inter:500,600,700&display=swap");
@@ -1536,23 +1537,6 @@ textarea {
   }
 }
 
-.wrapper {
-  overflow: clip;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  min-height: 100%;
-}
-.wrapper main {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
 .claim-listing {
   padding-top: 8.75rem;
   padding-bottom: 2.5rem;
@@ -2031,6 +2015,7 @@ textarea {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px;
   align-self: stretch;
+  width: 100%;
 }
 
 .item-plan {
@@ -2041,9 +2026,8 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.25rem; /* toRem(20) ~ 20px */
   padding: 20px;
-  flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -2060,6 +2044,7 @@ textarea {
   height: auto;
   cursor: pointer;
 }
+
 @media (any-hover: hover) {
   .item-plan:hover {
     border: 1px solid #28a746;
@@ -2069,25 +2054,22 @@ textarea {
   border: 1px solid #28a746;
   background: #ebfff0;
 }
-.item-plan.selected .item-plan__button {
-  background: #cef3d6;
-  color: #1f8437;
-}
+
 .item-plan.popular {
   border: 1px solid #e2e8f0;
   background: #ebfff0;
   position: relative;
 }
+
 .item-plan.popular .item-plan__button {
   color: #fff;
-  background-color: #28a745;
+  background: #28a745;
 }
+
 @media (any-hover: hover) {
   .item-plan.popular:hover {
     border: 1px solid #28a746;
   }
-}
-@media (any-hover: hover) {
   .item-plan.popular .item-plan__button-label:hover .item-plan__button {
     background-color: #10832b;
   }
@@ -2097,6 +2079,21 @@ textarea {
   border: 1px solid #28a745;
   background: #ebfff0;
 }
+
+.item-plan__button-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
 .item-plan.current .item-plan__button {
   border-radius: 8px;
   opacity: 0.6;
@@ -2111,14 +2108,16 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0.625rem;
+  gap: 0.625rem; /* toRem(10) ~ 10px */
 }
+
 .item-plan.current .item-plan__button svg {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   width: 20px;
   height: 20px;
 }
+
 @media (any-hover: hover) {
   .item-plan.current .item-plan__button-label:hover .item-plan__button {
     background-color: #cef3d6;
@@ -2126,18 +2125,29 @@ textarea {
 }
 .item-plan__title {
   color: #041007;
+  font-size: 16px;
   font-weight: 600;
 }
+
 .item-plan__text {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
+
 .item-plan__list {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  list-style: none;
+  padding-left: 0;
 }
+
+.item-plan__list .list-plan__item {
+  margin-bottom: 0.5rem;
+}
+
+/* Кнопки */
 .item-plan__button {
   text-align: center;
   width: 100%;
@@ -2152,11 +2162,12 @@ textarea {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
+/* Значок популярності */
 .item-plan__badge {
   border-radius: 32px;
   background: #1e293b;
   padding: 8px 12px;
-  position: absolute;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -2166,13 +2177,11 @@ textarea {
   color: #fff;
   font-size: 12px;
   font-weight: 700;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  text-wrap: nowrap;
+  white-space: nowrap;
   line-height: 110%;
 }
 
+/* Hover для кнопок через label */
 @media (any-hover: hover) {
   .item-plan__button-label:hover .item-plan__button {
     background-color: #c6c6c6;
@@ -2182,29 +2191,37 @@ textarea {
     background: #cef3d6;
     color: #1f8437;
     font-weight: 700;
-    line-height: 135%; /* 21.6px */
+    line-height: 135%;
     letter-spacing: -0.2px;
   }
 }
+/* Сховані радіо-кнопки */
 .visually-hidden {
   position: absolute;
   opacity: 0;
   pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
+/* Позиціонування label як контейнера для абсолютного input */
+.item-plan__button-label {
+  position: relative;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+/* Стиль для вибраного radio (через суміжний sibling) */
 .item-plan__button-label input[type=radio]:checked + .item-plan__button {
   border-radius: 8px;
   background: #cef3d6;
   color: #1f8437;
   font-weight: 700;
-  line-height: 135%; /* 21.6px */
+  line-height: 135%;
   letter-spacing: -0.2px;
-}
-
-.item-plan__button-label {
-  width: 100%;
-  display: block;
-  cursor: pointer;
 }
 
 .price {
