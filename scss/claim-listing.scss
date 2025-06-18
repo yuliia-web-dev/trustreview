@@ -427,7 +427,8 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 .plan {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 16px;
+	column-gap: 16px;
+	row-gap: 30px;
 	align-self: stretch;
 	width: 100%;
 }
@@ -553,7 +554,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	transition: all 0.3s;
 }
 
-/* Значок популярності */
 
 .item-plan__badge {
 	border-radius: 32px;
@@ -570,7 +570,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	line-height: 110%;
 }
 
-/* Hover для кнопок через label */
 
 @media (any-hover: hover) {
 	.item-plan__button-label:hover .item-plan__button {
