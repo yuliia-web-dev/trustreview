@@ -445,7 +445,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	background: #fff;
 	transition: all 0.3s;
 	height: auto;
-	cursor: pointer;
 }
 
 @media (any-hover: hover) {
