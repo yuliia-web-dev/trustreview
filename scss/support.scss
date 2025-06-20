@@ -63,6 +63,11 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	&__wrapper {
 		display: flex;
 		gap: toRem(32);
+		display: flex;
+		align-items: stretch;
+		background: #fff;
+		padding: 2rem;
+		border-radius: 12px;
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 40, 20);
 		}
@@ -74,9 +79,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	// .form__left
 
 	&__left {
-		max-width: toRem(405);
-		flex: 1 1 toRem(405);
-		width: 100%;
 		@media (max-width: toEm(767.98)) {
 			max-width: 100%;
 			flex: 1 1 100%;
@@ -86,8 +88,9 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	// .form__field
 
 	&__field {
-		display: grid;
-		gap: toRem(5);
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
 		input {
 			padding: toRem(10) toRem(15);
 			border-radius: 8px;
@@ -122,9 +125,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	// .form__right
 
 	&__right {
-		flex: 1 1 toRem(405);
-		max-width: toRem(405);
-		width: 100%;
 		@media (max-width: toEm(767.98)) {
 			max-width: 100%;
 			flex: 1 1 100%;
@@ -134,7 +134,7 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 	// .form__textarea
 
 	&__textarea {
-		min-height: toRem(213);
+		flex: 1;
 		resize: none;
 		padding: toRem(10) toRem(15);
 		border-radius: 8px;
@@ -168,4 +168,15 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 		@include adaptiveValue("padding-right", 65, 15);
 		@include adaptiveValue("padding-left", 65, 15);
 	}
+}
+
+.form__left,
+.form__right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.form__right .form__field {
+	flex: 1;
 }
