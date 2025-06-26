@@ -2920,6 +2920,9 @@ body.lock {
     padding-bottom: 0.625rem;
   }
 }
+.header--background {
+  background-color: #f8fafc;
+}
 .header.scrolled {
   padding: 0.625rem 0;
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
