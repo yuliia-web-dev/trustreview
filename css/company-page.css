@@ -211,7 +211,7 @@
 @media (any-hover: hover) {
   .card-company__edit-btn:hover, .review__edit-btn:hover {
     border: 1px solid #157d2d;
-    background-color: #dbf2e3;
+    background-color: rgba(219, 242, 227, 0.462745098);
   }
   .card-company__edit-btn:hover svg, .review__edit-btn:hover svg {
     -webkit-transform: scale(1.1);
