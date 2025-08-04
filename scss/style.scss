@@ -193,6 +193,7 @@ body.lock {
 		transform: translateY(0);
 	}
 	&__list {
+		padding: 8px;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -200,8 +201,8 @@ body.lock {
 		gap: 4px;
 		min-width: 240px;
 		border-radius: 12px;
-		border: 1px solid var(--slate-200, #e2e8f0);
-		background: var(--white, #fff);
+		border: 1px solid #e2e8f0;
+		background:  #fff;
 		box-shadow:
 			0px 48px 13px 0px rgba(132, 139, 133, 0),
 			0px 30px 12px 0px rgba(132, 139, 133, 0.02),
@@ -211,7 +212,6 @@ body.lock {
 	}
 	&__item {
 		width: 100%;
-		padding: 8px;
 		transition: background-color 0.3s;
 		@media (any-hover: hover) {
 			&:hover {
@@ -221,8 +221,9 @@ body.lock {
 		}
 	}
 	&__link {
+				padding: 8px 16px;
+
 		display: flex;
-		padding: 8px;
 		align-items: center;
 		gap: 12px;
 		color: #1e293b;
