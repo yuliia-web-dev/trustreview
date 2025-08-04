@@ -489,51 +489,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-//============header dropdown===============
-
-document.addEventListener('DOMContentLoaded', () => {
-	// Get references to elements
-	const profileBtn = document.getElementById('profileBtn');
-	const dropdownMenu = document.getElementById('dropdownMenu');
-
-	// Check if both elements exist
-	if (!profileBtn || !dropdownMenu) return;
-
-	let isDropdownHovered = false;
-
-	// Toggle dropdown on button click
-	profileBtn.addEventListener('click', (e) => {
-		e.preventDefault();
-		dropdownMenu.classList.toggle('show');
-	});
-
-	// Mark when mouse enters dropdown
-	dropdownMenu.addEventListener('mouseenter', () => {
-		isDropdownHovered = true;
-	});
-
-	// Mark when mouse leaves dropdown
-	dropdownMenu.addEventListener('mouseleave', () => {
-		isDropdownHovered = false;
-	});
-
-	// Hide dropdown when clicking outside
-	document.addEventListener('click', (e) => {
-		if (
-			!profileBtn.contains(e.target) &&
-			!dropdownMenu.contains(e.target)
-		) {
-			dropdownMenu.classList.remove('show');
-		}
-	});
-
-	// Optional: close dropdown when focusing away (e.g., keyboard nav)
-	profileBtn.addEventListener('blur', () => {
-		if (!isDropdownHovered) {
-			dropdownMenu.classList.remove('show');
-		}
-	});
-});
 
 
 
